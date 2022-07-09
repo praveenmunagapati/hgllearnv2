@@ -86,33 +86,28 @@ function Index() {
   ];
 
   return (
-    <div>
-      <Layout>
-        <Home image={image} />
-        <div>
-          <div className="grid md:grid-cols-2 gap-5  py-10 md:py-0 lg:gap-0 xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3">
-            {Moto?.map((val, i) => {
-              return (
-                <CompanyMoto
-                  key={i}
-                  title={val.title}
-                  description={val.description}
-                  icon={val.icon}
-                />
-              );
-            })}
-          </div>
+    <div className="">
+      <Home image={image} />
+      <div>
+        <div className="grid md:grid-cols-2 gap-5  py-10 md:py-0 lg:gap-0 xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3">
+          {Moto?.map((val, i) => {
+            return (
+              <CompanyMoto
+                key={i}
+                title={val.title}
+                description={val.description}
+                icon={val.icon}
+              />
+            );
+          })}
         </div>
-        <WelcomePortal images={images} />
-        <PopularCourses card={card} />
-        <CoursesSchemSchema />
-        <Testimonials />
-        <CallSection />
-        <WhoWeAre />
-        <MIssionVision />
-        <WhatWeProvide />
-        <WhatClientsSays />
-      </Layout>
+      </div>
+      <WelcomePortal images={images} />
+      <PopularCourses card={card} />
+      <CoursesSchemSchema />
+      <Testimonials />
+      <CallSection />
+      {/* <WhoWeAre /> */}
     </div>
   );
 }

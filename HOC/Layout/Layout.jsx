@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { IoIosArrowDropup } from "react-icons/io";
 import Footer from "./footer/footer";
+import TopBar from "../../components/Navigation/TopBar/TopBar";
+import SideBar from "../../components/Navigation/Sidebar/SideBar";
 function Layout({ children }) {
   const [showButton, setShowButton] = useState(false);
   // The back-to-top button is hidden at the beginning
@@ -21,8 +23,16 @@ function Layout({ children }) {
       behavior: "smooth", // for smoothly scrolling
     });
   };
+  const [iconClick, setIconClick] = useState(false);
+
   return (
-    <div>
+    <div className="">
+      <TopBar iconClick={iconClick} setIconClick={setIconClick} />
+      {iconClick ? (
+        <SideBar iconClick={iconClick} setIconClick={setIconClick} />
+      ) : (
+        ""
+      )}
       {showButton && (
         <button onClick={scrollToTop} className="back-to-top">
           <IoIosArrowDropup />

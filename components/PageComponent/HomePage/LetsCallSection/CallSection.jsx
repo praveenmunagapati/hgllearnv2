@@ -7,7 +7,7 @@ function CallSection() {
   });
   return (
     <div>
-      <div className="bg-gray-100 flex flex-col justify-center  my-28 pt-16 pb-12">
+      <div className="bg-gray-100 flex flex-col justify-center  mt-28 py-20 ">
         <div className="text-4xl font-bold Poppins text-center my-2">
           Let us Give you a <span className="text-main"> Call</span> !
         </div>

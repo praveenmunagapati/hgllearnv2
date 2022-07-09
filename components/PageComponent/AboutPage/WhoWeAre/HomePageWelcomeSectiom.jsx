@@ -37,7 +37,7 @@ function HomePageWelcomeSection({ play }) {
           </div>
         </div>
       </div>
-      <div className="  borer-gray-500 h-28   w-10/12  md:w-10/12 xxl:w-11/12 relative z-50 md:left-16 xxl:left-6 rounded-xl bottom-14">
+      <div className="  borer-gray-500 h-28   w-10/12  md:w-10/12 xxl:w-11/12 relative z-30 md:left-16 xxl:left-6 rounded-xl bottom-14">
         <div className="  border-2 border-gray-200 h-full w-full   bg-white  opacity-70 rounded-lg    "></div>
         <div className="absolute  left-5 md:left-5 xxl:left-5 md:w-11/12 xxl:w-11/12   bottom-3 flex   mx-auto ">
           <div>
