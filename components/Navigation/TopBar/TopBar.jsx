@@ -83,7 +83,7 @@ function TopBar({ iconClick, setIconClick }) {
         {!iconClick ? (
           <div>
             <MdDehaze
-              className="w-10 h-10 text-gray-700"
+              className="w-10 h-10 text-gray-700 cursor-pointer"
               onClick={() => setIconClick(true)}
             />
           </div>

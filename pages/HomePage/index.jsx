@@ -89,7 +89,7 @@ function Index() {
     <div className="">
       <Home image={image} />
       <div>
-        <div className="grid md:grid-cols-2 gap-5  py-10 md:py-0 lg:gap-0 xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-5  py-10 md:py-0 lg:gap-0 xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3 md:">
           {Moto?.map((val, i) => {
             return (
               <CompanyMoto

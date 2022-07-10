@@ -5,7 +5,7 @@ import Home from "./HomePage/index";
 export default function Index() {
   return (
     <Layout>
-      <div className={styles.container}>
+      <div className={``}>
         {/* <div> */}
         <Head>
           <title>Hubit</title>

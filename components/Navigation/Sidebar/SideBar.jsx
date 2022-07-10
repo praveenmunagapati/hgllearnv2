@@ -35,8 +35,8 @@ function SideBar({ iconClick, setIconClick }) {
                         className={`${
                           val.path === router.asPath
                             ? "bg-white text-gray-900"
-                            : ""
-                        }  w-56 mx-auto py-2 px-5 Poppins hover:bg-white hover:text-gray-900  rounded-md text-white cursor-pointer`}
+                            : "text-white"
+                        }  w-56 mx-auto py-2 px-5 Poppins hover:bg-white hover:text-gray-900  rounded-md cursor-pointer`}
                       >
                         {val.title}
                       </div>
@@ -59,8 +59,8 @@ function SideBar({ iconClick, setIconClick }) {
       <div className="col-span-8 " onClick={() => setIconClick(false)}>
         <div className=" md:mt-3 md:ml-2 flex justify-end md:justify-start w-full p-2">
           <AiOutlineClose
-            className="w-10 h-10 text-white 
-            rounded-full p-1.5 border-2 hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
+            className="w-10 h-10 text-white  cursor-pointer
+            rounded-full p-1.5 border-2 hover:scale-105 transition-all ease-in-out duration-300 "
             onClick={() => setIconClick(false)}
           />
         </div>

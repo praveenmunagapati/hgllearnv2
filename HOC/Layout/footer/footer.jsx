@@ -23,9 +23,9 @@ function Footer() {
     { title: "contact us" },
   ];
   return (
-    <div className=" px-20  bg-gray-800   py-14 ">
-      <div className="mx-auto grid capitalize text-white grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-4">
-        <div className="col-span-1">
+    <div className=" px-4 lg:px-8  xl:px-9  xxl:px-10 bg-gray-800   py-12 ">
+      <div className="mx-auto grid gap-5 text-white grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-4">
+        <div className="col-span-1 capitalize">
           <div className="text-xl lg:text-2xl xl:text-2xl xxl:text-2xl Poppins  my-2">
             links
           </div>
@@ -33,7 +33,7 @@ function Footer() {
             {links.map((val, i) => {
               return (
                 <div key={i}>
-                  <div className="my-2 cursor-pointer  text-base  font-medium w-fit textPrimary">
+                  <div className="my-2  cursor-pointer text-sm md:text-base lg:text-base  xl:text-base xxl:text-base  w-fit textPrimary">
                     {val.title}
                   </div>
                 </div>
@@ -41,7 +41,7 @@ function Footer() {
             })}
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 capitalize">
           <div className="text-xl lg:text-2xl xl:text-2xl xxl:text-2xl  my-2 Poppins ">
             about{" "}
           </div>
@@ -49,7 +49,7 @@ function Footer() {
             {about.map((val, i) => {
               return (
                 <div key={i}>
-                  <div className="my-2 cursor-pointer font-medium  w-fit text-base textPrimary">
+                  <div className="my-2 cursor-pointer   w-fit text-sm md:text-base lg:text-base  xl:text-base xxl:text-base textPrimary">
                     {val.title}
                   </div>
                 </div>
@@ -57,33 +57,35 @@ function Footer() {
             })}
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-2 sm:col-span-1  md:col-span-1 lg:col-span-1  xl:col-span-1 xxl:col-span-1 capitalize">
           <div className="text-xl lg:text-2xl xl:text-2xl xxl:text-2xl  my-2 Poppins">
             featured courses
           </div>
-          <div className="my-2 font-medium  ">MERN Stack Development</div>
+          <div className="my-2 font-medium text-xs md:text-sm lg:text-base  xl:text-base xxl:text-base ">
+            MERN Stack Development
+          </div>
           <div className="my-2 text-sm">
             starts in <span className="text-main"> March 20,2020</span>
           </div>
           <div className="my-2 font-medium ">Web Designing</div>
-          <div className="my-2 text-sm">
+          <div className="my-2 text-xs lg:text-sm  xl:text-sm xxl:text-sm">
             starts in <span className="text-main"> April 21,2020</span>
           </div>
         </div>
-        <div className="col-span-1">
-          <div className="text-xl lg:text-2xl xl:text-2xl xxl:text-2xl  my-2 Poppins">
+        <div className="col-span-2 sm:col-span-1  md:col-span-1 lg:col-span-1  xl:col-span-1 xxl:col-span-1">
+          <div className="text-xl capitalize lg:text-2xl xl:text-2xl xxl:text-2xl  my-2 Poppins">
             our contact
           </div>
-          <div className="font-medium ">
-            <div className="flex space-x-4 my-2  md:text-xl xxl:my-3 items-center">
+          <div className=" ">
+            <div className="flex space-x-4 my-2   md:text-sm xxl:my-3 items-center">
               <IoCall className="w-6 h-6" />
               <p>+977-9821424241</p>
             </div>
-            <div className="flex  items-center space-x-4 my-2  xxl:my-3 md:text-xl  ">
+            <div className="flex  items-center space-x-4 my-2  xxl:my-3 md:text-sm  ">
               <IoMdMail className="w-6 h-6" />
               <a href="">hubit@gmail.com</a>
             </div>
-            <div className="flex space-x-4 my-2   md:text-xl xxl:my-3  items-center">
+            <div className="flex space-x-4 my-2   md:text-sm xxl:my-3  items-center">
               <BiCurrentLocation className="w-8 h-8" />
               <p className="capitalize">
                 milan chowk-8, Butwal, ganganagar 30secs from main street
@@ -97,7 +99,7 @@ function Footer() {
       </div>
       {/* bottom section starts  */}
 
-      <div className="flex flex-col gap-10 md:flex-row lg:flex-row xl:flex-row xxl:flex-row items-start justify-between py-5 space-y-5 md:space-y-0">
+      <div className="flex flex-col md:gap-6 lg:gap-10 xl:gap-10 xxl:gap-10 md:flex-row lg:flex-row xl:flex-row xxl:flex-row lg:items-center xl:items-center xxl:items-center justify-between py-5 space-y-5 md:space-y-0">
         <Link href={"/"} passHref>
           <div className="w-28 -mt-2  cursor-pointer">
             <Image

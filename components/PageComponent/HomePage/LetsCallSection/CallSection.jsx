@@ -27,7 +27,7 @@ function CallSection() {
           {({ errors, touched }) => (
             <Form>
               <div
-                className=" my-8 flex w-11/12 lg:w-9/12 xl:w-7/12 xxl:w-6/12 mx-auto
+                className=" my-8 sm:flex md:flex lg:flex xl:flex xxl:flex  w-11/12 lg:w-9/12 xl:w-7/12 xxl:w-6/12 mx-auto
               "
               >
                 <div className="  w-full ">
@@ -51,7 +51,7 @@ function CallSection() {
                    "
                 >
                   <button
-                    className="h-12 w-44  font-semibold    border-none outline-none 
+                    className="h-12 my-3 sm:my-0 lg:my-0 xl:my-0 md:my-0 xxl:my-0  w-full sm:w-40 md:w-44 lg:w-44 xl:w-44 xxl:w-44   font-semibold    border-none outline-none 
                 hover:bg-orange-600    transition-all  duration-300 ease-in-out  mx-auto  text-base text-white 
     bg-main "
                     type="submit"
