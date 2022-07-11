@@ -85,7 +85,7 @@ function Testimonials() {
     ],
   };
   return (
-    <div className="w-full bg-gray-100 overflow-hidden">
+    <div className="w-full bg-gra-100 overflow-hidden">
       <div className="w-full my-5 px-8 mx-auto  ">
         <div className="text-left">
           <h2 className="text-primary text-2xl Poppinsfont-semibold">
@@ -122,7 +122,7 @@ function Testimonials() {
         </div>
         <div className="  my-8  ">
           {/* <Slider {...sliderSetting} ref={sliderRef}> */}
-          <div className="grid  h-full md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3   xxl:grid-cols-3   gap-5 xl:gap-6 xxl:gap-6  ">
+          <div className="grid  h-full bg-gray-100 p-10 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3   xxl:grid-cols-3   gap-5 xl:gap-6 xxl:gap-6  ">
             {Data.map((val, i) => {
               return (
                 <div key={i} className="">
