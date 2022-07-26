@@ -14,8 +14,8 @@ function TopBar({ iconClick, setIconClick }) {
         {/* top bar 1 is heading top bar in purple color */}
         <TopBar1 />
         {/* top bar 1 is heading bottom bar in purple color */}
-        <div className="flex justify-between px-20 xl:px-24 bg-white">
-          <div className="w-[86px]">
+        <div className="flex justify-between px-20 xl:px-24 xxl:px-32 bg-white">
+          <div className="w-[86px] xxl:w-[95px]">
             <Image
               src={Logo}
               height={25}
@@ -27,7 +27,7 @@ function TopBar({ iconClick, setIconClick }) {
               alt="logo"
             />
           </div>
-          <div className="flex gap-3 text-[13px] items-center">
+          <div className="flex gap-3 items-center">
             <div className="capitalize flex items-center gap-2 ">
               {NavData.map((val, i) => {
                 return (
@@ -38,7 +38,7 @@ function TopBar({ iconClick, setIconClick }) {
                           val.path === router.asPath
                             ? "border-b-2 border-main"
                             : ""
-                        } text-gray-700 text-xs w-fit cursor-pointer`}
+                        } text-gray-700 text-xs xl:text-sm xxl:text-base w-fit cursor-pointer`}
                       >
                         {val.title}
                       </div>
@@ -49,7 +49,9 @@ function TopBar({ iconClick, setIconClick }) {
               })}
             </div>
             <div className="flex items-center gap-[6px] cursor-pointer">
-              <div className="text-gray-800 text-xs">More</div>
+              <div className="text-gray-800 text-xs xl:text-sm xxl:text-base">
+                More
+              </div>
               <div className="grid grid-cols-2 gap-0.5 ">
                 <div className="bg-main w-[3px] h-[3px] rounded-full"></div>
                 <div className="bg-main w-[3px] h-[3px] rounded-full"></div>

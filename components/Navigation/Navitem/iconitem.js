@@ -8,7 +8,6 @@ const Icons = [
     { icon: < IoLogoWhatsapp /> },
     { icon: <AiFillTwitterCircle /> },
     { icon: <AiFillInstagram /> }
-
 ];
 
 export default Icons;

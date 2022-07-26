@@ -8,15 +8,11 @@ import images1 from "../../components/Resources/images/python.avif";
 import image from "../../components/Resources/images/Group 7.png";
 import PopularCourses from "../../components/PageComponent/HomePage/PopularCourses/PopularCourses";
 import { TbCertificate } from "react-icons/tb";
-// import CoursesScheme from "../../components/PageComponent/HomePage/CourseScheme/CoursesScheme";
 import Home from "./Home";
-import Testimonials from "../../components/PageComponent/HomePage/Testimonials/Testimonials";
 import CallSection from "../../components/PageComponent/HomePage/LetsCallSection/CallSection";
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
-// import WhoWeAre from "../../components/PageComponent/AboutPage/WhoWeAre/WhoWeAre";
-// import MIssionVision from "../../components/PageComponent/AboutPage/MissionVision/MIssionVision";
-// import WhatWeProvide from "../../components/PageComponent/AboutPage/whatWeProvideSection/WhatWeProvide";
-// import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
+import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
+
 function Index() {
   const [Moto, setMoto] = useState([
     {
@@ -103,11 +99,9 @@ function Index() {
       <WelcomePortal images={images} />
       <PopularCourses card={card} />
       <WhyHub />
-      {/* <CoursesScheme /> */}
-      <Testimonials />
       <PlacementPartners />
+      <FindUsOn />
       <CallSection />
-      {/* <WhoWeAre /> */}
     </div>
   );
 }

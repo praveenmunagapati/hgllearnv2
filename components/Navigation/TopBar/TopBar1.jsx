@@ -15,7 +15,7 @@ function TopBar1() {
   //   const [ID, setId] = useState("");
   return (
     <div>
-      <div className="bg-main text-[10px] flex text-white Poppins font-light py-[7px] items-center justify-between px-20 xl:px-24 ">
+      <div className="bg-main text-[10px] xxl:text-xs flex text-white Poppins font-light py-[7px] items-center justify-between px-20 xl:px-24 xxl:px-32 ">
         <div className="flex items-center gap-3 ">
           <div className="flex gap-1  items-center">
             <div>
