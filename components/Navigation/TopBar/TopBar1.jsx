@@ -3,35 +3,33 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 function TopBar1() {
   const data = [
-    { id: 1, title: "check certificate" },
-    { id: 2, title: "career" },
-    { id: 3, title: "contact us" },
-    { id: 4, title: "download brouchour" },
-    { id: 5, title: "hackathons" },
-    { id: 6, title: "hire talents" },
-    { id: 7, title: "testimonials" },
+    { id: 1, title: "Check Certificate" },
+    { id: 2, title: "Career" },
+    { id: 3, title: "Contact Us" },
+    { id: 4, title: "Download Brochure" },
+    { id: 5, title: "Hackathons" },
+    { id: 6, title: "Hire Talents" },
+    { id: 7, title: "Testimonials" },
   ];
   //   const [showUnderline, setShowUnderline] = useState(false);
   //   const [ID, setId] = useState("");
   return (
     <div>
-      <div className="bg-main text-sm flex   text-white py-2.5 items-center justify-between px-20 ">
-        <div className="flex gap-4 items-center ">
-          <div className="flex gap-2.5  items-center">
+      <div className="bg-main text-[10px] flex text-white Poppins font-light py-[7px] items-center justify-between px-20 xl:px-24 ">
+        <div className="flex items-center gap-3 ">
+          <div className="flex gap-1  items-center">
             <div>
-              <BsFillTelephoneFill className="w-3 h-3" />
+              <BsFillTelephoneFill className="font-[11px] rotate-[15deg]" />
             </div>
-            <div>071-532805</div>
-            <div className="w-0.5 h-3.5 bg-white"></div>
+            <span>071-532805</span>
+            <div className="w-[1.1px] h-[10px] bg-white"></div>
             <div>9827494116</div>
-            <div className="w-0.5 h-3.5 bg-white"></div>
-            <div>9851045414</div>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-1 items-center">
             <div>
-              <IoMdMail />
+              <IoMdMail className="font-[11px]" />
             </div>
-            <div>training@hubit.comp.np</div>
+            <div>training@hubit.com.np</div>
           </div>
         </div>
         <div className="flex gap-4">

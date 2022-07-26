@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+
 function CallSection() {
   const CallSectionSchema = yup.object().shape({
     name: yup.string().required(" Required !!!"),
@@ -12,19 +13,19 @@ function CallSection() {
           Let us Give you a <span className="text-main"> Call</span> !
         </div>
         <div className="text-xs font-light text-center my-2 text-gray-600 Poppins">
-          {" "}
-          leave us your number and our representatives will connect with you{" "}
+          { " " }
+          leave us your number and our representatives will connect with you{ " " }
         </div>
         <Formik
-          initialValues={{
+          initialValues={ {
             name: "",
-          }}
-          validationSchema={CallSectionSchema}
-          onSubmit={(values) => {
+          } }
+          validationSchema={ CallSectionSchema }
+          onSubmit={ (values) => {
             console.log(values);
-          }}
+          } }
         >
-          {({ errors, touched }) => (
+          { ({ errors, touched }) => (
             <Form>
               <div
                 className=" my-8 sm:flex md:flex lg:flex xl:flex xxl:flex  w-11/12 lg:w-9/12 xl:w-7/12 xxl:w-6/12 mx-auto
@@ -37,32 +38,32 @@ function CallSection() {
                     className="h-12   px-5 capitalize text-sm  w-full
                       font-normal border"
                   />
-                  {/* md:w-11/12 lg:w-11/12 xl:w-11/12  xxl:w-11/12  */}
-                  {errors.name && touched.name ? (
+                  {/* md:w-11/12 lg:w-11/12 xl:w-11/12  xxl:w-11/12  */ }
+                  { errors.name && touched.name ? (
                     <div className="text-red-500 my-2 text-xs">
-                      {errors.name}
+                      { errors.name }
                     </div>
-                  ) : null}
+                  ) : null }
                 </div>
 
                 <div
-                  className="    
-                border-none outline-none 
+                  className="
+                border-none outline-none
                    "
                 >
                   <button
-                    className="h-12 my-3 sm:my-0 lg:my-0 xl:my-0 md:my-0 xxl:my-0  w-full sm:w-40 md:w-44 lg:w-44 xl:w-44 xxl:w-44   font-semibold    border-none outline-none 
-                hover:bg-orange-600    transition-all  duration-300 ease-in-out  mx-auto  text-base text-white 
+                    className="h-12 my-3 sm:my-0 lg:my-0 xl:my-0 md:my-0 xxl:my-0  w-full sm:w-40 md:w-44 lg:w-44 xl:w-44 xxl:w-44   font-semibold    border-none outline-none
+                hover:bg-orange-600    transition-all  duration-300 ease-in-out  mx-auto  text-base text-white
     bg-main "
                     type="submit"
                   >
-                    {/* bg-gradient-to-r from-cyan-500 via-red-500 to-main */}
+                    {/* bg-gradient-to-r from-cyan-500 via-red-500 to-main */ }
                     Connect with me
                   </button>
                 </div>
               </div>
             </Form>
-          )}
+          ) }
         </Formik>
       </div>
     </div>

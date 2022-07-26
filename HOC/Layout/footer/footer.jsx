@@ -23,7 +23,7 @@ function Footer() {
     { title: "contact us" },
   ];
   return (
-    <div className=" px-4 lg:px-8  xl:px-9  xxl:px-10 bg-gray-800   py-12 ">
+    <div className=" px-4 lg:px-8  xl:px-9  xxl:px-10 bg-black   py-12 ">
       <div className="mx-auto grid gap-5 text-white grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-4">
         <div className="col-span-1 capitalize">
           <div className="text-xl lg:text-2xl xl:text-2xl xxl:text-2xl Poppins  my-2">
@@ -108,10 +108,8 @@ function Footer() {
               height={50}
               sizes={"80vw"}
               width={100}
-              placeholder="blur"
               priority={"true"}
               loading="eager"
-              blurDataURL="/sikkai1.webp"
               layout="responsive"
               quality={75}
               objectFit="contain"
@@ -136,12 +134,12 @@ function Footer() {
             <span className="h-4 w-0.5 bg-white"></span>
             <Link href="">
               <p className="cursor-pointer textPrimary transition hover:opacity-80">
-                Lisence Aggrement
+                License Agreement
               </p>
             </Link>
           </div>
           <p className="mt-5  md:my-4 lg:my-2 xl:my-2 xxl:my-2  text-xs sm:text-sm   lg:text-sm xl:text-sm xxl:text-sm text-white">
-            Copyright &copy; {new Date().getFullYear()}, Sikkai
+            Copyright &copy; {new Date().getFullYear()}, Hub IT
           </p>
         </div>
 
