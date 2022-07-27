@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { FaQuoteRight } from "react-icons/fa";
 import image1 from "../../../Resources/images/japan.jpg";
 import TestimonialsCard from "./TestimonialsCard";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
@@ -44,51 +44,11 @@ function Testimonials() {
   useEffect(() => {
     console.log(sliderRef);
   }, []);
-  const sliderSetting = {
-    arrows: false,
-    dots: false,
-    dotsClass: "slick-dots line-indicator",
-    slidesToShow: Data.length - 1,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 1201,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   return (
-    <div className="w-full bg-gra-100 overflow-hidden">
-      <div className="w-full my-5 px-8 mx-auto  ">
+    <div className="w-full px-4 md:px-8 lg:px-20 xl:px-24 overflow-hidden">
+      <div className="w-full my-5">
         <div className="text-left">
-          <h2 className="text-primary text-2xl Poppinsfont-semibold">
+          <h2 className="text-primary text-2xl Poppins font-semibold">
             Testimonials
           </h2>
           <h1 className=" text-2xl  lg:text-3xl Poppins xl:text-3xl xxl:text-3xl">
@@ -106,13 +66,13 @@ function Testimonials() {
             </p>
           </div>
           <div className="flex items-center space-x-2 lg:space-x-4 mr-4">
-            <div className="h-10 w-10 rounded-full bg-primary-200 text-white cursor-pointer transition opacity-60 hover:opacity-100 shoadow-lg text-center flex flex-col items-center justify-center">
+            <div className="h-10 w-10 rounded-full bg-primary-200 text-white cursor-pointer transition opacity-60 hover:opacity-100 shadow-lg text-center flex flex-col items-center justify-center">
               <FaAngleLeft
                 className="mx-auto text-xl"
                 onClick={() => sliderRef.current.slickPrev()}
               />
             </div>
-            <div className="h-10 w-10 rounded-full  bg-primary-200 text-white cursor-pointer transition opacity-60 hover:opacity-100 shoadow-lg text-center flex flex-col items-center justify-center">
+            <div className="h-10 w-10 rounded-full  bg-primary-200 text-white cursor-pointer transition opacity-60 hover:opacity-100 shadow-lg text-center flex flex-col items-center justify-center">
               <FaAngleRight
                 className="mx-auto text-xl"
                 onClick={() => sliderRef.current.slickNext()}

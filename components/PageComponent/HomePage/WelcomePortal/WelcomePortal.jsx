@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import Image from "next/image";
+
 function WelcomePortal({ images }) {
   return (
     <div>
-      <div className="bg-gray-100 py-14 sm:py-10 xl:py-28 xxl:py-28">
+      <div className="bg-[#f0f0f0] py-14 sm:py-10 xl:py-28 xxl:py-28">
         <div
           className="Poppins text-left xl:text-left xxl:text-left capitalize
-         py-0 xl:py-3 xxl:py-3 text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl 
+         py-0 xl:py-3 xxl:py-3 text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl
          xxl:text-6xl w-11/12  mx-auto  font-bold   "
         >
-          welcome to our portal
+          Welcome to our portal
         </div>
         <div
           className=" grid   lg:grid-cols-2 xl:grid-cols-2
@@ -22,7 +22,7 @@ function WelcomePortal({ images }) {
            xxl:row-start-1 "
           >
             <div
-              className="text-base xl:text-lg xxl:text-lg text-gray-600 lg:py-4
+              className="text-sm xl:text-lg xxl:text-lg text-gray-600 lg:py-4
              xl:py-5 xxl:py-5  sm:w-full sm:py-5 lg:w-full  xl:w-11/12 xxl:w-10/12 mx-auto
               xxl:mx-0 xl:mx-0 text-justify"
             >
@@ -36,10 +36,8 @@ function WelcomePortal({ images }) {
             </div>
             <div className="w-full  pt-5 sm:pt-0">
               <div
-                className="border  hover:scale-105 transition-all
-               ease-in-out duration-300 border-main w-fit px-5 py-2
-                rounded-3xl text-main cursor-pointer Poppins font-medium
-                 capitalize"
+                className="hover:scale-105 transition-all
+               ease-in-out duration-300 border-[1.5px] border-[#A0047D] rounded-full mr-6 px-2 py-[5px] text-sm text-main w-fit capitalize"
               >
                 learn more
               </div>
@@ -92,7 +90,7 @@ function WelcomePortal({ images }) {
                   >
                     <Image
                       src={val.img}
-                      alt={val.img}
+                      alt={"image"}
                       placeholder="blur"
                       blurDataURL={val.img}
                       height={50}
@@ -110,9 +108,6 @@ function WelcomePortal({ images }) {
       </div>
     </div>
   );
-  WelcomePortal.proptypes = {
-    images: PropTypes.array,
-  };
 }
 
 export default WelcomePortal;

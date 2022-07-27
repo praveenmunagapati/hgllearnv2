@@ -10,12 +10,12 @@ function Aboutus() {
   return (
     <Layout>
       <div>
-        <div className={styles.container}>
-          <WhoWeAre />
-          <MIssionVision />
-          <WhatWeProvide />
-          <WhatClientsSays />
-        </div>
+        {/* <div className={styles.container}> */}
+        <WhoWeAre />
+        <MIssionVision />
+        <WhatWeProvide />
+        <WhatClientsSays />
+        {/* </div> */}
       </div>
     </Layout>
   );

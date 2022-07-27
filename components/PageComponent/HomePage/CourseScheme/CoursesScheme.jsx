@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+
 function CoursesScheme() {
   const CoursesSchemSchema = yup.object().shape({
     name: yup.string().required("name is required"),
@@ -10,7 +11,7 @@ function CoursesScheme() {
   });
   return (
     <div
-      className=" grid  lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 bg-gray-200 
+      className=" grid  lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 bg-gray-200
      py-16 lg:py-20 xl:py-28 xxl:py-28  px-8 lg:px-14 xl:px-14 xxl:px-14"
     >
       <div
@@ -18,25 +19,25 @@ function CoursesScheme() {
         px-8 lg:px-10 xl:px-14 xxl:px-14  py-5 "
       >
         <div
-          className="  text-xl md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl Poppins font-bold 
+          className="  text-xl md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl Poppins font-bold
         text-gray-600 py-8"
         >
           courses for free
         </div>
 
         <Formik
-          initialValues={{
+          initialValues={ {
             name: "",
             email: "",
             phone: "",
             site: "",
-          }}
-          validationSchema={CoursesSchemSchema}
-          onSubmit={(values) => {
+          } }
+          validationSchema={ CoursesSchemSchema }
+          onSubmit={ (values) => {
             console.log(values);
-          }}
+          } }
         >
-          {({ errors, touched }) => (
+          { ({ errors, touched }) => (
             <Form>
               <div
                 className=" flex flex-col md:grid md:grid-cols-1  lg:grid lg:grid-cols-1  xl:grid xl:grid-cols-1 xxl:grid xxl:grid-cols-1 gap-8
@@ -49,12 +50,12 @@ function CoursesScheme() {
                     className="h-10 rounded-md  px-5 capitalize text-sm  w-full
                       font-normal border"
                   />
-                  {/* md:w-11/12 lg:w-11/12 xl:w-11/12  xxl:w-11/12  */}
-                  {errors.name && touched.name ? (
+                  {/* md:w-11/12 lg:w-11/12 xl:w-11/12  xxl:w-11/12  */ }
+                  { errors.name && touched.name ? (
                     <div className="text-red-500 text-xs my-2">
-                      {errors.name}
+                      { errors.name }
                     </div>
-                  ) : null}
+                  ) : null }
                 </div>
                 <div className="w-full  mx-auto">
                   <Field
@@ -63,11 +64,11 @@ function CoursesScheme() {
                     className="border h-10  px-5 w-full capitalize text-xs
                       font-normal rounded-md "
                   />
-                  {errors.email && touched.email ? (
+                  { errors.email && touched.email ? (
                     <div className="text-red-500 text-xs my-2">
-                      {errors.email}
+                      { errors.email }
                     </div>
-                  ) : null}
+                  ) : null }
                 </div>
                 <div className="w-full ">
                   <Field
@@ -76,11 +77,11 @@ function CoursesScheme() {
                     className="border h-10  px-5 capitalize
                      text-xs  font-normal rounded-md  w-full"
                   />
-                  {errors.phone && touched.phone ? (
+                  { errors.phone && touched.phone ? (
                     <div className="text-red-500 text-xs my-2">
-                      {errors.phone}
+                      { errors.phone }
                     </div>
-                  ) : null}
+                  ) : null }
                 </div>
                 <div className="w-full  ">
                   <Field
@@ -89,20 +90,20 @@ function CoursesScheme() {
                     className="border h-10 px-5 capitalize text-sm w-full
                       font-normal  rounded-md"
                   />
-                  {errors.site && touched.site ? (
+                  { errors.site && touched.site ? (
                     <div className="text-red-500 text-xs my-2">
-                      {errors.site}
+                      { errors.site }
                     </div>
-                  ) : null}
+                  ) : null }
                 </div>
               </div>
               <div
-                className="    
+                className="
                 border-none outline-none
                   mt-5 pb-8"
               >
                 <button
-                  className=" px-8  hover:shadow-gray-500 hover:shadow-xl transition-all  duration-300 ease-in-out  mx-auto py-2 text-lg text-white 
+                  className=" px-8  hover:shadow-gray-500 hover:shadow-xl transition-all  duration-300 ease-in-out  mx-auto py-2 text-lg text-white
                   rounded-md bg-blue-400 "
                   type="submit"
                 >
@@ -110,11 +111,11 @@ function CoursesScheme() {
                 </button>
               </div>
             </Form>
-          )}
+          ) }
         </Formik>
       </div>
       <div
-        className="  w-full    
+        className="  w-full
        lg:px-8  xl:px-12 xxl:px-12 pb-10  row-start-1 lg:row-start-2 xl:row-start-1 xl:col-start-2   xxl:row-start-1 xxl:col-start-2"
       >
         <div
@@ -129,7 +130,7 @@ function CoursesScheme() {
           temporibus obcaecati soluta, optio provident doloribus iusto impedit
           illo minus hic quas unde.
         </div>
-        {/* <div>time</div> */}
+        {/* <div>time</div> */ }
       </div>
     </div>
   );

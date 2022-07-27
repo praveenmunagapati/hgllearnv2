@@ -1,35 +1,27 @@
-import PropTypes from "prop-types";
 import React from "react";
 
 function Moto({ icon, title, description }) {
   return (
     <div
-      className=" shadow-lg border-r-2 transition-all duration-200 ease-linear 
-    md:hover:border-b-4 lg:hover:border-b-4 xl:hover:border-b-4
-     xxl:hover:border-b-4   md:h-80 xl:h-80  xxl:h-80   
-     hover:border-b-main shadow-gray-200 px-4 sm:px-6 
-     md:px-8 lg:px-16 xl:px-16 xxl:px-16  pt-4  "
+      className=" shadow-md bg-white transition-all duration-200 ease-linear
+    hover:border-b-4 hover:border-b-main shadow-gray-300 px-4 sm:px-6
+     md:px-4 lg:px-4 xl:px-16 xxl:px-16 pt-4 "
     >
-      <div className="flex gap-2 md:gap-4 lg:gap-5 xl:gap-5 xxl:gap-5 items-center ">
-        <div className=" text-5xl text-main"> {icon}</div>
-        <div className=" Poppins sm:text-lg text-2xl font-bold"> {title}</div>
+      <div className="flex gap-2 md:gap-2 lg:gap-2 xl:gap-3 xxl:gap-3 items-center ">
+        <div className=" text-3xl xl:text-4xl xxl:text-5xl text-main">
+          {" "}
+          {icon}{" "}
+        </div>
+        <div className=" Poppins text-sm xl:text-base xxl:text-lg font-semibold">
+          {" "}
+          {title}{" "}
+        </div>
       </div>
-      <div className="font-medium text-sm text-gray-600 text-justify my-4 sm:h-48 h-52 py-2 scroll overflow-scroll ">
-        {" "}
+      <div className="text-xs xl:text-sm xxl:text-base text-gray-700 text-justify mb-4 h-36 xl:h-40 xxl:h-52 py-2 scroll overflow-scroll ">
         {description}
       </div>
     </div>
   );
 }
-Moto.prototypes = {
-  title: PropTypes.string,
-  icon: PropTypes.string,
-  description: PropTypes.string,
-};
-Moto.defaultProps = {
-  title: "error",
-  icon: "error",
-  description: "error",
-};
 
 export default Moto;

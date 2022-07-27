@@ -1,21 +1,30 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import ReactPlayer from "react-player";
 import HomePageWelcomeSection from "./HomePageWelcomeSectiom";
+// import ReactPlayer from "react-player";
 
 function WhoWeAre() {
-  const nextVideo = useRef(null);
-  const [show, setshow] = useState(false);
-  const play = (e) => {
-    setshow(true);
-    // nextVideo.play();
-  };
+  // const nextVideo = useRef(null);
+  // const [show, setshow] = useState(false);
+  // const play = (e) => {
+  //   setshow(true);
+  // };
+  const [hasWindow, setHasWindow] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
 
   return (
-    <div className="px-5 lg:px-20 xl:px-20 xxl:px-20 pt-10 pb-20">
-      <div className="Poppins text-5xl font-bold  text-main">Who We Are ?</div>
-      <div className="grid grid-cols-1 lg:mt-10 xl:mt-10 xxl:mt-10 gap-12 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 ">
+    <div className="px-4 lg:px-20 xl:px-24 xxl:px-32 pt-8 pb-20">
+      <div className="Poppins text-lg xl:text-xl xxl:text-2xl font-bold  text-main">
+        Who We Are ?
+      </div>
+      <div className="grid grid-cols-1 gap-12 mt-1 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 ">
         <div className="row-start-2 lg:row-start-1  xl:row-start-1 text-justify xxl:row-start-1">
-          <div>
+          <div className="text-xs xl:text-sm xxl:text-base text-gray-700 text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
             eos quidem, exercitationem commodi cumque ex est quaerat repudiandae
             esse porro asperiores maiores aliquam necessitatibus suscipit,
@@ -30,8 +39,17 @@ function WhoWeAre() {
             nobis.
           </div>
         </div>
-        <div className="py-6 lg:py-0 xl:py-0 xxl:py-0">
-          {show ? (
+        <div className="">
+          {hasWindow && (
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=wWgIAphfn2U"
+              loop={true}
+              controls={true}
+              width="100%"
+              height="320px"
+            />
+          )}
+          {/* {show ? (
             <video
               ref={nextVideo}
               autoPlay={show ? true : false}
@@ -40,7 +58,7 @@ function WhoWeAre() {
               controls
               style={{
                 zIndex: -1,
-                height: "100%",
+                height: "80%",
                 width: "100%",
               }}
             >
@@ -48,7 +66,7 @@ function WhoWeAre() {
             </video>
           ) : (
             <HomePageWelcomeSection play={(e) => play(e)} />
-          )}
+          )} */}
         </div>
       </div>
     </div>
