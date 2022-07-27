@@ -53,10 +53,10 @@ function TopBar({ iconClick, setIconClick }) {
                 More
               </div>
               <div className="grid grid-cols-2 gap-0.5 ">
-                <div className="bg-main w-[3px] h-[3px] rounded-full"></div>
-                <div className="bg-main w-[3px] h-[3px] rounded-full"></div>
-                <div className="bg-main w-[3px] h-[3px] rounded-full"></div>
-                <div className="bg-main w-[3px] h-[3px] rounded-full"></div>
+                <div className="bg-main w-[3px] h-[3px] xl:w-[4px] xl:h-[4px] xxl:w-[5px] xxl:h-[5px] rounded-full"></div>
+                <div className="bg-main w-[3px] h-[3px] xl:w-[4px] xl:h-[4px] xxl:w-[5px] xxl:h-[5px] rounded-full"></div>
+                <div className="bg-main w-[3px] h-[3px] xl:w-[4px] xl:h-[4px] xxl:w-[5px] xxl:h-[5px] rounded-full"></div>
+                <div className="bg-main w-[3px] h-[3px] xl:w-[4px] xl:h-[4px] xxl:w-[5px] xxl:h-[5px] rounded-full"></div>
               </div>
             </div>
           </div>
