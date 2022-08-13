@@ -82,7 +82,7 @@ function Footer() {
             <div className="flex space-x-4 my-2   md:text-sm xxl:my-3 items-center">
               <IoCall className="text-sm xl:text-base xxl:text-lg" />
               <p className="text-xs xl:text-sm xxl:text-base">
-                +977-9821424241
+                071-532805,9827494116,9857045414
               </p>
             </div>
             <div className="flex  items-center space-x-4 my-2  text-xs xl:text-sm xxl:text-base  ">
