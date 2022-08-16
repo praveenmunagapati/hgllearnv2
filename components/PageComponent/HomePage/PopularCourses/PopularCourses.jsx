@@ -2,6 +2,7 @@ import React from "react";
 import { GiGraduateCap } from "react-icons/gi";
 import Image from "next/image";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Link from "next/link";
 
 function PopularCourses({ card, value }) {
   const color = (category) => {
@@ -37,12 +38,15 @@ function PopularCourses({ card, value }) {
           </div>
         ) : (
           <div>
-            <div className="text-xl  flex  justify-center items-center xl:text-2xl xxl:text-3xl my-2 capitalize Poppins font-bold">
+            <div
+              className="text-xl  flex  justify-center items-center
+             xl:text-2xl xxl:text-3xl my-2 capitalize Poppins font-bold"
+            >
               our popular courses
             </div>
-            <div className="   grid grid-cols-12 gap-16  my-14">
-              <div className="flex gap-16 col-span-9 ">
-                <div className="w-full ">
+            <div className="   md:grid lg:grid  xl:grid xxl:grid  grid-cols-12 gap-16  mt-7 md:mt-14  mb-4 md:mb-7">
+              <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9 ">
+                <div className="w-full my-6 ">
                   <input
                     type="text"
                     name=""
@@ -71,50 +75,61 @@ function PopularCourses({ card, value }) {
           </div>
         )}
         <div
-          className="grid grid-cols-1 my-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+          className="grid grid-cols-1 mt-8 md:mb-8  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
          xl:grid-cols-4 xxl:grid-cols-4 gap-5 w-full"
         >
           {card.map((val, i) => {
             return (
-              <div
+              <Link
                 key={i}
-                className="shadow-lg h-64 xs:h-84 xl:h-[340px] xxl:h-94 w-full 
-                overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
+                href={{
+                  pathname: `/OurCourses/${val._id}`,
+                  query: { image: val.image, description: val.description },
+                }}
               >
-                <div className="h-4/6 w-full relative">
-                  <Image
-                    src={val.img}
-                    alt={"images"}
-                    placeholder="blur"
-                    blurDataURL={val.img}
-                    objectFit="cover"
-                    layout="fill"
-                    className=" "
-                  />
-                </div>
-                <div className="flex h-2/6 items-center">
-                  <div className="px-2 Poppins capitalize h-max">
-                    <div
-                      className={`py-1 xs:py-2 ${color(
-                        val.category_name
-                      )} text-[9px] xl:text-[11px] xxl:text-sm font-semibold`}
-                    >
-                      {val.category_name}
-                    </div>
-                    <div className="font-semibold w-full h-max line-clamp-2 text-xs xl:text-sm xxl:text-base ">
-                      {val.course_name}
-                    </div>
-                    <div className="py-1 xs:py-2">
-                      <span className="text-gray-500 text-[9px] xl:text-[11px] xxl:text-sm">
-                        Duration :
-                      </span>
-                      <span className="text-[9px] xl:text-[11px] xxl:text-sm mx-1">
-                        {val.duration_type}
-                      </span>
+                <div
+                  className="shadow-lg h-fit  pb-4 w-full  
+                overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
+                >
+                  <div className="h-60 w-80 relative">
+                    <Image
+                      src={val.image}
+                      alt={"images"}
+                      placeholder="blur"
+                      blurDataURL={val.image}
+                      objectFit="cover"
+                      objectPosition="top"
+                      layout="fill"
+                      className=" "
+                    />
+                  </div>
+                  <div className="flex h-2/6 items-center pt-2">
+                    <div className="px-2 Poppins capitalize h-max">
+                      <div
+                        className={`py-1 xs:py-2 ${color(
+                          val.course_category
+                        )} text-[9px] xl:text-[11px] xxl:text-sm font-semibold`}
+                      >
+                        {val.course_category}
+                      </div>
+                      <div className="font-semibold w-full h-max line-clamp-2 text-xs xl:text-sm xxl:text-base ">
+                        {val.course_name}
+                      </div>
+                      <div className="py-1 xs:py-2">
+                        <span className="text-gray-500 text-[9px] xl:text-[11px] xxl:text-sm">
+                          Duration :
+                        </span>
+                        <span className="text-[9px] xl:text-[11px] xxl:text-sm mx-1">
+                          {val.duration}
+                        </span>
+                      </div>
+                      {/* <div className="line-clamp-2 pt-3  ">
+                        {val.description}
+                      </div> */}
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
