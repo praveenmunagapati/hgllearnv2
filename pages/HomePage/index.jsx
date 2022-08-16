@@ -97,7 +97,7 @@ function Index() {
         </div>
       </div>
       <WelcomePortal images={images} />
-      <PopularCourses card={card} />
+      <PopularCourses card={card} value="onlyTag" />
       <WhyHub />
       <PlacementPartners />
       <FindUsOn />

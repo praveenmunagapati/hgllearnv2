@@ -125,19 +125,19 @@ function Footer() {
         <div className=" flex-1 md:mx-8 lg:mx-16">
           <div className="flex items-center space-x-1 md:space-x-2 text-white text-lg xl:text-xl xxl:text-2xl">
             <Link href="">
-              <p className="cursor-pointer  textPrimary transition hover:opacity-80">
+              <p className="cursor-pointer   transition hover:opacity-80">
                 Terms & Condition
               </p>
             </Link>
             <span className="h-4 w-0.5 bg-white"></span>
-            <Link href="">
-              <p className="cursor-pointer textPrimary transition hover:opacity-80">
+            <Link href={`/Policy`}>
+              <p className="cursor-pointer  transition hover:opacity-80">
                 Privacy Policy
               </p>
             </Link>
             <span className="h-4 w-0.5 bg-white"></span>
             <Link href="">
-              <p className="cursor-pointer textPrimary transition hover:opacity-80">
+              <p className="cursor-pointer  transition hover:opacity-80">
                 License Agreement
               </p>
             </Link>

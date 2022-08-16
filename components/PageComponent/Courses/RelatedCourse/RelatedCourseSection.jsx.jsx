@@ -39,7 +39,7 @@ const RelatedCourseSection = () => {
         <div className="text-xl md:text-3xl font-bold">Related Courses</div>
 
         <div className="flex justify-between">
-          <div className="grid md:grid-cols-3 lg:grid-cols-3 xl:lg:grid-cols-3 xxl:grid-cols-4 gap-3 mt-10 mb-5">
+          <div className="grid md:grid-cols-3  lg:grid-cols-3 xl:lg:grid-cols-3 xxl:grid-cols-3 mx-auto gap-3 mt-10 mb-5">
             {data?.map((val, i) => {
               return (
                 <div

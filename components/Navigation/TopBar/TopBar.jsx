@@ -9,23 +9,26 @@ import { MdDehaze } from "react-icons/md";
 function TopBar({ iconClick, setIconClick }) {
   const router = useRouter();
   return (
-    <div className="sticky top-0 shadow-[0px_1px_8px_1px_gray] z-50">
+    <div className=" w-full relative top-0 shadow-[0px_1px_8px_1px_gray] z-50">
       <div className="hidden lg:block xl:block xxl:block">
         {/* top bar 1 is heading top bar in purple color */}
         <TopBar1 />
         {/* top bar 1 is heading bottom bar in purple color */}
         <div className="flex justify-between px-20 xl:px-24 xxl:px-32 bg-white">
-          <div className="w-[86px] xxl:w-[95px]">
-            <Image
-              src={Logo}
-              height={25}
-              width={35}
-              priority
-              layout="responsive"
-              objectFit="contain"
-              quality={100}
-              alt="logo"
-            />
+          {" "}
+          <div className="w-[86px] xxl:w-[95px] cursor-pointer">
+            <Link href={"/"}>
+              <Image
+                src={Logo}
+                height={25}
+                width={35}
+                priority
+                layout="responsive"
+                objectFit="contain"
+                quality={100}
+                alt="logo"
+              />
+            </Link>
           </div>
           <div className="flex gap-3 items-center">
             <div className="capitalize flex items-center gap-2 ">
