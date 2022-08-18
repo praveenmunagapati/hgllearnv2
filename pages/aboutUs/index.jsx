@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import MIssionVision from "../../components/PageComponent/AboutPage/MissionVision/MIssionVision";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
@@ -8,6 +9,10 @@ import styles from "../../styles/Home.module.css";
 
 function Aboutus() {
   return (
+    <div>
+      <Head>
+        
+      </Head>
     <Layout>
       <div>
         {/* <div className={styles.container}> */}
@@ -18,6 +23,7 @@ function Aboutus() {
         {/* </div> */}
       </div>
     </Layout>
+    </div>
   );
 }
 
