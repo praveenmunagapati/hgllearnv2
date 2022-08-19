@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WhyHub from "../../components/PageComponent/HomePage/WhyHub/whyHub";
 import CompanyMoto from "../../components/PageComponent/HomePage/Companymoto/Moto";
 import WelcomePortal from "../../components/PageComponent/HomePage/WelcomePortal/WelcomePortal";
@@ -12,8 +12,9 @@ import Home from "./Home";
 import CallSection from "../../components/PageComponent/HomePage/LetsCallSection/CallSection";
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
 import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
-
+import axios from "axios";
 function Index() {
+  const [card, setCard] = useState([]);
   const [Moto, setMoto] = useState([
     {
       icon: <TbCertificate />,
@@ -52,33 +53,50 @@ function Index() {
     },
   ]);
   const images = [{ img: image1 }, { img: image2 }];
-  const card = [
-    {
-      img: images1,
-      category_name: "programming",
-      course_name: "python with artificial intelligence (AI)",
-      duration_type: "3 months",
-    },
-    {
-      img: images1,
-      category_name: "account & finance",
-      course_name: "python with artificial intelligence (AI)",
-      duration_type: "3 months",
-    },
-    {
-      img: images1,
-      category_name: "Basic Computer",
-      course_name: "python with artificial intelligence (AI)",
-      duration_type: "3 months",
-    },
-    {
-      img: images1,
-      category_name: "Graphic Designing",
-      course_name: "python with artificial intelligence (AI)",
-      duration_type: "3 months",
-    },
-  ];
-
+  // const card = [
+  //   {
+  //     img: images1,
+  //     category_name: "programming",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "account & finance",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Basic Computer",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Graphic Designing",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  // ];
+  const getData = () => {
+    try {
+      axios
+        .get("https://hubitnep.herokuapp.com/course")
+        .then((res) => {
+          console.log(res);
+          setCard(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="">
       <Home image={image} />

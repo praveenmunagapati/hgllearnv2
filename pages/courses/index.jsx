@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import image from "../../components/Resources/images/Rectangle 27.jpg";
 import Layout from "../../HOC/Layout/Layout";
-import images1 from "../../components/Resources/images/python.avif";
+// import images1 from "../../components/Resources/images/python.avif";
 import axios from "axios";
 import FeaturedCourses from "../../components/PageComponent/Courses/FeaturedCourses/FeaturedCourses";
 import PopularCourses from "../../components/PageComponent/HomePage/PopularCourses/PopularCourses";
@@ -111,7 +111,6 @@ function Course() {
               width={"100%"}
               layout="responsive"
               objectFit="cover"
-              // objectPosition="center"
               placeholder="blur"
               blurDataURL={image}
               alt="Loading ..."
@@ -125,7 +124,7 @@ function Course() {
         </div>
         <FeaturedCourses />
         <div className="pb-28">
-          <PopularCourses card={card} />
+          <PopularCourses card={card} value="courses" />
         </div>
       </div>
     </Layout>

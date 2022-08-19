@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["hubitnep.herokuapp.com"],
+    domains: ["hubitnep.herokuapp.com", "firebasestorage.googleapis.com"],
   },
 };
 

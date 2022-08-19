@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { GiGraduateCap } from "react-icons/gi";
 import Image from "next/image";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function PopularCourses({ card, value }) {
   const color = (category) => {
@@ -19,10 +20,32 @@ function PopularCourses({ card, value }) {
         return "text-black";
     }
   };
+  const [counter, setCounter] = useState(1);
+  const [pagination, setPagination] = useState({
+    start: 0,
+    end: 4,
+  });
+  // logic starts for slicing card for dynamic numbers
+  let EndValue = counter * pagination.end;
+  let StartValue = EndValue - pagination.end;
+  // perPageChange
+  let PageChange = Math.ceil(card.length / pagination.end);
+  // setCounter ko increment and decrement login implementation
+  let counterDecrement = counter > 1 ? counter - 1 : counter;
+  let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
 
+  const prev = () => {
+    console.log(StartValue, EndValue, counter, card);
+
+    setCounter(counterDecrement);
+  };
+  const next = () => {
+    console.log(StartValue, EndValue, counter, card.length);
+    setCounter(counterIncrement);
+  };
   return (
     <div>
-      <div className="flex flex-col justify-between  px-4 md:px-8 lg:px-20 xl:px-24 xxl:px-32">
+      <div className="flex flex-col justify-between  px-4 md:px-8 lg:px-12 xl:px-14 xxl:px-16">
         {value === "onlyTag" ? (
           <div className=" flex flex-col justify-between items-center">
             {" "}
@@ -36,7 +59,7 @@ function PopularCourses({ card, value }) {
               explore more courses
             </div>
           </div>
-        ) : (
+        ) : value === "courses" ? (
           <div>
             <div
               className="text-xl  flex  justify-center items-center
@@ -73,12 +96,31 @@ function PopularCourses({ card, value }) {
               </div>
             </div>
           </div>
+        ) : (
+          ""
         )}
+        <div className="flex px-5  justify-end gap-2 ">
+          <div>
+            <FaChevronLeft
+              onClick={() => prev()}
+              color="white"
+              className="w-5 h-5 md:h-6 md:w-6 xxl:h-6 xxl:w-6  p-1.5 flex items-center justify-center
+                  bg-main rounded-full mr-2 hover:cursor-pointer"
+            />
+          </div>
+          <div>
+            <FaChevronRight
+              onClick={() => next()}
+              color="white"
+              className="w-5 h-5 md:h-6 md:w-6 xxl:h-6 xxl:w-6 p-1.5  flex items-center justify-center  bg-main rounded-full hover:cursor-pointer"
+            />
+          </div>
+        </div>
         <div
           className="grid grid-cols-1 mt-8 md:mb-8  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
          xl:grid-cols-4 xxl:grid-cols-4 gap-5 w-full"
         >
-          {card.map((val, i) => {
+          {card?.slice(StartValue, EndValue)?.map((val, i) => {
             return (
               <Link
                 key={i}
@@ -102,6 +144,12 @@ function PopularCourses({ card, value }) {
                       layout="fill"
                       className=" "
                     />
+                    {/* <img
+                      src={val.image}
+                      alt={val.course_name}
+                      height="200"
+                      width={200}
+                    /> */}
                   </div>
                   <div className="flex h-2/6 items-center pt-2">
                     <div className="px-2 Poppins capitalize h-max">
