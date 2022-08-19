@@ -1,30 +1,134 @@
-import React from "react";
-import Buttom from "../../components/PageComponent/Courses/CourseSection/Buttom";
-import Leftbanner from "../../components/PageComponent/Courses/CourseSection/LeftBanner";
-import ScheduleSection from "../../components/PageComponent/Courses/UpcomingSchedule/ScheduleSection";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import image from "../../components/Resources/images/Rectangle 27.jpg";
 import Layout from "../../HOC/Layout/Layout";
-import RelatedCourseCard from "../../components/PageComponent/Courses/RelatedCourse/RelatedCourseSection.jsx";
-import EnquiryForm from "../../components/PageComponent/Courses/UpcomingSchedule/EnquiryForm";
-const index = () => {
+// import images1 from "../../components/Resources/images/python.avif";
+import axios from "axios";
+import FeaturedCourses from "../../components/PageComponent/Courses/FeaturedCourses/FeaturedCourses";
+import PopularCourses from "../../components/PageComponent/HomePage/PopularCourses/PopularCourses";
+function Course() {
+  // const card = [
+  //   {
+  //     img: images1,
+  //     category_name: "programming",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "account & finance",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Basic Computer",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Graphic Designing",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "programming",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "account & finance",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Basic Computer",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Graphic Designing",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "programming",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "account & finance",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Basic Computer",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  //   {
+  //     img: images1,
+  //     category_name: "Graphic Designing",
+  //     course_name: "python with artificial intelligence (AI)",
+  //     duration_type: "3 months",
+  //   },
+  // ];
+  const [card, setCard] = useState([]);
+  const getData = () => {
+    try {
+      axios
+        .get("https://hubitnep.herokuapp.com/course")
+        .then((res) => {
+          console.log(res.data.data);
+          setCard(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <Layout>
-      <div className="  lg:grid  lg:grid-cols-3 xl:grid  xl:grid-cols-3 xxl:grid  xxl:grid-cols-3 md:px-5 lg:px-20 xl:px-20  xxl:px-20   gap-4">
-        <div className=" col-span-2 ">
-          <div>
-            <Leftbanner />
+      <div>
+        <div className="relative">
+          <div className=" w-full bg-main ">
+            <Image
+              src={image}
+              height={"35%"}
+              width={"100%"}
+              layout="responsive"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL={image}
+              alt="Loading ..."
+              className=" opacity-75 "
+            />
           </div>
-          <div className="">
-            <Buttom />
-            <RelatedCourseCard />
+          <div className="absolute z-50 top-5 md:top-40 lg:top-40 xl:top-40 xxl:top-40 left-20 text-white capitalize">
+            <div className="font-bold  text-3xl">our courses</div>
+            <div className="Poppins text-sm mt-2">home/courses</div>
           </div>
         </div>
-        <div>
-          <ScheduleSection />
-          <EnquiryForm />
+        <FeaturedCourses />
+        <div className="pb-28">
+          <PopularCourses card={card} value="courses" />
         </div>
       </div>
     </Layout>
   );
-};
+}
 
-export default index;
+export default Course;

@@ -123,26 +123,26 @@ function Footer() {
 
         {/* privacy policy section starts  */}
         <div className=" flex-1 md:mx-8 lg:mx-16">
-          <div className="flex items-center space-x-1 md:space-x-2 text-white text-lg xl:text-xl xxl:text-2xl">
+          <div className="flex items-center space-x-1 md:space-x-2 text-white ">
             <Link href="">
-              <p className="cursor-pointer  textPrimary transition hover:opacity-80">
+              <p className="cursor-pointer   transition hover:opacity-80">
                 Terms & Condition
               </p>
             </Link>
             <span className="h-4 w-0.5 bg-white"></span>
-            <Link href="">
-              <p className="cursor-pointer textPrimary transition hover:opacity-80">
+            <Link href={`/Policy`}>
+              <p className="cursor-pointer  transition hover:opacity-80">
                 Privacy Policy
               </p>
             </Link>
             <span className="h-4 w-0.5 bg-white"></span>
             <Link href="">
-              <p className="cursor-pointer textPrimary transition hover:opacity-80">
+              <p className="cursor-pointer  transition hover:opacity-80">
                 License Agreement
               </p>
             </Link>
           </div>
-          <p className="text-xs xl:text-sm   xxl:text-base text-white">
+          <p className="text-xs xl:text-sm   xxl:text-[14px] mt-1 text-white">
             Copyright &copy; {new Date().getFullYear()}, Hub IT
           </p>
         </div>
