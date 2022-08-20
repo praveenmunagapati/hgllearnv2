@@ -18,9 +18,7 @@ Being the best IT training institute in Nepal, HUB IT is determined to combine e
         </Head>
         <main>
           <Home />
-          
         </main>
-
       </div>
     </Layout>
   );

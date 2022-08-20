@@ -11,18 +11,19 @@ function Aboutus() {
   return (
     <div>
       <Head>
-        
+
       </Head>
-    <Layout>
-      <div>
-        {/* <div className={styles.container}> */}
-        <WhoWeAre />
-        <MIssionVision />
-        <WhatWeProvide />
-        <WhatClientsSays />
-        {/* </div> */}
-      </div>
-    </Layout>
+
+      <Layout>
+        <div>
+          {/* <div className={styles.container}> */}
+          <WhoWeAre />
+          <MIssionVision />
+          <WhatWeProvide />
+          <WhatClientsSays />
+          {/* </div> */}
+        </div>
+      </Layout>
     </div>
   );
 }
