@@ -6,7 +6,6 @@ function Policy() {
     <Layout>
       <div className="p-10 bg-gray-100 Poppins">
         <h1>Privacy Policy</h1>
-        <p>Last updated: January 27, 2022</p>
         <p>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the
