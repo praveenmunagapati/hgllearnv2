@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: http://www.example.com/sitemap.xml
+# Host
+Host: https://hubit.com.np
+
+# Sitemaps
+Sitemap: https://hubit.com.np/sitemap.xml
