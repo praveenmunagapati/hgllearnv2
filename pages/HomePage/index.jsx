@@ -18,22 +18,12 @@ function Index() {
     {
       icon: <TbCertificate />,
       title: "Top Courses",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-             typesetting industry. Lorem Ipsum has been the industry's standard dummy
-             text ever since the 1500s, when an unknown printer took a galley of type
-             and scrambled it to make a type specimen book. It has survived not only five
-             centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.`,
+      description: `Our training and certification courses are designed for IT and business professionals across all industries, and cover an array of subjects including technologies, IT topics (cloud, cybersecurity, AI, DevOps , Data analytics, Hardware ,Mobile repairing & many more), and personal development and productivity.`,
     },
     {
       icon: <TbCertificate />,
-      title: "Certified Teachers",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-             typesetting industry. Lorem Ipsum has been the industry's standard dummy
-             text ever since the 1500s, when an unknown printer took a galley of type
-             and scrambled it to make a type specimen book. It has survived not only five
-             centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.`,
+      title: "Certified Instructor",
+      description: ``,
     },
     {
       icon: <TbCertificate />,
