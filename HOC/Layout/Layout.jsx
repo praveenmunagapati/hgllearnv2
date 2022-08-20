@@ -15,7 +15,7 @@ function Layout({ children }) {
         setShowButton(false);
       }
     });
-  }, []);
+  }, []); 
   // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo({
