@@ -4,6 +4,7 @@ import { IoIosArrowDropup } from "react-icons/io";
 import Footer from "../footer/footer";
 import TopBar from "../../components/Navigation/TopBar/TopBar";
 import SideBar from "../../components/Navigation/Sidebar/SideBar";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 function Layout({ children }) {
   const [showButton, setShowButton] = useState(false);
   // The back-to-top button is hidden at the beginning
@@ -15,7 +16,7 @@ function Layout({ children }) {
         setShowButton(false);
       }
     });
-  }, []);
+  }, []); 
   // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo({
@@ -33,11 +34,15 @@ function Layout({ children }) {
       ) : (
         ""
       )}
-      {showButton && (
+      {/* {showButton && (
         <button onClick={scrollToTop} className="back-to-top">
           <IoIosArrowDropup />
         </button>
-      )}
+      )} */}
+       <MessengerCustomerChat
+    pageId="1872050236414372"
+    appId="966538807569641"
+  />
       <div className="">{children}</div>
       <div>
         <Footer />

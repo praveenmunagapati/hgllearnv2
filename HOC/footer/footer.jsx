@@ -76,23 +76,24 @@ function Footer() {
         </div>
         <div className="col-span-2 sm:col-span-1  md:col-span-1 lg:col-span-1  xl:col-span-1 xxl:col-span-1">
           <div className="text-lg xl:text-xl xxl:text-2xl capitalize  mb-2 Poppins">
-            our contact
+            Our Contact
           </div>
           <div className=" ">
             <div className="flex space-x-4 my-2   md:text-sm xxl:my-3 items-center">
               <IoCall className="text-sm xl:text-base xxl:text-lg" />
               <p className="text-xs xl:text-sm xxl:text-base">
-                +977-9821424241
+                +977-071532805,9827494116,9857045414
               </p>
             </div>
             <div className="flex  items-center space-x-4 my-2  text-xs xl:text-sm xxl:text-base  ">
               <IoMdMail className="text-sm xl:text-base xxl:text-lg" />
-              <a href="">hubit@gmail.com</a>
+              <a href="">training@hubit.com.np</a>
             </div>
             <div className="flex space-x-4 my-2 text-xs xl:text-sm xxl:text-base xxl:my-3  items-center">
               <BiCurrentLocation className="text-sm xl:text-base xxl:text-lg" />
               <p className="capitalize">
-                milan chowk-8, Butwal, ganganagar 30secs from main street
+                Butwal-09 (Ganesh Path),Milanchowk<br />
+                Rupandehi Nepal
               </p>
             </div>
           </div>
