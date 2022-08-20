@@ -5,8 +5,8 @@ import Home from "./HomePage/index";
 export default function Index() {
   return (
     <Layout>
-      <div className={ `` }>
-        {/* <div> */ }
+      <div className={``}>
+        {/* <div> */}
         <Head>
           <title>HUB IT GROUP PVT LTD. - We provide best IT Training,Solution,Digital Marketing ,Hardware/Networking</title>
           <meta name="description" content="HUB IT is recognized as one of Nepal’s best skill development and IT training centers. The journey of HUB IT started in 2017 with a big dream to bring applied education to the mass population at an affordable cost. The main purpose of HUB IT is to facilitate, with the best IT-related skills.

@@ -29,7 +29,7 @@ function SideBar({ iconClick, setIconClick }) {
             >
               {NavData.map((val, i) => {
                 return (
-                  <div key={i} className="w-full ">
+                  <div className="w-full " key={i}>
                     <Link href={val.path} passHref>
                       <div
                         className={`${

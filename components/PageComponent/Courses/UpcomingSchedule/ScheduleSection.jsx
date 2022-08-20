@@ -49,8 +49,11 @@ const Right = () => {
   ];
   return (
     <div>
-      <div className=" shadow-md shadow-gray-300 mt-4 pb-4 lg:pb-6 xl:pb-7 xxl:pb-8">
-        <div className="text-center md:text-left md:text-xl md:px-4 lg:text-3xl text-white font-bold text-md bg-main py-4">
+      <div className=" shadow-md shadow-gray-200 mt-4 pb-4 lg:pb-6 xl:pb-7 xxl:pb-8">
+        <div
+          className="text-center md:text-left md:text-xl md:px-4 
+        lg:text-3xl text-white font-bold text-md bg-main py-4"
+        >
           Upcomming Class Schedule
         </div>
         <div className=" px-4 pt-4 font-medium">
