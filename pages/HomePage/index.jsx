@@ -13,6 +13,7 @@ import CallSection from "../../components/PageComponent/HomePage/LetsCallSection
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
 import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
 import axios from "axios";
+import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
 function Index() {
   const [card, setCard] = useState([]);
   const [Moto, setMoto] = useState([
@@ -115,8 +116,12 @@ function Index() {
         </div>
       </div>
       <WelcomePortal images={images} />
-      <PopularCourses card={card} value="onlyTag" />
+      <div className=" pt-8 pb-20">
+        {" "}
+        <PopularCourses card={card} value="onlyTag" />
+      </div>
       <WhyHub />
+      <WhatClientsSays />
       <PlacementPartners />
       <FindUsOn />
       <CallSection />

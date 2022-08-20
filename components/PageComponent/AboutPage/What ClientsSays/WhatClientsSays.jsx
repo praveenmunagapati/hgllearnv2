@@ -1,38 +1,172 @@
-import { data } from "autoprefixer";
-import React from "react";
+import React, { useState } from "react";
 import image1 from "../../../Resources/images/japan.jpg";
+import Regular from "./TabComponents/Regular";
 function WhatClientsSays() {
+  const [Active, setActive] = useState("regular");
   const tabs = [
     { title: "regular" },
     { title: "facebook" },
     { title: "google" },
   ];
-  const clientDetails = [
+
+  const Regulars = [
     {
       image: image1,
       name: "monica kc",
       title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `Lorem Ipsindustry. dummy text ever .`,
     },
     {
       image: image1,
-      name: "monica kc",
+      name: "nischal kc",
       title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
     },
     {
       image: image1,
-      name: "monica kc",
-      title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      name: "hari sir",
+      title: "teacher",
+      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
     },
     {
       image: image1,
-      name: "monica kc",
+      name: "kisan mahat",
       title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
     },
   ];
+
+  const Facebook = [
+    {
+      image: image1,
+      name: "rajiv das",
+      title: "student",
+      description: `Lorem Ipsindustry. dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "raymant das",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "kavi vai",
+      title: "teacher",
+      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "sahil sainju",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+  ];
+  const Google = [
+    {
+      image: image1,
+      name: "rohit karki",
+      title: "student",
+      description: `Lorem Ipsindustry. dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "nischal karki",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "pratik karki",
+      title: "teacher",
+      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "goma  karki",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "ramchandra  karki",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+    {
+      image: image1,
+      name: "mickey  karki",
+      title: "student",
+      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+    },
+  ];
+  const [counter, setCounter] = useState(1);
+  const [pagination, setPagination] = useState({
+    start: 0,
+    end: 2,
+  });
+  // logic starts for slicing card for dynamic numbers
+  let EndValue = counter * pagination.end;
+  let StartValue = EndValue - pagination.end;
+
+  const prev = (val) => {
+    // console.log(StartValue, EndValue, counter, clientDetails);
+    // perPageChange
+    let PageChange = Math.ceil(val.length / pagination.end);
+    // setCounter ko increment and decrement login implementation
+    let counterDecrement = counter > 1 ? counter - 1 : counter;
+    let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
+    setCounter(counterDecrement);
+  };
+  const next = (val) => {
+    console.log(StartValue, EndValue, counter, val.length, val);
+    // perPageChange
+
+    let PageChange = Math.ceil(val.length / pagination.end);
+    // setCounter ko increment and decrement login implementation
+    let counterDecrement = counter > 1 ? counter - 1 : counter;
+    let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
+    setCounter(counterIncrement);
+  };
+  const tabClick = () => {
+    switch (Active) {
+      case "regular":
+        return (
+          <Regular
+            clientDetails={Regulars}
+            StartValue={StartValue}
+            EndValue={EndValue}
+            prev={prev}
+            next={next}
+          />
+        );
+        break;
+      case "facebook":
+        return (
+          <Regular
+            clientDetails={Facebook}
+            StartValue={StartValue}
+            EndValue={EndValue}
+            prev={prev}
+            next={next}
+          />
+        );
+        break;
+      case "google":
+        return (
+          <Regular
+            clientDetails={Google}
+            StartValue={StartValue}
+            EndValue={EndValue}
+            prev={prev}
+            next={next}
+          />
+        );
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <div>
       <div className="py-5 text-center">
@@ -43,9 +177,22 @@ function WhatClientsSays() {
           Lorem ipsum dolor sit met, consectetur adipiscing elit
         </div>
       </div>
-      {data.map((val, i) => {
-        return <div key={i}>{val.title}</div>;
-      })}
+      <div className="flex gap-3 px-32 capitalize Popppins font-semibold">
+        {tabs.map((val, i) => {
+          return (
+            <div
+              key={i}
+              className={`cursor-pointer ${
+                Active === val.title ? "text-main" : ""
+              }`}
+              onClick={() => setActive(val.title)}
+            >
+              {val.title}
+            </div>
+          );
+        })}
+      </div>
+      {tabClick()}
     </div>
   );
 }
