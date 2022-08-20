@@ -395,3 +395,27 @@ h6 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+@keyframes nextPage {
+  0% {
+    opacity: 1;
+    transform: translate(5em, 0);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes prevPage {
+  0% {
+    opacity: 0.8;
+    transform: translate(-5em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
