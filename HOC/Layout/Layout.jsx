@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { IoIosArrowDropup } from "react-icons/io";
-import Footer from "./footer/footer";
+import Footer from "../footer/footer";
 import TopBar from "../../components/Navigation/TopBar/TopBar";
 import SideBar from "../../components/Navigation/Sidebar/SideBar";
 function Layout({ children }) {
@@ -15,7 +15,7 @@ function Layout({ children }) {
         setShowButton(false);
       }
     });
-  }, []);
+  }, []); 
   // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo({
