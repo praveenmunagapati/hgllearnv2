@@ -47,7 +47,7 @@ function MIssionVision() {
             })}
           </div>
         </div>
-        <div>pics & videos</div>
+        {/* <div>pics & videos</div> */}
       </div>
     </div>
   );
