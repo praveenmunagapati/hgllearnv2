@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+import { IoMdCopy } from "react-icons/io";
 const Body = () => {
   return (
     <>
@@ -11,7 +11,7 @@ const Body = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h3>
         </div>
-        <div className=" px-5 py-24 ml-20">
+        <div className="xs:flex xs:justify-center xs:items-center px-5 py-24 ml-20">
           <div className="flex flex-wrap -m-4">
             {[1, 2, 3, 4, 5, 6, 7, 8].map(() => {
               return (
@@ -34,10 +34,14 @@ const Body = () => {
                           alt="image"
                           src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200"
                         />
-                        <div class="pl-2 flex items-center gap-11">
+                        <div class="pl-2 flex items-center gap-4">
                           <div class="font-medium">Kisan Mahat</div>
+                          <div>
+                            <IoMdCopy />
+                          </div>
                           <div class="text-gray-600 text-xs">
-20                          </div>
+                            <p>20</p>
+                          </div>
                         </div>
                       </div>
                     </div>

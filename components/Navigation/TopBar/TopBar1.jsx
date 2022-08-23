@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
+import Link from "next/link";
 function TopBar1() {
   const data = [
-    { id: 1, title: "Check Certificate" },
-    { id: 2, title: "Career" },
-    { id: 3, title: "Contact Us" },
-    { id: 4, title: "Download Brochure" },
-    { id: 5, title: "Hackathons" },
-    { id: 6, title: "Hire Talents" },
-    { id: 7, title: "Testimonials" },
+    { id: 1, title: "Check Certificate", href: "/" },
+    { id: 2, title: "Career", href: "/" },
+    { id: 3, title: "Contact Us", href: "/contact" },
+    { id: 4, title: "Download Brochure", href: "/" },
+    { id: 5, title: "Hackathons", href: "/" },
+    { id: 6, title: "Hire Talents", href: "/" },
+    { id: 7, title: "Testimonials", href: "/" },
   ];
   //   const [showUnderline, setShowUnderline] = useState(false);
   //   const [ID, setId] = useState("");
@@ -35,16 +36,18 @@ function TopBar1() {
         <div className="flex gap-4">
           {data.map((val, i) => {
             return (
-              <div
-                // onClick={() => {
-                //   setShowUnderline(true), setId(val.id);
-                // }}
-                key={i}
-                className={` hover:scale-105 transition-all duration-300 ease-in-out  capitalize cursor-pointer `}
-              >
-                {" "}
-                {val.title}
-              </div>
+              <Link href={val.href} key={i}>
+                <div
+                  // onClick={() => {
+                  //   setShowUnderline(true), setId(val.id);
+                  // }}
+                  key={i}
+                  className={` hover:scale-105 transition-all duration-300 ease-in-out  capitalize cursor-pointer `}
+                >
+                  {" "}
+                  {val.title}
+                </div>
+              </Link>
             );
           })}
         </div>

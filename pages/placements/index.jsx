@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import { SiMicrosoft } from "react-icons/si";
 import BottomSection from "../../components/PageComponent/Placement/BottomSection";
 import HeroSection from "../../components/PageComponent/Placement/HeroSection";
+import Partners from "../../components/PageComponent/Placement/Partners";
 import Layout from "../../HOC/Layout/Layout";
 const placement = () => {
   return (
@@ -10,6 +10,7 @@ const placement = () => {
       <Layout>
         <HeroSection />
         <BottomSection />
+        <Partners />
       </Layout>
     </>
   );
