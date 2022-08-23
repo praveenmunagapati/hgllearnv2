@@ -104,12 +104,10 @@ function Course() {
     <Layout>
       <div>
         <div className="relative">
-          <div className=" w-full bg-main ">
+          <div className=" w-full h-80  bg-main ">
             <Image
               src={image}
-              height={"35%"}
-              width={"100%"}
-              layout="responsive"
+              layout="fill"
               objectFit="cover"
               placeholder="blur"
               blurDataURL={image}
@@ -117,7 +115,7 @@ function Course() {
               className=" opacity-75 "
             />
           </div>
-          <div className="absolute z-50 top-5 md:top-40 lg:top-40 xl:top-40 xxl:top-40 left-20 text-white capitalize">
+          <div className="absolute top-32 sm:top-28   md:top-40 lg:top-40 xl:top-32 xxl:top-40 left-8 sm:left-20 text-white capitalize">
             <div className="font-bold  text-3xl">our courses</div>
             <div className="Poppins text-sm mt-2">home/courses</div>
           </div>

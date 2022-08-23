@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       colors: {
         main: "rgba(160, 4, 125, 1)",
+        hoverMain: "#c2259f",
       },
       height: {
         84: "21rem",

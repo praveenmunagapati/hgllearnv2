@@ -1,8 +1,8 @@
-import '../styles/globals.css'
-import '../styles/SCSS/master.scss'
+import "../styles/globals.css";
+import "../styles/SCSS/master.scss";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
