@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { SiMicrosoft } from "react-icons/si";
 const BottomSection = () => {
@@ -7,15 +8,14 @@ const BottomSection = () => {
         {[1, 2, 3, 4].map((item, index) => {
           return (
             <div
-              className="rounded-lg overflow-hidden shadow-lg group p-2 "
+              className="rounded-lg overflow-hidden shadow-lg group p-2  "
               key={index}
             >
               <img
-                className="w-full group-hover:scale-105 transition-all duration-300"
+                className="w-10/12 group-hover:scale-105 transition-all duration-300"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzXzIgxiHN9Ktcb5hqKCr_ezUySvhoawPrUQ&usqp=CAU"
-                alt="Mountain"
-                height={250}
-                width={250}
+                alt="image"
+               
               />
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">

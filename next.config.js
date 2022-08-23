@@ -10,6 +10,7 @@ const nextConfig = {
       "hubitnep.herokuapp.com",
       "firebasestorage.googleapis.com",
       "www.derby-college.ac.uk",
+      "encrypted-tbn0.gstatic.com",
     ],
   },
 };

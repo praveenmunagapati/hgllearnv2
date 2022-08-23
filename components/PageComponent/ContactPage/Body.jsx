@@ -1,22 +1,55 @@
 import React from "react";
-import { SiMicrosoft } from "react-icons/si";
-
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { GoLocation } from "react-icons/go";
+import { FiMail } from "react-icons/fi";
+import { BiTime } from "react-icons/bi";
 const Body = () => {
+  const contact = [
+    {
+      title: "Call us",
+      text: "9821420682 , 9812345679",
+      icon: (
+        <BsFillTelephoneFill className="text-white w-10 h-10 bg-main rounded-[50%] p-1" />
+      ),
+    },
+    {
+      title: "Find us",
+      text: "Butwal, Milanchowk",
+      icon: (
+        <GoLocation className="text-white w-10 h-10 bg-main rounded-[50%] p-1" />
+      ),
+    },
+    {
+      title: "Mail us",
+      text: "hubit@gmail.com",
+      icon: (
+        <FiMail className="text-white w-10 h-10 bg-main rounded-[50%] p-1" />
+      ),
+    },
+    {
+      title: "Available time",
+      text: "Sun-Fri, 9:00 am - 6:00 pm",
+      icon: (
+        <BiTime className="text-white w-10 h-10 bg-main rounded-[50%] p-1" />
+      ),
+    },
+  ];
   return (
     <>
       <section className="bg-gray-100  ">
         <div className=" px-5 py-24 mx-auto flex xs:flex-col sm:flex-col  gap-36 md:gap-24 items-center">
           <div className="sm:w-full xs:w-full lg:w-[40vw] md:w-[30vw] xl:w-[40vw] xxl:w-[40vw] rounded-lg overflow-hidden sm:mr-10 p-10 flex flex-col items-center justify-center  md:mr-10">
-            {[1, 2, 3, 4].map((item, i) => {
+            {contact.map((item, i) => {
+              const { title, text, icon } = item;
               return (
                 <div
                   className="flex gap-8 bg-white rounded-lg w-[25vw] h-[15vh] mx-10 my-5 p-4 items-center sm:w-full xs:w-full  "
                   key={i}
                 >
-                  <SiMicrosoft />{" "}
+                  {icon}{" "}
                   <div className="flex-col ">
-                    <p>Call us</p>
-                    <p>9821420682 , 9812345678</p>
+                    <p>{title}</p>
+                    <p>{text}</p>
                   </div>
                 </div>
               );
