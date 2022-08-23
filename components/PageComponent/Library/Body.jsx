@@ -31,18 +31,18 @@ const Body = () => {
                       </h1>
                       <hr />
 
-                      <div class="flex items-center mt-2">
+                      <div className="flex items-center mt-2">
                         <img
-                          class="w-10 h-10 object-cover rounded-full"
+                          className="w-10 h-10 object-cover rounded-full"
                           alt="image"
                           src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200"
                         />
-                        <div class="pl-2 flex items-center gap-4">
-                          <div class="font-medium">Kisan Mahat</div>
+                        <div className="pl-2 flex items-center gap-4">
+                          <div className="font-medium">Kisan Mahat</div>
                           <div>
                             <IoMdCopy />
                           </div>
-                          <div class="text-gray-600 text-xs">
+                          <div className="text-gray-600 text-xs">
                             <p>20</p>
                           </div>
                         </div>
