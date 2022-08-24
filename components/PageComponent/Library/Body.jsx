@@ -11,48 +11,43 @@ const Body = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h3>
         </div>
-        <div className="xs:flex xs:justify-center xs:items-center sm:flex sm:items-center sm:justify-center px-5 py-24 ml-20">
-          <div className="flex flex-wrap -m-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item, i) => {
-              return (
-                <div
-                  className="p-4 xs:w-full xs:mr-16  sm:w-[42vw] md:w-[28vw] lg:w-[28vw] xl:w-[22vw] xxl:w-[22vw] "
-                  key={i}
-                >
-                  <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <img
-                      className="lg:h-48 md:h-36 w-full object-cover object-center"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbxOluvYA1hlxr6zzd8P__pV9hUY57H5_iatY3FJGU&s"
-                      alt="services"
-                    />
-                    <div className="p-6">
-                      <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                        Learn AI for Beginner{" "}
-                      </h1>
-                      <hr />
+        <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xxl:grid-cols-5 gap-5">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((item, i) => {
+            return (
+              <div className="rounded overflow-hidden shadow-lg" key={i}>
+                <img
+                  className="w-full"
+                  src="https://www.cnet.com/a/img/resize/4e82f3a17554a5aff8089194237de5a3acfce3b4/2022/04/27/b796792b-5b34-4405-83eb-efc66371ee06/samsung-galaxy-book-2-pro-360-01.jpg?auto=webp&fit=crop&height=630&width=1200"
+                  alt="image"
+                />
 
-                      <div className="flex items-center mt-2">
-                        <img
-                          className="w-10 h-10 object-cover rounded-full"
-                          alt="image"
-                          src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200"
-                        />
-                        <div className="pl-2 flex items-center gap-4">
-                          <div className="font-medium">Kisan Mahat</div>
-                          <div>
-                            <IoMdCopy />
-                          </div>
-                          <div className="text-gray-600 text-xs">
-                            <p>20</p>
-                          </div>
-                        </div>
+                <div className="p-6">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
+                    Learn AI for Beginner{" "}
+                  </h1>
+                  <hr />
+
+                  <div className="flex items-center mt-2">
+                    <img
+                      className="w-10 h-10 object-cover rounded-full"
+                      alt="image"
+                      src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200"
+                    />
+                    <div className="pl-2 flex items-center gap-4">
+                      <div className="font-medium">Kisan Mahat</div>
+                      <div>
+                        <IoMdCopy />
+                      </div>
+                      <div className="text-gray-600 text-xs">
+                        <p>20</p>
+
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>
