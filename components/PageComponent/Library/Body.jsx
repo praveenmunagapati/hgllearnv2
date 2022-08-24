@@ -14,7 +14,7 @@ const Body = () => {
         <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xxl:grid-cols-5 gap-5">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((item, i) => {
             return (
-              <div className="rounded overflow-hidden shadow-lg">
+              <div className="rounded overflow-hidden shadow-lg" key={i}>
                 <img
                   className="w-full"
                   src="https://www.cnet.com/a/img/resize/4e82f3a17554a5aff8089194237de5a3acfce3b4/2022/04/27/b796792b-5b34-4405-83eb-efc66371ee06/samsung-galaxy-book-2-pro-360-01.jpg?auto=webp&fit=crop&height=630&width=1200"
