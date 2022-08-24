@@ -40,6 +40,7 @@ const Body = () => {
                       </div>
                       <div className="text-gray-600 text-xs">
                         <p>20</p>
+
                       </div>
                     </div>
                   </div>

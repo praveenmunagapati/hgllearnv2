@@ -8,7 +8,7 @@ const Banner = () => {
           <h1 className="text-5xl font-bold text-white ">Contact Us </h1>
           <br />
           <p className="text-4xl text-white ">
-            Lorem ipsum dolor sit..
+            You can contact us if you have any query
           </p>
         </div>
       </div>

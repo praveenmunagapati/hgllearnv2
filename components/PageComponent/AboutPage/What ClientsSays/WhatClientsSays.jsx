@@ -171,10 +171,10 @@ function WhatClientsSays() {
     <div>
       <div className="py-5 text-center">
         <div className="text-3xl text-main capitalize Poppins font-bold">
-          What our clients say
+          What our students say about us
         </div>
-        <div className="capitalize Poppins  font-light my-3 text-sm  text-gray-700  ">
-          Lorem ipsum dolor sit met, consectetur adipiscing elit
+        <div className="Poppins  font-light my-3 text-sm  text-gray-700  ">
+          Here some testimonials about the experience of our students in HUB IT TRAINING
         </div>
       </div>
       <div className="flex gap-3 px-32 capitalize Popppins font-semibold">
