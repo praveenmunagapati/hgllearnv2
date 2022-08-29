@@ -8,7 +8,7 @@ const HeroSection = () => {
           <h1 className="font-bold text-main ">
             What we do for your placement?
           </h1>
-          <p className="  ">
+          <p className="">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae
             ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio
             praesentium impedit, neque consequatur aliquam veniam nemo non

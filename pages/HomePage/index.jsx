@@ -11,9 +11,10 @@ import { TbCertificate } from "react-icons/tb";
 import Home from "./Home";
 import CallSection from "../../components/PageComponent/HomePage/LetsCallSection/CallSection";
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
-import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
 import axios from "axios";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
+import SuccessStories from "../../components/PageComponent/HomePage/SuccessStories/SuccessStories";
+import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
 function Index() {
   const [card, setCard] = useState([]);
   const [Moto, setMoto] = useState([
@@ -113,6 +114,7 @@ function Index() {
       <WhyHub />
       <WhatClientsSays />
       <PlacementPartners />
+      <SuccessStories />
       <FindUsOn />
       <CallSection />
     </div>

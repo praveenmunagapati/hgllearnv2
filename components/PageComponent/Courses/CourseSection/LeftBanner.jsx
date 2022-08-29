@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 // import image from "../../../Resources/images/hero.jpg";
-import MainImage from "./mainimage";
-const Leftbanner = ({ image, Des }) => {
+// import MainImage from "./mainimage";
+const Leftbanner = ({ image, description }) => {
   console.log(image);
   return (
     <>
       {/* <MainImage /> */}
       <div className=" py-4">
-        <div className="shadow-md  h-108 w-full  relative">
+        <div className="shadow-md  h-96 w-full mx-auto  relative">
           <Image
             src={image}
             alt="loading..."
@@ -20,8 +20,8 @@ const Leftbanner = ({ image, Des }) => {
             quality={100}
           />
         </div>
-        <p className="text-base mt-4 py-6 px-4 bg-gray-50   Poppins font-[400] text-justify text-gray-500">
-          {Des}
+        <p className="text-sm mt-4 py-6 px-4 bg-gray-50    font-[300] text-justify text-gray-500">
+          {description}
         </p>
       </div>
     </>

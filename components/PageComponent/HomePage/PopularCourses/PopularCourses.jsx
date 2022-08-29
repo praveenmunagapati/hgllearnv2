@@ -110,21 +110,21 @@ function PopularCourses({ card, value }) {
             </div>
             <div className="   md:grid lg:grid  xl:grid xxl:grid  grid-cols-12 gap-16  mt-7 md:mt-14  mb-4 md:mb-7">
               <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9 ">
-                <div className="w-full my-6 ">
-                  <input
-                    type="text"
-                    name=""
-                    placeholder="Course "
-                    className=" px-5 py-2  w-full bg-[#EEEAEA] border-b-2 border-main rounded-sm"
-                  />
-                </div>
                 <div className="w-full ">
-                  <select className=" px-5 py-2  w-full bg-[#EEEAEA]  rounded-sm">
+                  <select className=" px-6 py-2 outline-none text-gray-400 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
                     <option>category</option>
                     <option>category</option>
                     <option>category</option>
                     <option>category</option>
                   </select>
+                </div>
+                <div className="w-full my-6 ">
+                  <input
+                    type="text"
+                    name="course"
+                    placeholder="Course "
+                    className=" px-5 py-2  w-full bg-[#EEEAEA] border-b-2 border-main rounded-sm"
+                  />
                 </div>
               </div>
               <div className="col-span-3  flex items-center text-white Poppins font-semibold">

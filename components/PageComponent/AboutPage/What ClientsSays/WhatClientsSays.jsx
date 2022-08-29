@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import image1 from "../../../Resources/images/japan.jpg";
 import Regular from "./TabComponents/Regular";
 function WhatClientsSays() {
@@ -114,8 +114,8 @@ function WhatClientsSays() {
     // perPageChange
     let PageChange = Math.ceil(val.length / pagination.end);
     // setCounter ko increment and decrement login implementation
-    let counterDecrement = counter > 1 ? counter - 1 : counter;
-    let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
+    let counterDecrement = counter > 1 ? counter - 1 : PageChange;
+    // let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
     setCounter(counterDecrement);
   };
   const next = (val) => {
@@ -124,10 +124,11 @@ function WhatClientsSays() {
 
     let PageChange = Math.ceil(val.length / pagination.end);
     // setCounter ko increment and decrement login implementation
-    let counterDecrement = counter > 1 ? counter - 1 : counter;
-    let counterIncrement = counter < PageChange ? counter + 1 : PageChange;
+    // let counterDecrement = counter > 1 ? counter - 1 : counter;
+    let counterIncrement = counter < PageChange ? counter + 1 : 1;
     setCounter(counterIncrement);
   };
+
   const tabClick = () => {
     switch (Active) {
       case "regular":
@@ -174,7 +175,8 @@ function WhatClientsSays() {
           What our students say about us
         </div>
         <div className="Poppins  font-light my-3 text-sm  text-gray-700  ">
-          Here some testimonials about the experience of our students in HUB IT TRAINING
+          Here some testimonials about the experience of our students in HUB IT
+          TRAINING
         </div>
       </div>
       <div className="flex gap-3 px-32 capitalize Popppins font-semibold">

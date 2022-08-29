@@ -4,11 +4,11 @@ import * as yup from "yup";
 
 function CallSection() {
   const CallSectionSchema = yup.object().shape({
-    name: yup.string().required(" Required !!!"),
+    // name: yup.string().required(" Required !!!"),
   });
   return (
     <div>
-      <div className="bg-gray-100 flex flex-col justify-center mt-14 py-8 ">
+      <div className="bg-[#EEEAEA] flex flex-col justify-center mt-14 py-24 ">
         <div className="text-xl xl:text-2xl xxl:text-3xl font-bold Poppins text-center">
           Let us Give you a <span className="text-main"> Call</span> !
         </div>
