@@ -7,7 +7,11 @@ import Image from "next/image";
 function Home() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row h-[calc(100vh-50px)] w-full justify-center items-center bg-gradient-to-t from-[#f0f0f0] to-white md:px-8 lg:px-20 xl:px-24 xxl:px-32 px-4">
+      <div
+        className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row
+         h-[calc(100vh-50px)] w-full justify-center items-center
+        md:px-8 lg:px-20 xl:px-24 xxl:px-32 px-4"
+      >
         <div className="h-max lg:w-3/6 xl:w-3/6 xxl:w-3/6 w-full ">
           <div className="flex">
             {Icons.map((icon, index) => {
@@ -27,7 +31,11 @@ function Home() {
             IT Training Institute in Nepal
           </div>
           <div className="text-xs xl:text-sm xxl:text-base text-gray-700 pr-6 text-justify">
-          HUB IT is recognized as one of Nepal’s best global skill development and IT training centers. The journey of HUB IT started in 2017 with a big dream to bring applied education to the mass population at an affordable cost. The main purpose of HUB IT is to facilitate, with the best IT-related skills.
+            HUB IT is recognized as one of Nepal’s best global skill development
+            and IT training centers. The journey of HUB IT started in 2017 with
+            a big dream to bring applied education to the mass population at an
+            affordable cost. The main purpose of HUB IT is to facilitate, with
+            the best IT-related skills.
           </div>
           <div className="flex mt-6">
             <button
@@ -47,12 +55,15 @@ function Home() {
         </div>
         <div className="h-max w-full mt-8 md:mt-4 lg:mt-0 xl:mt-0 mx-auto lg:w-3/6 xl:w-3/6 xxl:w-3/6">
           <div className="relative">
-            <div className="relative  h-[300px] sm:h-[360px] md:h-[400px] lg:h-[400px] xl:h-[440px] xxl:h-[550px] w-full sm:w-[550px] md:w-[600px] xxl:w-[600px] md:mx-auto sm:mx-auto xxl:ml-auto">
+            <div className="  w-full">
               <Image
                 src={teacher}
-                alt={"teacher"}
-                layout="fill"
-                priority
+                alt={"Loading"}
+                layout="responsive"
+                width={120}
+                height={100}
+                placeholder="blur"
+                blurDataURL={teacher}
               ></Image>
             </div>
             <div className="bg-white shadow-[0px_1px_10px_1px_black] h-max py-3 absolute top-[50%] left-[22%]  w-[200px] ">

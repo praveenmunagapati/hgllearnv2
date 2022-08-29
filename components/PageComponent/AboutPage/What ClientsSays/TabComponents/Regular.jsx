@@ -12,11 +12,17 @@ function Regular({ clientDetails, StartValue, EndValue, prev, next }) {
         >
           <MdKeyboardArrowLeft className="w-6 h-6" />
         </div>
-        <div className="flex justif   my-14 ">
+        <div
+          className="grid grid-cols-1 w-11/12  gap-4 md:grid-cols-2
+         lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2    my-14 "
+        >
           {clientDetails?.slice(StartValue, EndValue)?.map((val, i) => {
             return (
               <div key={i} className="flex w-full relative">
-                <div className=" w-20 absolute left-12 top-5 border-4 border-white rounded-full ">
+                <div
+                  className=" w-20 absolute left-12 top-5 border-4
+                 border-white rounded-full "
+                >
                   <Image
                     src={val.image}
                     height={70}

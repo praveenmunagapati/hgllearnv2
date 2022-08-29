@@ -395,6 +395,10 @@ h6 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+.borderRadiusTopHover:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
 @keyframes nextPage {
   0% {
@@ -418,4 +422,23 @@ h6 {
     opacity: 1;
     transform: translate(0, 0);
   }
+}
+
+.tipDown {
+  background-color: rgba(160, 4, 125, 1);
+  position: relative;
+  z-index: 900;
+}
+.tipDown::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  background-color: rgba(160, 4, 125, 1);
+  z-index: -10;
+  height: 30px;
+  top: 20px;
+  left: 30px;
+  rotate: 50deg;
+  // border-bottom-left-radius: 20px;
+  // border-bottom-right-radius: 20px;
 }
