@@ -23,12 +23,12 @@ const WhyHub = () => {
         },
         {
             icon:<GiTeacher />,
-            title:'Well-Equipped Lab',
+            title:'Support after training',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. In sunt optio unde rem nulla, quibusdam aperiam,vol'
         },
         {
             icon:<GiTeacher />,
-            title:'Well-Equipped Lab',
+            title:'Access library',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. In sunt optio unde rem nulla, quibusdam aperiam,vol'
         }
     ];
