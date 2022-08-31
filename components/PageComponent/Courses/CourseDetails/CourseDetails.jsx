@@ -6,6 +6,8 @@ import RelatedCourseCard from "../../../PageComponent/Courses/RelatedCourse/Rela
 import EnquiryForm from "../../../PageComponent/Courses/UpcomingSchedule/EnquiryForm";
 import { useRouter } from "next/router";
 import OverView from "../Overview/OverView";
+import CourseCuriculum from "../Curiculum/CourseCuriculum";
+import CourseInstructor from "../CourseInstructor/CourseInstructor";
 const CourseDetails = () => {
   const router = useRouter();
   const [Image, setImage] = useState(null);
@@ -31,10 +33,10 @@ const CourseDetails = () => {
         return <OverView image={Image} description={description} />;
         break;
       case "curiculum":
-        return 2;
+        return <CourseCuriculum />;
         break;
       case "instructor":
-        return 3;
+        return <CourseInstructor />;
         break;
       case "review":
         return 4;
