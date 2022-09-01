@@ -8,7 +8,7 @@ function CallSection() {
   });
   return (
     <div>
-      <div className="bg-[#EEEAEA] flex flex-col justify-center mt-14 py-24 ">
+      <div className="bg-[#EEEAEA] flex flex-col justify-center mt-7 lg:mt-14 xl:mt-14 xxl:mt-14 py-8  lg:py-24 xl:py-24 xxl:py-24 ">
         <div className="text-xl xl:text-2xl xxl:text-3xl font-bold Poppins text-center">
           Let us Give you a <span className="text-main"> Call</span> !
         </div>

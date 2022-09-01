@@ -12,7 +12,7 @@ const Buttom = () => {
   return (
     <div>
       <div className=" ">
-        <div className="flex items-center justify-start mt-8 my-4">
+        <div className="flex items-center justify-start ">
           <p className="text-xl font-bold mr-4">Share on:</p>
           <div className="flex">
             <Icon

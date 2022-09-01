@@ -54,24 +54,34 @@ const CourseDetails = () => {
        xxl:grid-cols-3   gap-12"
         >
           <div className=" col-span-2 ">
-            <div className="my-5 bg-gray-100    flex gap-4">
-              {tabs.map((val, i) => {
-                return (
-                  <div
-                    key={i}
-                    className={` ${
-                      active === val.title ? "text-white tipDown " : ""
-                    } capitalize px-4 py-2 cursor-pointer`}
-                    onClick={() => setActive(val.title)}
-                  >
-                    {val.title}
-                  </div>
-                );
-              })}
+            <div className="my-5 flex gap-6  items-center ">
+              <div className="bg-gray-100 px-.5 w-fit lg:w-full xl:w-full xxl:w-full flex gap-4">
+                {tabs.map((val, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className={` ${
+                        active === val.title ? "text-white tipDown " : ""
+                      } capitalize px-1 lg:px-4 xl:px-4 xxl:px-4 py-2 cursor-pointer`}
+                      onClick={() => setActive(val.title)}
+                    >
+                      {val.title}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="w-80 hidden lg:block xl:block xxl:block">
+                <Buttom />
+              </div>
             </div>
+
             {Tabs()}
+
             <div className="">
-              <Buttom />
+              <div className=" mt-8 mb-4">
+                {" "}
+                <Buttom />
+              </div>
               <RelatedCourseCard />
             </div>
           </div>

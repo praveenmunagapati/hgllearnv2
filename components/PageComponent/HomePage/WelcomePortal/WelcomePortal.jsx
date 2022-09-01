@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-
+import Background from "../../../Resources/images/portal.jpg";
+import { AiFillPlayCircle } from "react-icons/ai";
 function WelcomePortal({ images }) {
   return (
     <div>
-      <div className="bg-[#f0f0f0] py-14 sm:py-10 xl:py-28 xxl:py-28">
+      <div className="bg-[#f4f4f4] py-14 sm:py-10 xl:py-28 xxl:pt-28 xxl:pb-16 ">
         <div
-          className="Poppins text-left xl:text-left xxl:text-left capitalize
+          className="Poppins text-left xl:text-left xxl:text-left capitalize 
          py-0 xl:py-3 xxl:py-3 text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl
-         xxl:text-6xl w-11/12  mx-auto  font-bold   "
+         xxl:text-6xl w-11/12  mx-auto  font-bold    "
         >
           Welcome to our portal
         </div>
@@ -22,11 +23,11 @@ function WelcomePortal({ images }) {
            xxl:row-start-1 "
           >
             <div
-              className="text-sm xl:text-lg xxl:text-lg text-gray-600 lg:py-4
+              className="text-sm xl:text-base xxl:text-base text-gray-500 lg:py-4
              xl:py-5 xxl:py-5  sm:w-full sm:py-5 lg:w-full  xl:w-11/12 xxl:w-10/12 mx-auto
               xxl:mx-0 xl:mx-0 text-justify"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              Lorem ipsum dolor sit amt consectetur adipisicing elit. Dolores
               quia rerum natus voluptate voluptates odit ducimus consectetur
               voluptatem obcaecati, eligendi itaque quasi delectus at officiis
               quas porro unde aperiam ipsa. Lorem ipsum dolor sit amet
@@ -34,47 +35,51 @@ function WelcomePortal({ images }) {
               voluptates odit ducimus consectetur voluptatem obcaecati, eligendi
               itaque quasi delectus at officiis quas porro unde aperiam ipsa.
             </div>
-            <div className="w-full  pt-5 sm:pt-0">
-              <div
+            <div className="w-full  pt-2 sm:pt-0">
+              <button
                 className="hover:scale-105 transition-all
-               ease-in-out duration-300 border-[1.5px] border-[#A0047D] rounded-full mr-6 px-2 py-[5px] text-sm text-main w-fit capitalize"
+               ease-in-out duration-300 border-[1.5px]
+                border-[#A0047D] rounded-2xl  px-2 
+                py-[5px] text-[14px] text-main w-fit capitalize"
               >
                 learn more
-              </div>
+              </button>
             </div>
           </div>
           <div
-            className="  w-fit mx-auto sm:flex md:flex lg:flex xl:flex xxl:flex  gap-5 bg-gree-500
+            className="   w-fit mx-auto sm:flex md:flex lg:flex xl:flex xxl:flex  gap-5 bg-gree-500
            sm:mx-auto md:mx-auto lg:auto xl:justify-end
             xxl:justify-end xl:mx-auto xxl:mx-auto py-5 sm:pt-8 sm:pb-2 xl:py-0 xxl:py-0
-             xl:w-11/12 xxl:w-11/12 "
+             xl:w-11/12 xxl:w-11/12 xl:-mt-12 xxl:-mt-32 "
           >
-            <div className="  bg-re-500  ">
-              <div className="w-72   sm:w-72 lg:w-64 md:w-96 xl:w-80 xxl:w-72">
-                <div
-                  className="h-72  sm:h-103 cursor-pointer md:h-108 lg:h-94 xl:h-100 xxl:h-98"
-                  style={{
-                    // width: "200px",
-                    // height: "550px",
-                    backgroundImage:
-                      "linear-gradient(0deg, rgba(190,9,206,0.425973389355743) 20%, rgba(0,0,0,0.00979166666666667) 55%, rgba(0,0,0,0.00129586834733894) 80%, rgba(0,0,0,0.00295973389355743) 100%), url(https://images.unsplash.com/photo-1561489413-985b06da5bee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODR8fHN2ZyUyMHN0dWRlbnQlMjBpbWFnZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60)",
-                    backgroundPosition: " left",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></div>
-                {/* <Image
-                  src={image3}
-                  alt={image3}
+            <div className="   ">
+              <div className="w-72  relative   bg-main sm:w-72 lg:w-64 md:w-96 xl:w-80 xxl:w-72">
+                {/* <div
+                className="h-72  sm:h-103 cursor-pointer md:h-108 lg:h-94 xl:h-100 xxl:h-98 xxl:w-60"
+                style={{
+                  // width: "200px",
+                  // height: "550px",
+                  backgroundImage: `linear-gradient(0deg, rgba(190,9,206,0.425973389355743) 20%, rgba(0,0,0,0.00979166666666667) 55%, rgba(0,0,0,0.00129586834733894) 80%, rgba(0,0,0,0.00295973389355743) 100%), url(${"../../../Resources/images/portal.jpg"}")`,
+                  backgroundPosition: " center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div> */}
+                <Image
+                  src={Background}
+                  alt={Background}
                   placeholder="blur"
-                  blurDataURL={image3}
-                  height={70}
+                  blurDataURL={Background}
+                  height={75}
                   width={50}
                   objectFit="cover"
                   objectPosition="right"
                   layout="responsive"
-                  className=""
-                /> */}
+                  className=" opacity-60 "
+                />
+                <div className="absolute top-48 left-24 ">
+                  <AiFillPlayCircle className="h-14 w-14 text-white animate-pulse" />
+                </div>
               </div>
             </div>
             <div
@@ -86,15 +91,15 @@ function WelcomePortal({ images }) {
                   <div
                     key={i}
                     className="bg-gree-500 sm:w-60 hovr:scale-105 transition-all duration-300  cursor-pointer ease-in-out w-72 md:w-64 lg:w-40 xl:w-52
-                   xxl:w-52"
+                   xxl:w-48"
                   >
                     <Image
                       src={val.img}
                       alt={"image"}
                       placeholder="blur"
                       blurDataURL={val.img}
-                      height={50}
-                      width={50}
+                      height={38}
+                      width={35}
                       objectFit="cover"
                       layout="responsive"
                       className=""

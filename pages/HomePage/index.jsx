@@ -26,7 +26,15 @@ function Index() {
     {
       icon: <TbCertificate />,
       title: "Certified Instructor",
-      description: ``,
+      description: `Lorem Ipsum is simply dummy text of the printing and
+      typesetting industry. Lorem Ipsum has been the industry's standard dummy
+      text ever since the 1500s, when an unknown printer took a galley of type
+      and scrambled it to make a type specimen book. It has survived not only five
+      centuries Lorem Ipsum is simply dummy text of the printing and
+      typesetting industry. Lorem Ipsum has been the industry's standard dummy
+      text ever since the 1500s, when an unknown printer took a galley of type
+      and scrambled it to make a type specimen book. It has survived not only five
+      centuries`,
     },
     {
       icon: <TbCertificate />,
@@ -110,8 +118,11 @@ function Index() {
   return (
     <div className="">
       <Home image={image} />
-      <div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 bg-[#f0f0f0] gap-5  py-10 md:py-0 lg:gap-[1px] xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3">
+      <div className="bg-white xxl:h-96">
+        <div
+          className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 
+         gap-5  py-10 md:py-0 lg:gap-[1px] xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3"
+        >
           {Moto.map((val, i) => {
             return (
               <CompanyMoto

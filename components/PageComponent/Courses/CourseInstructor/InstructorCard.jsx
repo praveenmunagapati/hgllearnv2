@@ -4,13 +4,13 @@ import { IoMail } from "react-icons/io5";
 
 function InstructorCard({ image, role, name, email }) {
   return (
-    <div className="flex gap-14 ">
+    <div className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row gap-14 ">
       <div
         className="shadow-xl shadow-gray-500 hover:scale-1 
     transition-all cursor-pointer duration-300 ease-linear  w-fit  
       pb-5 rounded-lg hover:opacity-80 "
       >
-        <div className="w-72  borderRadiusTopHover ">
+        <div className=" w-full lg:w-72 xl:w-72 xxl:w-72   borderRadiusTopHover ">
           <Image
             src={image}
             height={45}
