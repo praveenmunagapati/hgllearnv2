@@ -35,7 +35,6 @@ function SuccessStudentCard({ image, placement, as, name, position }) {
           <div className="text-main">{as}</div>
         </div>
       </div>
-// latest
     </div>
   );
 }
