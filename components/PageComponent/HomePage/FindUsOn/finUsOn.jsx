@@ -6,7 +6,7 @@ const FindUsOn = () => {
       <div className="w-max text-[#a0047d] text-lg xl:text-xl xxl:text-2xl capitalize Poppins font-bold my-10">
         Find Us On
       </div>
-      <div className="flex flex-row gap-10 flex-wrap justify-around my-6 w-full">
+      <div className="  grid  grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 xxl:grid-cols-5  gap-10 flex-wrap justify-around my-6 w-full">
         {Data.map((item, index) => {
           return (
             <div

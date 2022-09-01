@@ -33,8 +33,8 @@ function SuccessStories() {
     },
   ];
   return (
-    <div className="my-28">
-      <div className="text-2xl text-center  text-main Poppins font-bold capitalize">
+    <div className=" mt-20 lg:mt-28 xl:mt-28 xxl:my-20 lg:mb-28 xl:mb-28 xxl:mb-28">
+      <div className="text-xl md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl text-center  text-main Poppins font-bold capitalize">
         some of our students success stories
       </div>
       <div

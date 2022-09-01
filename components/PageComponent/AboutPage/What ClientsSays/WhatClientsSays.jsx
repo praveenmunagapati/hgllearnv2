@@ -171,7 +171,7 @@ function WhatClientsSays() {
   return (
     <div>
       <div className="py-5 text-center">
-        <div className="text-3xl text-main capitalize Poppins font-bold">
+        <div className=" text-xl md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl text-main capitalize Poppins font-bold">
           What our students say about us
         </div>
         <div className="Poppins  font-light my-3 text-sm  text-gray-700  ">

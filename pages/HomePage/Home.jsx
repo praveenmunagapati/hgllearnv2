@@ -9,11 +9,11 @@ function Home() {
     <>
       <div
         className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row
-         h-[calc(100vh-50px)] w-full justify-center items-center
-        md:px-8 lg:px-20 xl:px-24 xxl:px-32 px-4"
+          w-full justify-center items-center pb-20 pt-10
+        md:px-8 lg:px-20 xl:px-24 xxl:px-32 px-4 bg-[#fafafa]"
       >
         <div className="h-max lg:w-3/6 xl:w-3/6 xxl:w-3/6 w-full ">
-          <div className="flex">
+          <div className="flex mb-3">
             {Icons.map((icon, index) => {
               return (
                 <div
