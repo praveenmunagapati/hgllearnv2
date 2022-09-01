@@ -9,8 +9,7 @@ export default function Index() {
         {/* <div> */}
         <Head>
           <title>
-            HUB IT GROUP PVT LTD. - Providing IT Training,Solution,Digital
-            Marketing ,Hardware/Networking
+            Providing IT Training,Since 2016
           </title>
           <meta
             name="description"
