@@ -4,8 +4,8 @@ const WhyHub = () => {
 
   return (
     <div className="px-4 md:px-8 lg:px-20 xl:px-20 xxl:px-20 w-full h-max my-16">
-      <div className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row w-full h-max gap-7 lg:gap-10 xl:gap-16  xxl:gap-20 ">
-        <div className="flex flex-col  mt-8  w-full lg:w-2/6 xl:w-2/6 xxl:w-2/6 ">
+      <div className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row w-full h-max gap-7 items-center lg:gap-10 xl:gap-16  xxl:gap-20 ">
+        <div className="flex flex-col   w-full lg:w-2/6 xl:w-2/6 xxl:w-2/6 ">
           {" "}
           <div className="w-max text-lg xl:text-xl xxl:text-2xl capitalize Poppins font-bold">
             Why Choose

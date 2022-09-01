@@ -4,7 +4,7 @@ const PlacementPartners = () => {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div className="px-4 md:px-8 lg:px-20 xl:px-24 xxl:px-32 mt-20 flex flex-col items-center ">
+    <div className="px-4 md:px-8 lg:px-20 xl:px-24 xxl:px-32 mt-10 flex flex-col items-center ">
       <div className="w-max text-[#a0047d] text-lg xl:text-xl xxl:text-2xl capitalize Poppins my-10 font-bold">
         Placement Partners
       </div>

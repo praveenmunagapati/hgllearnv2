@@ -14,7 +14,7 @@ function Regular({ clientDetails, StartValue, EndValue, prev, next }) {
         </div>
         <div
           className="grid grid-cols-1 w-11/12  gap-4 md:grid-cols-2
-         lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2    my-14 "
+         lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2    pt-12 "
         >
           {clientDetails?.slice(StartValue, EndValue)?.map((val, i) => {
             return (

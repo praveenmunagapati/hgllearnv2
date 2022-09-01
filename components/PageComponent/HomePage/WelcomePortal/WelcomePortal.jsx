@@ -6,11 +6,11 @@ import { AiFillPlayCircle } from "react-icons/ai";
 function WelcomePortal({ images }) {
   return (
     <div>
-      <div className="bg-[#f4f4f4] py-14 sm:py-10 xl:py-28 xxl:pt-28 xxl:pb-16">
+      <div className="bg-[#f4f4f4] py-14 sm:py-10 xl:py-28 xxl:pt-28 xxl:pb-16 ">
         <div
-          className="Poppins text-left xl:text-left xxl:text-left capitalize
+          className="Poppins text-left xl:text-left xxl:text-left capitalize 
          py-0 xl:py-3 xxl:py-3 text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl
-         xxl:text-6xl w-11/12  mx-auto  font-bold   "
+         xxl:text-6xl w-11/12  mx-auto  font-bold    "
         >
           Welcome to our portal
         </div>
@@ -35,22 +35,22 @@ function WelcomePortal({ images }) {
               voluptates odit ducimus consectetur voluptatem obcaecati, eligendi
               itaque quasi delectus at officiis quas porro unde aperiam ipsa.
             </div>
-            <div className="w-full  pt-5 sm:pt-0">
-              <div
+            <div className="w-full  pt-2 sm:pt-0">
+              <button
                 className="hover:scale-105 transition-all
                ease-in-out duration-300 border-[1.5px]
-                border-[#A0047D] rounded-full mr-6 px-2 
-                py-[5px] text-sm text-main w-fit capitalize"
+                border-[#A0047D] rounded-2xl  px-2 
+                py-[5px] text-[14px] text-main w-fit capitalize"
               >
                 learn more
-              </div>
+              </button>
             </div>
           </div>
           <div
             className="   w-fit mx-auto sm:flex md:flex lg:flex xl:flex xxl:flex  gap-5 bg-gree-500
            sm:mx-auto md:mx-auto lg:auto xl:justify-end
             xxl:justify-end xl:mx-auto xxl:mx-auto py-5 sm:pt-8 sm:pb-2 xl:py-0 xxl:py-0
-             xl:w-11/12 xxl:w-11/12 xl:-mt-12 xxl:-mt-16 "
+             xl:w-11/12 xxl:w-11/12 xl:-mt-12 xxl:-mt-32 "
           >
             <div className="   ">
               <div className="w-72  relative   bg-main sm:w-72 lg:w-64 md:w-96 xl:w-80 xxl:w-72">

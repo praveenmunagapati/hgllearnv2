@@ -6,7 +6,7 @@ import Collapse from "@kunukn/react-collapse";
 
 function CourseCuriculum() {
   const [toggle, setToggle] = useState(false);
-  const [ID, setID] = useState(false);
+  const [ID, setID] = useState(1);
   const courseCuriculumData = [
     {
       id: 1,
@@ -81,11 +81,11 @@ function CourseCuriculum() {
                 </div>
               </div>
               <Collapse
-                isOpen={toggle && ID === val.id}
+                isOpen={ID === val.id}
                 // state ko value yeha change huni raicha like true or false
                 className={
                   "app__collapse app__collapse--gradient " +
-                  (toggle && ID === val.id
+                  (ID === val.id
                     ? "app__collapse--active UserProfile "
                     : "UserProfile ")
                 }

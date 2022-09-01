@@ -10,7 +10,7 @@ function InstructorCard({ image, role, name, email }) {
     transition-all cursor-pointer duration-300 ease-linear  w-fit  
       pb-5 rounded-lg hover:opacity-80 "
       >
-        <div className=" w-full lg:w-72  borderRadiusTopHover ">
+        <div className=" w-full lg:w-72 xl:w-72 xxl:w-72   borderRadiusTopHover ">
           <Image
             src={image}
             height={45}
