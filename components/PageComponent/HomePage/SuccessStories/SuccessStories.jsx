@@ -44,6 +44,7 @@ function SuccessStories() {
       <div className="text-xl md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl text-center  text-main Poppins font-bold capitalize">
         some of our students success stories
       </div>
+      {/* working */}
       <div
         className="grid grid-cols-1 gap-y-8  md:grid-cols-2 md:gap-y-8
        lg:gap-y-8 xl:gap-y-0 xxl:gap-y-0 lg:grid-cols-3 xl:grid-cols-5 
