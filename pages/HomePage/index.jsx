@@ -86,8 +86,26 @@ function Index() {
       console.log(error);
     }
   };
+  const getReview = () => {
+    let placeId='ChIJU6XiOYiGljkRv4xyNSswlBE';
+    let apiKey='AIzaSyAKQo1DhCmxNhzHWqelTUs_T3jS_pGiBG4'
+    try {
+      axios
+        .get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`)
+        .then((res) => {
+          console.log(res);
+          setCard(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     getData();
+    getReview();
   }, []);
   return (
     <div className="">
