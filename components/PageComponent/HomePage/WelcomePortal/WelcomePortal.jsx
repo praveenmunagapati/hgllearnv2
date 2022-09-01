@@ -110,6 +110,7 @@ function WelcomePortal({ images }) {
             </div>
           </div>
         </div>
+// fdfdfdd
       </div>
     </div>
   );
