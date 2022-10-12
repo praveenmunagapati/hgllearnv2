@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Script from "next/script";
+import Analytics from "../components/SEO/Seo";
 import Layout from "../HOC/Layout/Layout";
 // import styles from "../styles/Home.module.css";
 import Home from "./HomePage/index";
@@ -6,10 +8,12 @@ export default function Index() {
   return (
     <Layout>
       <div className={``}>
+     <Analytics />
         {/* <div> */}
         <Head>
+          
           <title>
-            Providing IT Training,Since 2016
+            Providing Computer & IT Training,Since 2016
           </title>
           <meta
             name="description"
