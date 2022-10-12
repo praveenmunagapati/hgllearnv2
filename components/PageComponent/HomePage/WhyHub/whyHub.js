@@ -5,36 +5,36 @@ const WhyHub = () => {
       icon: <GiTeacher />,
       title: "Well-Equipped Lab",
       description:
-        "Labs are equipped with world class equipments and facilities based on the latest technology pertaining to different sectors. The students and faculties push the boundaries of possibilities in these world class labs, and there is always a constant buzz in this part of the institute where new knowledge is created.",
+        "Labs are equipped with world class equipments and facilities based on the latest technology.",
     },
     {
       icon: <GiTeacher />,
       title: "Highly experience instructor",
       description:
-        "Our Instructors are highly qualified active professional working in an organization as developer,designer,technician with years of expertise in their own field. They are continuously conducting trainings in our advanced training centre using a cutting-edge technology.",
+        "Instructors are highly qualified active professional",
     },
     {
       icon: <GiTeacher />,
       title: "Updated Syllablus",
       description:
-        "Designed syllablus focusing the sector as need of industries demand in which our students can compete the requirement need.We also research new technology or tools which will be required on the industries in present or future and we add the content to our Syllablus. ",
+        "Designed syllablus focusing the sector as need of industries demand in which our students can compete.",
     },
     {
       icon: <GiTeacher />,
       title: "Personality Development training",
-      description: "",
+      description: "We not only provide skill,we create P.D of students by HR professionals",
     },
     {
       icon: <GiTeacher />,
       title: "Support after training",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sunt optio unde rem nulla, quibusdam aperiam,vol",
+        "As I.T is upgraded every second our student needs support for new upgrade,we provide support after training also",
     },
     {
       icon: <GiTeacher />,
       title: "Access library",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sunt optio unde rem nulla, quibusdam aperiam,vol",
+        "Our online library provide students a vast refrence book which they may use in future also",
     },
   ];
 
@@ -49,9 +49,7 @@ const WhyHub = () => {
             HUBIT
           </div>
           <div className="text-xs xl:text-sm xxl:text-base text-gray-700 text-justify mt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-            est enim? Quod eaque, at odio nobis maxime corporis. Velit sit fugit
-            aliquam accusamus maiores enim molestiae!
+            A 
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 xxl:grid-cols-3 gap-x-6 gap-y-12 w-full lg:w-4/6 xl:w-4/6 xxl:w-4/6">
