@@ -64,7 +64,7 @@ function Home() {
                 height={100}
                 placeholder="blur"
                 blurDataURL={teacher}
-              ></Image>
+              />
             </div>
             <div className="bg-white shadow-[0px_1px_10px_1px_black] h-max py-3 absolute top-[50%] left-[22%]  w-[200px] ">
               <div className="h-full w-full  relative">

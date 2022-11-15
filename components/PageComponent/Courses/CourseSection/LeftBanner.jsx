@@ -9,16 +9,20 @@ const Leftbanner = ({ image, description }) => {
       {/* <MainImage /> */}
       <div className=" py-4">
         <div className="shadow-md  h-96 w-full mx-auto  relative">
-          <Image
-            src={image}
-            alt="loading..."
-            layout="fill"
-            blurDataURL={image}
-            placeholder="blur"
-            objectFit="contain"
-            objectPosition={"top"}
-            quality={100}
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt="loading..."
+              layout="fill"
+              blurDataURL={image}
+              placeholder="blur"
+              objectFit="contain"
+              objectPosition={"top"}
+              quality={100}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <p className="text-sm mt-4 py-6 px-4 bg-gray-50    font-[300] text-justify text-gray-500">
           {description}

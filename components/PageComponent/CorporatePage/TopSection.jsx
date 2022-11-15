@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const TopSection = () => {
   return (
     <>
@@ -16,11 +14,10 @@ const TopSection = () => {
             saepe earum, magni tempore labore eius dicta praesentium autem
             libero iure molestias perspiciatis qui natus! Tempore aliquid illum
             consequuntur accusantium impedit doloremque? Quis saepe nostrum
-           
           </p>
         </div>
         <div className="xs:hidden sm:hidden lg:w-[30vw] xl:w-[30vw] xxl:w-[30vw]">
-          <img src="./image1.jpg" alt="" />s
+          <img src="./image1.jpg" alt="loading" />
         </div>
       </div>
     </>

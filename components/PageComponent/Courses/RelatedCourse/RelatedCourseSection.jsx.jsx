@@ -198,22 +198,25 @@ const RelatedCourseSection = () => {
                 overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
                   >
                     <div className="h-60 w-80 relative">
-                      <Image
-                        src={val.image}
-                        alt={"images"}
-                        placeholder="blur"
-                        blurDataURL={val.image}
-                        objectFit="cover"
-                        objectPosition="top"
-                        layout="fill"
-                        className=" "
-                      />
-                      {/* <img
-                      src={val.image}
-                      alt={val.course_name}
-                      height="200"
-                      width={200}
-                    /> */}
+                      {val.image ? (
+                        <Image
+                          src={val.image}
+                          alt={"images"}
+                          placeholder="blur"
+                          blurDataURL={val.image}
+                          objectFit="cover"
+                          objectPosition="top"
+                          layout="fill"
+                          className=" "
+                        />
+                      ) : (
+                        <img
+                          src={val.image}
+                          alt={val.course_name}
+                          height="200"
+                          width={200}
+                        />
+                      )}
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">

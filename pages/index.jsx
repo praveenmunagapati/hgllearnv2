@@ -11,10 +11,12 @@ export default function Index() {
      <Analytics />
         {/* <div> */}
         <Head>
+
           
           <title>
             Providing Computer & IT Training,Since 2016
           </title>
+
           <meta
             name="description"
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal

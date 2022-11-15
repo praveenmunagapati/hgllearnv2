@@ -442,3 +442,18 @@ h6 {
   // border-bottom-left-radius: 20px;
   // border-bottom-right-radius: 20px;
 }
+.animatePulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.75;
+      background-color: rgb(33, 28, 28);
+      // color: rgba(160, 4, 125, 1);
+    }
+  }
+}
