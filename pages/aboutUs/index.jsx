@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import HowWeWork from "../../components/PageComponent/AboutPage/HowWeWork/HowWeWork";
 import MIssionVision from "../../components/PageComponent/AboutPage/MissionVision/MIssionVision";
@@ -15,6 +16,13 @@ function Aboutus() {
       <Layout>
         <div className=" pt-8 pb-24">
           {/* <div className={styles.container}> */}
+          <Head>
+            <title>
+              About us
+            </title>
+            <meta name="description" content="" />
+            <meta name="keywords" content=""/>
+          </Head>
           <WhoWeAre />
           <MIssionVision />
           <WhatWeProvide />

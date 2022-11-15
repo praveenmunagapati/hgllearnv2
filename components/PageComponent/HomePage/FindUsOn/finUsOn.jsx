@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Data from "../../../Navigation/Navitem/findusicon";
 
 const FindUsOn = () => {
@@ -6,7 +7,7 @@ const FindUsOn = () => {
       <div className="w-max text-[#a0047d] text-lg xl:text-xl xxl:text-2xl capitalize Poppins font-bold my-10">
         Find Us On
       </div>
-      <div className="  grid  grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 xxl:grid-cols-5  gap-10 flex-wrap justify-around my-6 w-full">
+      <div className="  grid  grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 xxl:grid-cols-6  gap-10 flex-wrap justify-around my-6 w-full">
         {Data.map((item, index) => {
           return (
             <div
@@ -16,7 +17,9 @@ const FindUsOn = () => {
               hover:shadow-[0px_0px_2px_0px_blue]  duration-200"
             >
               <div className="text-4xl xl:text-5xl xxl:text-6xl">
-                <a href="https://www.facebook.com/hubitts">{item.icon}</a>
+                <Link href={item.path} passHref >
+                <a target={"_blank"} >{item.icon}</a>
+                </Link>
               </div>
               <div className="text-base xl:text-lg xxl:text-xl Poppins">
                 500

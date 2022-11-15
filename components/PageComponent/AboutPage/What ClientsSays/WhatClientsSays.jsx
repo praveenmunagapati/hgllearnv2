@@ -12,9 +12,9 @@ function WhatClientsSays() {
   const Regulars = [
     {
       image: image1,
-      name: "monica kc",
-      title: "student",
-      description: `Lorem Ipsindustry. dummy text ever .`,
+      name: "Bhawana Suryabhansi",
+      title: "Python",
+      description: `.`,
     },
     {
       image: image1,

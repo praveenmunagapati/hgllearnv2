@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Script from "next/script";
+import Analytics from "../components/SEO/Seo";
 import Layout from "../HOC/Layout/Layout";
 // import styles from "../styles/Home.module.css";
 import Home from "./HomePage/index";
@@ -6,9 +8,15 @@ export default function Index() {
   return (
     <Layout>
       <div className={``}>
+     <Analytics />
         {/* <div> */}
         <Head>
-          <title>Providing IT Training,Since 2016</title>
+
+          
+          <title>
+            Providing Computer & IT Training,Since 2016
+          </title>
+
           <meta
             name="description"
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal
