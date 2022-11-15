@@ -8,13 +8,16 @@ import { MdDehaze } from "react-icons/md";
 
 function TopBar({ iconClick, setIconClick }) {
   const router = useRouter();
+  const AdmissionForm = (id) => {
+    router.push({ pathname: `/admissionForm/id` });
+  };
   return (
     <div className=" w-full relative top-0 shadow-[0px_1px_8px_1px_gray] z-50">
       <div className="hidden lg:block xl:block xxl:block">
         {/* top bar 1 is heading top bar in purple color */}
         <TopBar1 />
         {/* top bar 1 is heading bottom bar in purple color */}
-        <div className="flex justify-between px-20 xl:px-24 xxl:px-32 bg-white">
+        <div className="flex justify-between items-center  px-20 xl:px-24 xxl:px-32 bg-white">
           {" "}
           <div className="w-[86px] xxl:w-[95px] cursor-pointer">
             <Link href={"/"}>
@@ -29,6 +32,13 @@ function TopBar({ iconClick, setIconClick }) {
                 alt="logo"
               />
             </Link>
+          </div>
+          <div
+            className="capitalize cursor-pointer px-2 py-1 text-xs xl:text-sm xxl:text-base  transition-all hover:scale-105 ease-in-out duration-300 delay-75 bg-main   animatePulse rounded-md text-white
+             "
+            onClick={() => AdmissionForm()}
+          >
+            online admission
           </div>
           <div className="flex gap-3 items-center">
             <div className="capitalize flex items-center gap-2 ">

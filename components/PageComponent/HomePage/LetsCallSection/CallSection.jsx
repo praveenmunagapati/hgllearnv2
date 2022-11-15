@@ -27,11 +27,11 @@ function CallSection() {
         >
           {({ errors, touched }) => (
             <Form>
-              <div className="my-4 sm:flex md:flex lg:flex xl:flex xxl:flex  w-11/12 lg:w-7/12 xl:w-7/12 xxl:w-6/12 mx-auto">
+              <div className="my-4 tablet:flex m  w-11/12 tablet:w-7/12 laptop:w-7/12 desktopL:w-6/12 mx-auto">
                 <div className="  w-full ">
                   <Field
                     name="name"
-                    className="px-2 h-8 xl:h-10 xxl:h-12 capitalize text-sm xl:text-base xxl:text-lg w-full font-normal border"
+                    className="px-2 h-8 laptop:h-10 desktop:h-12 capitalize text-sm tablet:text-base desktop:text-lg w-full font-normal border"
                   />
                   {errors.name && touched.name ? (
                     <div className="text-red-500 mt-1 text-xs xl:text-sm xxl:text-base">
@@ -50,7 +50,6 @@ function CallSection() {
                 hover:bg-orange-600    transition-all  duration-300 ease-in-out  mx-auto  text-base xl:text-lg xxl:text-xl text-white bg-main capitalize"
                     type="submit"
                   >
-                    {/* bg-gradient-to-r from-cyan-500 via-red-500 to-main */}
                     Connect with us
                   </button>
                 </div>

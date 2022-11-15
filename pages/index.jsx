@@ -8,9 +8,7 @@ export default function Index() {
       <div className={``}>
         {/* <div> */}
         <Head>
-          <title>
-            Providing IT Training,Since 2016
-          </title>
+          <title>Providing IT Training,Since 2016</title>
           <meta
             name="description"
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal
