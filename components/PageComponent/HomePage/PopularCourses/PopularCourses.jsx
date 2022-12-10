@@ -5,10 +5,46 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/router";
-
+import axios from "axios";
 function PopularCourses({ card, value }) {
   const router = useRouter();
   console.log(router);
+  const [course, setCourse] = useState([]);
+
+  const getCourse = () => {
+    try {
+      axios
+        .get("https://hubitnep.herokuapp.com/course")
+        .then((res) => {
+          console.log(res);
+          setCourse(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getCourse();
+  }, []);
+  let courseName = [];
+  {
+    course.map((val, i) => {
+      courseName.push({ id: val.id, course_name: val.course_name });
+      return <div key={i}>{val.course_name}</div>;
+    });
+  }
+  console.log(courseName);
+  const options = [
+    {
+      id: "0",
+      course_name: "choose any course name",
+      apikey: "course_names",
+    },
+    ...courseName,
+  ];
 
   const color = (category) => {
     switch (category) {
@@ -112,10 +148,11 @@ function PopularCourses({ card, value }) {
               <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9 ">
                 <div className="w-full ">
                   <select className=" px-6 py-2 outline-none text-gray-400 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                    <option>category</option>
-                    <option>category</option>
-                    <option>category</option>
-                    <option>category</option>
+                    {options.map((val, i) => {
+                      console.log(val);
+                      return <option key={i}>{val.course_name}</option>;
+                    })}
+                    {/* <option>val</option> */}
                   </select>
                 </div>
                 <div className="w-full my-6 ">
@@ -257,22 +294,25 @@ function PopularCourses({ card, value }) {
               overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
                   >
                     <div className="h-60 w-80 relative">
-                      <Image
-                        src={val.image}
-                        alt={"images"}
-                        placeholder="blur"
-                        blurDataURL={val.image}
-                        objectFit="cover"
-                        objectPosition="top"
-                        layout="fill"
-                        className=" "
-                      />
-                      {/* <img
-                    src={val.image}
-                    alt={val.course_name}
-                    height="200"
-                    width={200}
-                  /> */}
+                      {val.image ? (
+                        <Image
+                          src={val.image}
+                          alt={"images"}
+                          placeholder="blur"
+                          blurDataURL={val.image}
+                          objectFit="cover"
+                          objectPosition="top"
+                          layout="fill"
+                          className=" "
+                        />
+                      ) : (
+                        <img
+                          src={val.image}
+                          alt={val.course_name}
+                          height="200"
+                          width={200}
+                        />
+                      )}
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">

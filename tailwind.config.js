@@ -12,9 +12,6 @@ module.exports = {
       lg: { min: "992px", max: "1199.98px" },
       xl: { min: "1200px", max: "1399.98px" },
       xxl: { min: "1400px" },
-      "3xl": { min: "1450px", max: "1550.98px" },
-      "4xl": { min: "1551px", max: "1650.98px" },
-      "5xl": { min: "1650px", max: "1750.98px" },
     },
     extend: {
       colors: {

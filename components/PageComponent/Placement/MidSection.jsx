@@ -15,7 +15,6 @@ const BottomSection = () => {
                 className="w-10/12 group-hover:scale-105 transition-all duration-300"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzXzIgxiHN9Ktcb5hqKCr_ezUySvhoawPrUQ&usqp=CAU"
                 alt="image"
-               
               />
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">
@@ -35,7 +34,6 @@ const BottomSection = () => {
           );
         })}
       </div>
-     
     </>
   );
 };
