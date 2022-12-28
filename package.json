@@ -27,6 +27,7 @@
     "react-player": "^2.10.1",
     "react-slick": "^0.29.0",
     "react-time-ago": "^7.2.1",
+    "react-whatsapp-widget": "^2.1.0",
     "sass": "^1.52.2",
     "slick-carousel": "^1.8.1",
     "yup": "^0.32.11"
