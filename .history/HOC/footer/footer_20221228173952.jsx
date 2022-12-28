@@ -198,7 +198,7 @@ function Footer() {
 
       {/* bottom section ends  */}
       {/* whatsapp widget */}
-      <div className="text-main text-4xl bottom-16 right-6 fixed cursor-pointer transition textPrimary">
+      <div className="text-main text-4xl bottom-16 right-5 fixed cursor-pointer transition textPrimary">
         {Wicon.map((val, i) => {
           return (
             <div key={i}>
