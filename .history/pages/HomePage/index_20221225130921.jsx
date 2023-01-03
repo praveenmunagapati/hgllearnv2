@@ -52,28 +52,28 @@ function Index() {
                unchanged.`,
     },
   ]);
-  const images = [{ img: image1 }, { img: image2 }];
+  const images = [{ image: image1 }, { image: image2 }];
   // const card = [
   //   {
-  //     img: images1,
+  //     image: images1,
   //     category_name: "programming",
   //     course_name: "python with artificial intelligence (AI)",
   //     duration_type: "3 months",
   //   },
   //   {
-  //     img: images1,
+  //     image: images1,
   //     category_name: "account & finance",
   //     course_name: "python with artificial intelligence (AI)",
   //     duration_type: "3 months",
   //   },
   //   {
-  //     img: images1,
+  //     image: images1,
   //     category_name: "Basic Computer",
   //     course_name: "python with artificial intelligence (AI)",
   //     duration_type: "3 months",
   //   },
   //   {
-  //     img: images1,
+  //     image: images1,
   //     category_name: "Graphic Designing",
   //     course_name: "python with artificial intelligence (AI)",
   //     duration_type: "3 months",
@@ -95,11 +95,13 @@ function Index() {
     }
   };
   const getReview = () => {
-    let placeId='ChIJU6XiOYiGljkRv4xyNSswlBE';
-    let apiKey='AIzaSyAKQo1DhCmxNhzHWqelTUs_T3jS_pGiBG4'
+    let placeId = "ChIJU6XiOYiGljkRv4xyNSswlBE";
+    let apiKey = "AIzaSyAKQo1DhCmxNhzHWqelTUs_T3jS_pGiBG4";
     try {
       axios
-        .get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`)
+        .get(
+          `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`
+        )
         .then((res) => {
           console.log(res);
           setCard(res.data.data);
