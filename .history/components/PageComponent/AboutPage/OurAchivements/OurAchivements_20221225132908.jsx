@@ -1,6 +1,6 @@
 import React from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import image1 from "../../../../public/images/hero.jpg";
+import image1 from "public/images/hero.jpg";
 import AchivementsCard from "./AchivementsCard";
 
 function OurAchivements() {

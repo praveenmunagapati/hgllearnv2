@@ -94,10 +94,10 @@ function WelcomePortal({ images }) {
                    xxl:w-48"
                   >
                     <Image
-                      src={val.img}
+                      src={val.image}
                       alt={"image"}
                       placeholder="blur"
-                      blurDataURL={val.img}
+                      blurDataURL={val.image}
                       height={38}
                       width={35}
                       objectFit="cover"

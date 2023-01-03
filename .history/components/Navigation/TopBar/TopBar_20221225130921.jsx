@@ -1,7 +1,7 @@
 import { NavData } from "../NavData";
 import TopBar1 from "./TopBar1";
 import Link from "next/link";
-import Image from "next/image";
+import image from "next/image";
 import Logo from "../../Resources/images/hubitLogo.svg";
 import { useRouter } from "next/router";
 import { MdDehaze } from "react-icons/md";
@@ -21,7 +21,7 @@ function TopBar({ iconClick, setIconClick }) {
           {" "}
           <div className="w-[86px] xxl:w-[95px] cursor-pointer">
             <Link href={"/"}>
-              <Image
+              <image
                 src={Logo}
                 height={25}
                 width={35}
