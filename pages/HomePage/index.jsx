@@ -26,30 +26,14 @@ function Index() {
     {
       icon: <TbCertificate />,
       title: "Certified Instructor",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy
-      text ever since the 1500s, when an unknown printer took a galley of type
-      and scrambled it to make a type specimen book. It has survived not only five
-      centuries Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy
-      text ever since the 1500s, when an unknown printer took a galley of type
-      and scrambled it to make a type specimen book. It has survived not only five
-      centuries`,
+      description: `All instructor are a thorough understanding of the subject matter, strong communication skills, and the ability to adapt to the needs of individual students. They are highly qualified and experienced professionals who are committed to helping others learn and grow in their chosen areas of study.`,
     },
     {
       icon: <TbCertificate />,
       title: "Book and Libraries",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-             typesetting industry. Lorem Ipsum has been the industry's standard dummy
-             text ever since the 1500s, when an unknown printer took a galley of type
-             and scrambled it to make a type specimen book. It has survived not only five
-             centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum has been the industry's standard dummy
-              text ever since the 1500s, when an unknown printer took a galley of type
-              and scrambled it to make a type specimen book. It has survived not only five
-              centuries, but also the leap into electronic typesetting, remaining essentially
-               unchanged.`,
+      description: `Students can search our online library to find specific Books & materials needed for present and their future.
+      Our library provide access to online Books, e-books, and other resources that students can access remotely. 
+      These resources may include Book, Project, Assignments, and language learning tools`,
     },
   ]);
   const images = [{ image: image1 }, { image: image2 }];
