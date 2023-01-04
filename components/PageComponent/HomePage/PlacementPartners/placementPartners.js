@@ -19,7 +19,7 @@ const PlacementPartners = () => {
                 <SiMicrosoft />
               </span>
               <span className="ml-2 text-xs xl:text-sm xxl:text-base">
-                Microsoft
+                Bright IT
               </span>
             </div>
           );

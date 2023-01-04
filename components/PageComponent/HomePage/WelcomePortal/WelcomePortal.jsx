@@ -28,14 +28,13 @@ function WelcomePortal({ images }) {
               xxl:mx-0 xl:mx-0 text-justify"
             >
               <p>
-                Lorem ipsum dolor sit amt consectetur adipisicing elit. Dolores
-                quia rerum natus voluptate voluptates odit ducimus consectetur
-                voluptatem obcaecati, eligendi itaque quasi delectus at officiis
-                quas porro unde aperiam ipsa. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Dolores quia rerum natus voluptate
-                voluptates odit ducimus consectetur voluptatem obcaecati,
-                eligendi itaque quasi delectus at officiis quas porro unde
-                aperiam ipsa.
+              We are glad that you have chosen to visit us and hope that you will find what you are looking for. 
+              Our portal is a place where you can access a wide range of information  on a variety of topics through our YouTube channel. 
+              Whether you are looking for our news, events, way we teach, or something else.
+              We encourage you to explore our portal and discover all that we have to offer. 
+              If you have any questions or need help finding something specific, please dont hesitate to reach out to us. 
+              We are always here to assist you and make your experience on our portal as enjoyable as possible. 
+              Thank you for visiting
               </p>
             </div>
             <div className="w-full  pt-2 sm:pt-0">

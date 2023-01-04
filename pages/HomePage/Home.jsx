@@ -56,7 +56,7 @@ function Home() {
                   <AiFillPlayCircle className="text-3xl text-main ml-1 hover:text-white" />
                 </div>
                 <button className="text-main text-2xl mr-1 font-normal hover:text-white">
-                  watch now
+                  Watch now
                 </button>
               </div>
             </div>
