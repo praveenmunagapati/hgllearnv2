@@ -1,4 +1,4 @@
-import { data } from "autoprefixer";
+//import { data } from "autoprefixer";
 import React from "react";
 import { GiBinoculars } from "react-icons/gi";
 import { IoIosRocket } from "react-icons/io";
@@ -26,27 +26,28 @@ function MIssionVision() {
     },
   ];
   return (
-    <div className="px-5 lg:px-20 xl:px-20 xxl:px-20">
+    <div className="px-12 lg:px-20 xl:px-24 xxl:px-24">
       <div className="grid grid-cols-2 gap-12">
-        <div className=" col-span-">
-          <div>
-            {data.map((val, i) => {
-              return (
-                <div key={i} className="flex gap-5 capitalize my-20">
-                  <div className=" text-2xl w-fit h-fit p-2 bg-main rounded-full text-white">
-                    {val.icon}
+        <div>
+          {data.map((val, i) => {
+            return (
+              <div key={i} className="flex gap-5 capitalize my-20 ">
+                <div className=" text-2xl w-fit h-fit p-2 bg-main rounded-full text-white">
+                  {val.icon}
+                </div>
+                <div>
+                  <div className="my-1 Poppins text-main text-xl">
+                    {val.title}
                   </div>
-                  <div>
-                    <div className="my-1 Poppins text-lg">{val.title}</div>
-                    <div className="my-1  text-sm text-gray-500">
-                      {val.description}
-                    </div>
+                  <div className="my-1 mx-5  text-sm text-gray-500">
+                    <p>{val.description}</p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
+
         {/* <div>pics & videos</div> */}
       </div>
     </div>
