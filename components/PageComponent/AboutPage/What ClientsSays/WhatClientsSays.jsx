@@ -12,27 +12,28 @@ function WhatClientsSays() {
   const Regulars = [
     {
       image: "/images/japan.jpg",
-      name: "Bhawana Suryabhansi",
+      name: "Gayatri Malla",
       title: "Python",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.`,
+      description: `I have been studying Python Programming Language at Hub IT since 2 months. It has been a knowledgeable learning also build-up my confidence towards programming. Hub IT has a friendly environment and our Python Teacher is great in teaching.`,
     },
     {
       image: "/images/japan.jpg",
-      name: "nischal kc",
-      title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      name: "Saroj GC",
+      title: "CCNA",
+      description: `Hub IT, for me, is one of the best places for learners (specially IT). I am happy to choose the institute for enhancing my Computer Networking knowledge with CCNA course. Thumbs UP!`,
     },
     {
       image: "/images/japan.jpg",
-      name: "hari sir",
-      title: "teacher",
-      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      name: "Prayab Maharjan",
+      title: "MERN",
+      description: `My time in the Institute was very satisfying. Teachers were very friendly and cooperative. Learning environment was also very suitable for beginners as well as veterans.
+      Thank you a lot HUB IT for providing a perfect learning experience to me.`,
     },
     {
       image: "/images/japan.jpg",
-      name: "kisan mahat",
-      title: "student",
-      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+      name: "Jenish Shrestha",
+      title: "Web Designing",
+      description: `It's a nice place to study IT related subjects it has a wide range of courses available I've been studying here for last 2 and a half months it's been a very fruitfull journey`,
     },
   ];
 
