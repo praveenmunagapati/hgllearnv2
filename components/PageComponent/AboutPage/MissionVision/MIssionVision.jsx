@@ -10,19 +10,19 @@ function MIssionVision() {
       icon: <GiBinoculars />,
       title: "vision",
       description:
-        " ipsum dolor sit amet consectetur adipisicing elit. Omnis aut dolores tempora eum deleniti sunt veniam. Tempore quae vero at nesciunt delectus",
+        "Our vision at the HIGPL is to empower individuals and organizations with the knowledge and skills they need to get started in the digital Nepal. We are glad to be the leading provider of quality education and services in the field of information technology.",
     },
     {
       icon: <IoIosRocket />,
       title: "mission",
       description:
-        " ipsum dolor sit amet consectetur adipisicing elit. Omnis aut dolores tempora eum deleniti sunt veniam. Tempore quae vero at nesciunt delectus",
+        "Our mission at the HIGPL is to provide high-quality education, services and proper infrastructure to individuals and organizations in the information technology. We aim to achieve this through offering a range of update courses, proper infrastructure, and best quality services and make dream of digital Nepal true.",
     },
     {
       icon: <TbClipboardText />,
       title: "objectives",
       description:
-        " ipsum dolor sit amet consectetur adipisicing elit. Omnis aut dolores tempora eum deleniti sunt veniam. Tempore quae vero at nesciunt delectus",
+        "Our objective at the HIGPL is to equip individuals and organizations with the necessary IT literacy and skills to level-up their career in the field of technology era. We are planning achieve this through providing accessible, up-to-date and relevant IT guidance, mentorship, and industry leading quality so, join us in this mission.",
     },
   ];
   return (
