@@ -36,14 +36,14 @@ function OurTeamMembers() {
     <div className="my-28">
       <div>
         <div className="text-2xl text-center  text-main Poppins font-bold capitalize">
-          our team members
+          Our Teams Members
         </div>
 
         <div className="text-sm  w-7/12  text-center mx-auto  mt-5 text-gray-400   capitalize">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          quisquam eius animi fugit consectetur maxime obcaecati necessitatibus
-          excepturi commodi earum nisi itaque perspiciatis minus, quidem at
-          magni possimus maiores nihil.
+        Our team members at the HIGPL are a diverse group of highly skilled and experienced professionals
+        with great knowledge in the technology field. They are experts in their own fields and are devoted
+        to providing you the latest and most up-to-date services. They are passionate about teaching and
+        are committed to helping the clients to achieve their goals.
         </div>
       </div>
       <div
