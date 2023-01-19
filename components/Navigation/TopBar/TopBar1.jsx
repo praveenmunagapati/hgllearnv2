@@ -4,13 +4,14 @@ import { IoMdMail } from "react-icons/io";
 import Link from "next/link";
 function TopBar1() {
   const data = [
-    { id: 1, title: "Check Certificate", href: "/" },
-    { id: 2, title: "Career", href: "/" },
-    { id: 3, title: "Contact Us", href: "/contact" },
-    { id: 4, title: "Download Brochure", href: "/" },
-    { id: 5, title: "Hackathons", href: "/" },
-    { id: 6, title: "Hire Talents", href: "/" },
-    { id: 7, title: "Testimonials", href: "/" },
+    { id: 1, title: "Become Partner", href: "/" },
+    { id: 2, title: "Check Certificate", href: "/" },
+    { id: 3, title: "Career", href: "/" },
+    { id: 4, title: "Contact Us", href: "/contact" },
+    { id: 5, title: "Download Brochure", href: "/" },
+    { id: 6, title: "Hackathons", href: "/" },
+    { id: 7, title: "Hire Talents", href: "/" },
+    { id: 8, title: "Testimonials", href: "/" },
   ];
   //   const [showUnderline, setShowUnderline] = useState(false);
   //   const [ID, setId] = useState("");
