@@ -40,10 +40,17 @@ function HowWeWork() {
 
         <div className="text-sm  w-7/12  text-center mx-auto  mt-5 text-gray-400   capitalize">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            quisquam eius animi fugit consectetur maxime obcaecati
-            necessitatibus excepturi commodi earum nisi itaque perspiciatis
-            minus, quidem at magni possimus maiores nihil.
+          At the Hub IT Training Institute, we believe in a collaborative approach to 
+          learning. We work closely with our students and staff to understand their needs and
+          tailor our training and resources to meet those needs. We use a variety of teaching
+          methods, including hands-on exercises, lectures, and group discussions to ensure that
+          our students have a well-rounded learning experience. This provides us the
+          advantage to be people's choice and be industry lending. We not only teach
+          but also give you a job as per your skill and ability. We extremely 
+          that we are not “shovel sellers ” Additionally, we are committed to staying
+          up-to-date with the latest developments in the field of technology and
+          regularly update our curriculum to reflect these changes.
+
           </p>
         </div>
       </div>
