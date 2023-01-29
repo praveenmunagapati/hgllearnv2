@@ -31,7 +31,7 @@ function GroupStatus() {
       {
         status.map((val)=>{
           return(
-            <div className=" w-fit h-fit grid flex-col justify-center items-center  text-[#515151] p-2 rounded-md ">
+            <div key={i} className=" w-fit h-fit grid flex-col justify-center items-center  text-[#515151] p-2 rounded-md ">
               <div className="Poppins h-fit">
                 <p className='text-4xl font-semibold'>{val.counting}</p>
               </div>
