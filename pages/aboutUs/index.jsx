@@ -9,6 +9,8 @@ import WhatWeProvide from "../../components/PageComponent/AboutPage/whatWeProvid
 import WhoWeAre from "../../components/PageComponent/AboutPage/WhoWeAre/WhoWeAre";
 import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
 import Layout from "../../HOC/Layout/Layout";
+import GroupStatus from "../../components/PageComponent/AboutPage/GroupStatus/GroupStatus";
+import TouchButton from "../../components/PageComponent/AboutPage/GetIntouchButton/TouchButton";
 
 function Aboutus() {
   return (
@@ -24,7 +26,9 @@ function Aboutus() {
             <meta name="keywords" content=""/>
           </Head>
           <WhoWeAre />
+          <GroupStatus/>
           <MIssionVision />
+          <TouchButton/>
           <WhatWeProvide />
           <WhatClientsSays />
           <OurTeamMembers />

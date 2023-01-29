@@ -11,10 +11,13 @@ import { TbCertificate } from "react-icons/tb";
 import Home from "./Home";
 import CallSection from "../../components/PageComponent/HomePage/LetsCallSection/CallSection";
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
+import CourseStatus from "../../components/PageComponent/HomePage/courseStatus.jsx/CourseStatus";
 import axios from "axios";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
+import OurAchivements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchivements";
 import SuccessStories from "../../components/PageComponent/HomePage/SuccessStories/SuccessStories";
 import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
+
 function Index() {
   const [card, setCard] = useState([]);
   const [Moto, setMoto] = useState([
@@ -105,7 +108,7 @@ function Index() {
     <div className="">
       <Home image={image} />
       <div className="bg-white xxl:h-96">
-        <div
+        {/* <div
           className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 
          gap-5 py-10 md:py-0 lg:gap-[1px] xl:gap-0 xl:grid-cols-3 xxl:gap-0 xxl:grid-cols-3"
         >
@@ -119,14 +122,20 @@ function Index() {
               />
             );
           })}
-        </div>
+        </div> */}
       </div>
-      <WelcomePortal images={images} />
       <div className=" pt-8 pb-20">
         <PopularCourses card={card} value="onlyTag" />
       </div>
+      
+      <CourseStatus/>
+      
+      
+      <WelcomePortal images={images} />
       <WhyHub />
       <WhatClientsSays />
+      <OurAchivements/>
+      
       <PlacementPartners />
       <SuccessStories />
       <FindUsOn />

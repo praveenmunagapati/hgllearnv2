@@ -30,8 +30,8 @@ function Home() {
               );
             })}
           </div>
-          <div className="font-bold xl:text-xl xxl:text-2xl text-[#A0047D] mb-1">
-            <h1>IT Training Institute in Nepal</h1>
+          <div className="w-full flex flex-col font-bold xl:text-xl xxl:text-2xl text-[#A0047D] ">
+            <h2>IT Training Institute in Nepal</h2>
           </div>
           <div className="text-xs xl:text-sm xxl:text-base text-gray-700 pr-6 text-justify">
             <p>

@@ -2,9 +2,10 @@ import { Field, Form, Formik } from "formik";
 import React, { useState, useEffect } from "react";
 import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
+import bg from "../../public/images/Rectangle 35.png"
 import * as Yup from "yup";
 import { BiVial } from "react-icons/bi";
-import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
+// import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
 import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
 import axios from "axios";
 function AdmissionForm() {
@@ -38,7 +39,7 @@ function AdmissionForm() {
 
   const admissionForm = [
     {
-      label: "full_name:",
+      label: "full name:",
       type: "text",
       apikey: "full_name",
       placeholder: " Enter your full name",
@@ -51,7 +52,7 @@ function AdmissionForm() {
     },
 
     {
-      label: "date_of_birth:",
+      label: "date of birth:",
       type: "date",
       apikey: "dob",
     },
@@ -63,7 +64,7 @@ function AdmissionForm() {
     },
 
     {
-      label: "phone_no:",
+      label: "phone no:",
       type: "text",
       apikey: "phone_no",
       placeholder: "E.g:9878765432 ",
@@ -87,7 +88,7 @@ function AdmissionForm() {
       ],
     },
     {
-      label: "level_of_education:",
+      label: "level of education:",
       apikey: "level_of_education",
       Gender: [
         {
@@ -221,16 +222,39 @@ function AdmissionForm() {
   };
   return (
     <Layout>
-      <div className="px-2">
-        <div className="flex justify-between h-[300px] bg-yellow-400 items-center text-xl capitalize border-2 border-black  ">
-          <div className="flex justify-center items-center w-full">text</div>
-          <div className="h-full w-0.5 bg-white"></div>
-          <div className="flex justify-center items-center w-full">image</div>
+      <div className="relative">
+        <div className=" w-full h-80  bg-main ">
+          <Image
+            src={bg}
+            layout="fill"
+            objectfit="cover"
+            alt="Loading ..."
+            className=" opacity-75 "
+          />
         </div>
-        <div className=" my-10 rounded-t-2xl">
-          <div className="bg-main w-full p-2 rounded-t-xl mb-10 Poppins tracking-widest text-center uppercase text-2xl  text-white font-medium">
-            {" "}
-            student enrollment registration form:
+        <div className="absolute top-20 /0 left-8 sm:left-20 text-white capitalize">
+          <div className="font-bold  text-3xl"> Student Admission Form</div>
+          <div className="Poppins text-xs w-2/3 font-light mt-2 ">Enter your admission information below to admit for their interested IT Course at their comfort, we have made available the Online Admission Form below!</div>
+          <div className="Poppins text-sm mt-2">home/courses</div>
+          <button className="px-6 py-2 bg-[#FACC15] Poppins text-black font-medium text-xs mt-2 rounded-full">View Form</button>
+        </div>
+      </div>
+      <div className="px-2">
+
+        <div className="  rounded-t-2xl">
+          <div className="flex flex-col w-full justify-center items-center pb-5 pt-16 gap-2">
+            <div className=" w-full   Poppins  text-center uppercase text-xl  text-black font-medium">
+              {" "}
+              student enrollment registration form:
+            </div>
+            <div className="text-xs Poppins capitalize ">
+              <p>Fill out the form carefully for registration. All Asterisks (*) fields are mandatory to fill-up.</p>
+            </div>
+            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-5 mt-5 Poppins">
+              <button>Personel Information</button>
+              <button>Payment Option</button>
+              <button>Review Details</button>
+            </div>
           </div>
           <Formik
             initialValues={{
@@ -260,139 +284,24 @@ function AdmissionForm() {
             {({ errors, touched, handleSubmit, values, setFieldValue }) => (
               <div>
                 <Form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-12 px-7 mb-16">
-                    <div className="grid grid-cols-2 gap-5 col-start-3 col-span-10">
-                      {admissionForm.map((val, i) => {
-                        if (val.Gender) {
-                          return (
-                            <div>
-                              <div className="flex  h-10  rounded-sm border-2 border-main">
-                                <div className="bg-[#f1aad4]  px-2  uppercase w-fit flex  items-center">
-                                  {val.label}
-                                </div>
-                                <div className="flex gap-5   ">
-                                  {val.Gender.map((val, i) => {
-                                    return (
-                                      <div key={i} className=" ">
-                                        <div className=" flex  px-1 h-full items-center justify-center ">
-                                          <div className="w-full ">
-                                            <Field
-                                              type={val.type}
-                                              value={val.value}
-                                              name={val.apikey}
-                                              className=" w-full   px-2 py-1.5  "
-                                            />
-                                          </div>
-                                          <div className="w-fit ml-2 ">
-                                            <div className="  capitalize w-fit  flex justify-center  items-center">
-                                              <label>{val.label}</label>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              </div>
-                              <div
-                                className={`text-red-400 ${
-                                  errors[val.apikey] && touched[val.apikey]
-                                    ? " bg-red-100 my-2"
-                                    : ""
-                                }  px-1.5 py-1  text-xs font-medium`}
-                              >
-                                {errors[val.apikey] && touched[val.apikey]
-                                  ? errors[val.apikey]
-                                  : ""}
-                              </div>
-                            </div>
-                          );
-                        } else {
-                          if (val.grid) {
-                            return val.grid.map((val, i) => {
-                              return (
-                                <div key={i} className="  w-full">
-                                  <div className="flex rounded-sm border-2 border-main">
-                                    <div className="w-fit">
-                                      <div className="bg-[#f1aad4]  px-2 h-full uppercase w-fit flex  items-center">
-                                        <label>{val.label}</label>
-                                      </div>{" "}
-                                    </div>
-                                    <div className="w-full">
-                                      <Field
-                                        type={val.type}
-                                        placeholder={val.placeholder}
-                                        name={val.apikey}
-                                        className=" w-full   px-2 py-1.5  "
-                                      />
-                                    </div>
-                                  </div>
-                                  <div
-                                    className={`text-red-400  ${
-                                      errors[val.apikey] && touched[val.apikey]
-                                        ? " bg-red-100 my-2"
-                                        : ""
-                                    }  px-2 py-1 text-xs font-medium`}
-                                  >
-                                    {errors[val.apikey] && touched[val.apikey]
-                                      ? errors[val.apikey]
-                                      : ""}
-                                  </div>
-                                </div>
-                              );
-                            });
-                          } else {
-                            return (
-                              <div key={i} className=" grid">
-                                <div className="flex  rounded-sm border-2 border-main">
-                                  <div className="w-fit">
-                                    <div className="bg-[#f1aad4]  px-2 h-full uppercase w-fit flex  items-center">
-                                      <label>{val.label}</label>
-                                    </div>{" "}
-                                  </div>
-                                  <div className="w-full">
-                                    <Field
-                                      type={val.type}
-                                      placeholder={val.placeholder}
-                                      name={val.apikey}
-                                      className=" w-full   px-2 py-1.5  "
-                                    />
-                                  </div>
-                                </div>
-                                <div
-                                  className={`text-red-400  ${
-                                    errors[val.apikey] && touched[val.apikey]
-                                      ? " my-2  bg-red-100"
-                                      : ""
-                                  }  px-2 py-1 text-xs font-medium`}
-                                >
-                                  {errors[val.apikey] && touched[val.apikey]
-                                    ? errors[val.apikey]
-                                    : ""}
-                                </div>
-                              </div>
-                            );
-                          }
-                        }
-                      })}
-                    </div>
-                    {/* for images or document */}
+                  <div className="flex flex-col  px-7 mb-16">
                     <div
-                      className={`  flex justify-center col-start-1 row-start-1 col-span-2 `}
+                      className={`  flex justify-center  `}
                     >
                       {FormImage.map((val, i) => {
                         let AllImage = val.apikey;
                         return (
                           <div key={i}>
-                            <div className=" capitalize   font-semibold text-lg text-gray-700">
+                            <div className=" capitalize    font-semibold text-lg text-gray-700">
                               <label
-                                className="cursor-pointer"
+                                className="cursor-pointer "
                                 htmlFor={val.apikey}
                               >
                                 {val.label}
+
                               </label>
                             </div>
-                            <div className="border bg-gray-100  w-44 ">
+                            <div className="   ">
                               <label
                                 htmlFor={val.apikey}
                                 className={`cursor-pointer`}
@@ -409,15 +318,15 @@ function AdmissionForm() {
                                   layout="responsive"
                                   height={100}
                                   width={100}
-                                  className="m-auto h-60 laptop:h-80 "
+                                  className="m-auto h-60 laptop:h-80 rounded-full "
                                 />
                               </label>
                             </div>
-                            <div className="mt-5">
+                            <div className="">
                               {" "}
                               <label
                                 htmlFor={val.apikey}
-                                className="px-4  capitalize cursor-pointer py-2 border-none outline-none  bg-main text-white font-medium text-base"
+                                className="px-4   capitalize cursor-pointer  border-none outline-none   text-black font-medium "
                               >
                                 choose your profile
                               </label>
@@ -436,11 +345,10 @@ function AdmissionForm() {
                               />
                             </div>
                             <div
-                              className={`${
-                                errors[val.apikey] && touched[val.apikey]
+                              className={`${errors[val.apikey] && touched[val.apikey]
                                   ? "bg-red-100 my-2"
                                   : ""
-                              } text-red-400 py-1 px-2 text-xs font-medium`}
+                                } text-red-400 py-1 px-2 text-xs font-medium`}
                             >
                               {errors[val.apikey] && touched[val.apikey]
                                 ? errors[val.apikey]
@@ -450,6 +358,120 @@ function AdmissionForm() {
                         );
                       })}
                     </div>
+                    <div className="grid grid-cols-2 gap-16 col-start-3 col-span-10 px-40 mt-16 ">
+                      {admissionForm.map((val, i) => {
+                        if (val.Gender) {
+                          return (
+                            <div>
+                              <div className="flex col-span-5 flex-col  h-14  gap-3  ">
+                                <div className="  px-2  capitalize Poppins text-sm  w-fit flex  items-center">
+                                  {val.label}
+                                </div>
+                                <div className="flex  gap-5   ">
+                                  {val.Gender.map((val, i) => {
+                                    return (
+                                      <div key={i} className=" ">
+                                        <div className=" flex   px-1 h-full items-center justify-center ">
+                                          <div className="w-full ">
+                                            <Field
+                                              type={val.type}
+                                              value={val.value}
+                                              name={val.apikey}
+                                              className=" w-full form-radio checked:bg-main   px-4 py-1.5  "
+                                            />
+                                          </div>
+                                          <div className="w-fit ml-2 ">
+                                            <div className="  capitalize w-fit Poppins text-sm text-gray-500 flex justify-center  items-center">
+                                              <label>{val.label}</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                              <div
+                                className={`text-red-400 ${errors[val.apikey] && touched[val.apikey]
+                                    ? " bg-red-100 my-2"
+                                    : ""
+                                  }  px-1.5 py-1  text-xs font-medium`}
+                              >
+                                {errors[val.apikey] && touched[val.apikey]
+                                  ? errors[val.apikey]
+                                  : ""}
+                              </div>
+                            </div>
+                          );
+                        } else {
+                          if (val.grid) {
+                            return val.grid.map((val, i) => {
+                              return (
+                                <div key={i} className="  w-full">
+                                  <div className="flex flex-col gap-3  ">
+                                    <div className="w-fit">
+                                      <div className="  px-2 h-full capitalize text-sm Poppins w-fit flex  items-center">
+                                        <label>{val.label}</label>
+                                      </div>{" "}
+                                    </div>
+                                    <div className="w-full">
+                                      <Field
+                                        type={val.type}
+                                        placeholder={val.placeholder}
+                                        name={val.apikey}
+                                        className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
+                                        ? " bg-red-100 my-2"
+                                        : ""
+                                      }  px-2 py-1 text-xs font-medium`}
+                                  >
+                                    {errors[val.apikey] && touched[val.apikey]
+                                      ? errors[val.apikey]
+                                      : ""}
+                                  </div>
+                                </div>
+                              );
+                            });
+                          } else {
+                            return (
+                              <div key={i} className=" ">
+                                <div className="flex flex-col gap-3 ">
+                                  <div className="w-fit">
+                                    <div className="  px-2 h-full capitalize text-sm Poppins  w-fit flex  items-center">
+                                      <label>{val.label}</label>
+                                    </div>{" "}
+                                  </div>
+                                  <div className="w-full">
+                                    <Field
+                                      type={val.type}
+                                      placeholder={val.placeholder}
+                                      name={val.apikey}
+                                      className=" w-full bg-[#EEEAEA] rounded-full  px-4 py-1.5  "
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
+                                      ? " my-2  bg-red-100"
+                                      : ""
+                                    }  px-2 py-1 text-xs font-medium`}
+                                >
+                                  {errors[val.apikey] && touched[val.apikey]
+                                    ? errors[val.apikey]
+                                    : ""}
+                                </div>
+                              </div>
+                            );
+                          }
+                        }
+                      })}
+                    </div>
+                    {/* for images or document */}
+
                   </div>
                   <div>
                     <NameOfCourseToEnroll
@@ -461,43 +483,39 @@ function AdmissionForm() {
                       description="description"
                     />
                   </div>
-                  <div>
-                    <RulesAndRegulations
-                      clickedCheckBox={clickedCheckBox}
-                      setClickedCheckBox={setClickedCheckBox}
-                    />
-                    <div className="flex gap-2 items-center Poppins  px-8 text-sm text-gray-600 mt-5">
-                      <div>
+                  <div className=" flex mb-5 px-40 ">
+
+                    <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
+                      <div className="flex items-center">
                         <input
                           type="checkbox"
-                          className="w-6 h-6"
+                          className="w-4 h-4 "
                           onClick={() => setClickedCheckBox(!clickedCheckBox)}
                         />
                       </div>
 
-                      <div>
-                        I agree to the terms and conditions as set out by the
-                        user agreement.
+                      <div className="text-xs Poppins font-regular capitalize">
+                        I agree to the<button className="text-main capitalize mx-1"> terms and conditions</button> 
                       </div>
                     </div>
-                  </div>
-
-                  <div className="w-full my-5 flex justify-end  px-7">
+                    <div className="w-full my-5 flex justify-end  px-7">
                     <button
                       type="submit"
                       className={`px-5 py-2 capitalize bg-main text-white w-fit 
                         
-                      ${
-                        clickedCheckBox
+                      ${clickedCheckBox
                           ? "opacity-100 cursor-pointer transition-all hover:scale-105 ease-in-out duration-300 "
                           : " opacity-50 cursor-not-allowed"
-                      } rounded-md
+                        } rounded-md
                      `}
                       disabled={clickedCheckBox ? "" : "disabled "}
                     >
                       submit
                     </button>
                   </div>
+                  </div>
+
+                  
                 </Form>
               </div>
             )}

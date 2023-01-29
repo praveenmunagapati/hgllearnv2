@@ -5,10 +5,13 @@ import * as yup from "yup";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {FaUser} from "react-icons/fa"
+import {MdEmail, MdCall} from "react-icons/md"
+import {BsChatSquareTextFill} from "react-icons/bs"
 //import CourseOption from "./CourseOption";
 
 const schema = yup.object().shape({
-  name: yup.string().required("fullname is required"),
+  name: yup.string().required("Fullname is required"),
   email: yup
     .string()
     .email("not a valid email address")
@@ -25,14 +28,20 @@ function Inquiry() {
 
   const FormFields = [
     {
+      position:"center",
+      icon:<FaUser/>,
       name: "name",
       type: "text",
     },
     {
+      position:"center",
+      icon:<MdEmail/>,
       name: "email",
       type: "email",
     },
     {
+      position:"center",
+      icon:<MdCall/>,
       name: "phone",
       type: "text",
     },
@@ -43,8 +52,9 @@ function Inquiry() {
       option: [],
     },
     {
+      pad:"10px",
+      icon :<BsChatSquareTextFill/>,
       name: "description",
-
       as: "textarea",
     },
   ];
@@ -98,33 +108,33 @@ function Inquiry() {
 
   return (
     <>
-      <div>
+      <div>                                                                                                    
         <ToastContainer />
         {console.log(FormFields)}
         {/* send us inquiry button */}
         <div>
           <button
             onClick={() => setShow(true)}
-            className="capitalize bg-main text-white fixed top-80 bottom-50 right-0 border-none rounded-lg p-2"
+            className="capitalize bg-main text-white fixed top-32 bottom-50 right-0 border-none rounded-lg p-2"
           >
             send us inquiry
           </button>
         </div>
         {/* form body */}
         <div
-          className={`border-none rounded-md fixed top-40 bottom-48 right-0 w-72 h-fit bg-white shadow-xl shadow-gray-500 text-center py-5 cursor-pointer ${
+          className={`border-none rounded-lg fixed top-32 bottom-48 right-0 w-72 h-fit bg-white  shadow-[0_35px_60px_-15px_rgba(0.5,0,0,0.5)] text-center py-5 Poppins  cursor-pointer ${
             Show
-              ? "transition-all duration-500 delay-100 mr-3"
+              ? "transition-all duration-500 delay-100 "
               : "ease-in-out duration-500 delay-100 -mr-96"
           }`}
         >
           <div className="flex justify-between px-5">
-            <h1 className="capitalize text-center text-main text-xl">
+            <p className="capitalize text-center text-main text-2xl font-medium pb-2 Poppins">
               get in touch
-            </h1>
+            </p>
             <RiCloseFill
               onClick={() => setShow(false)}
-              className="text-2xl text-white border-none rounded-full bg-main -mt-7 -mr-5"
+              className="text-2xl text-white border-none rounded-full bg-gray-800 -mt-7 -mr-5"
             />
           </div>
           <Formik
@@ -147,24 +157,24 @@ function Inquiry() {
                 <Form
                   action="post"
                   onSubmit={handleSubmit}
-                  className="px-5 flex flex-col py-2 "
+                  className="px-5 flex flex-col  "
                 >
                   {FormFields.map((val, i) => {
                     if (val.as === "select") {
                       return (
-                        <div key={i} className="">
+                        <div key={i} className="py-2">
                           <Field
                             as={val.as}
-                            placeholder={`enter your ${val.name}`}
+                            placeholder={`Enter your ${val.name}`}
                             name={val.name}
-                            className="border-none rounded-md py-2 px-6  text-base text-gray-500 bg-gray-200"
+                            className="outline-none w-full text-xs  py-2.5 px-6  rounded-md  text-gray-500 bg-gray-200"
                           >
                             {val.option?.map((val, i) => {
                               return (
                                 <option
                                   key={i}
                                   value={val._course}
-                                  className="text-gray-500 text-xs"
+                                  className="text-gray-500 text-xs  "
                                 >
                                   {val.course_name}
                                 </option>
@@ -175,27 +185,34 @@ function Inquiry() {
                           <ErrorMessage
                             name={val.name}
                             component={"div"}
-                            className="text-red-600 text-xs "
+                            className="text-red-600 text-[10px] "
                           />
                         </div>
                       );
                     } else {
                       return (
-                        <div key={i} className="flex flex-col py-2 ">
+                        <div key={i} className="flex flex-col py-2  ">
+                           <ErrorMessage
+                            name={val.name}
+                            component={"div"}
+                            className="text-red-700 poppins text-[10px] w-full text-left capitalize"
+                          />
+                          <div className="w-full h-fit text-gray-600  rounded-md bg-gray-200  pl-3  " style={{ display:"flex", alignItems:val.position}} >
+                            <div  style={{paddingTop:val.pad}}>
+                           {val.icon} 
+                           </div>
                           <Field
                             as={val.as}
                             type={val.type}
-                            placeholder={`enter your ${val.name}`}
+                            placeholder={`Enter your ${val.name}`}
                             name={val.name}
-                            className="border-none rounded-md  text-base text-gray-500 py-2 px-3 bg-gray-200"
+                            className=" outline-none  border-b text-xs bg-transparent  py-2 px-3 "
                           />
 
                           {console.log(values)}
-                          <ErrorMessage
-                            name={val.name}
-                            component={"div"}
-                            className="text-red-600 text-xs "
-                          />
+                          
+                          </div>
+                         
                         </div>
                       );
                     }
@@ -203,7 +220,7 @@ function Inquiry() {
 
                   <button
                     type="submit"
-                    className="w-full h-fit px-8 py-3 mt-5
+                    className="w-full h-fit px-5 py-2 mt-5
                     bg-main text-white text-[14px] border-none rounded-full capitalize"
                   >
                     send request

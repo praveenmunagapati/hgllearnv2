@@ -25,21 +25,21 @@ function OurTeamMembers() {
       as: "MERN fullstack Developer",
     },
     {
-      image: "/images/sushant.jpg",
+      image: "/images/japan.jpg",
       position: "mid-level web developer",
       placement: "placement at hub it pvt.ltd",
-      name: "sushant shrestha",
-      as: "Frontend developer",
+      name: "himal fullel",
+      as: "MERN fullstack Developer",
     },
   ];
   return (
-    <div className="my-28">
-      <div>
+    <div className="py-16">
+      <div className="flex flex-col gap-5">
         <div className="text-2xl text-center  text-main Poppins font-bold capitalize">
           Our Teams Members
         </div>
 
-        <div className="text-sm  w-7/12  text-center mx-auto  mt-5 text-gray-400   capitalize">
+        <div className="Poppins text-xs leading-6   w-5/6  text-center mx-auto   text-gray-400">
         Our team members at the HIGPL are a diverse group of highly skilled and experienced professionals
         with great knowledge in the technology field. They are experts in their own fields and are devoted
         to providing you the latest and most up-to-date services. They are passionate about teaching and
@@ -47,8 +47,8 @@ function OurTeamMembers() {
         </div>
       </div>
       <div
-        className="grid grid-cols-1 gap-y-8  md:grid-cols-2 md:gap-y-8
-       lg:gap-y-8 xl:gap-y-0 xxl:gap-y-0 lg:grid-cols-3 xl:grid-cols-4 
+        className="w-full  place-content-center place-items-center grid grid-cols-1 gap-y-8  md:grid-cols-2 md:gap-y-8
+       lg:gap-y-8 xl:gap-y-0  xxl:gap-y-0 lg:grid-cols-3 xl:grid-cols-4
        xxl:grid-cols-4 px-14 pt-16"
       >
         {OurTeamMembersCard.map((val, i) => {

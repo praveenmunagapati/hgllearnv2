@@ -8,7 +8,7 @@ function AchivementsCard({ image, name, from, date }) {
     transition-all cursor-pointer duration-300 ease-linear  w-fit  
       pb-5 rounded-lg"
     >
-      <div className="w-72 ">
+      <div className="w-60 h-52 ">
         <Image
           src={image}
           height={45}
@@ -22,13 +22,13 @@ function AchivementsCard({ image, name, from, date }) {
         />
       </div>
       <div className=" px-4  flex flex-col items-center justify-center my-6  ">
-        <div className="Poppins capitalize font-bold  text-gray-800 text-[18px]">
+        <div className="Poppins capitalize font-medium text-gray-800 text-[16px]">
           {name}
         </div>
-        <div className="text-gray-600 font-semibold text-[14px]">
+        <div className="text-gray-600 font-medium text-[14px]">
           From: {from}
         </div>
-        <div className="text-gray-500 font-medium capitalize text-[12px]">
+        <div className="text-gray-500 font-regular capitalize text-[12px]">
           {date}
         </div>
       </div>

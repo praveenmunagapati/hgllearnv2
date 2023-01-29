@@ -170,8 +170,8 @@ function WhatClientsSays() {
     }
   };
   return (
-    <div>
-      <div className="py-5 text-center">
+    <div className=" py-8">
+      <div className=" text-center">
         <div className=" md:text-2xl lg:text-2xl xl:text-2xl xxl:text-2xl text-main capitalize Poppins font-bold">
           <h2 className="text-[18px]">What our students say about us</h2>
         </div>
