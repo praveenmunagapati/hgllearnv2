@@ -46,8 +46,8 @@ function SuccessStories() {
         </h2>
       </div>
       <div
-        className="grid grid-cols-1 gap-y-8  md:grid-cols-2 md:gap-y-8
-       lg:gap-y-8 xl:gap-y-0 xxl:gap-y-0 lg:grid-cols-3 xl:grid-cols-5 
+        className="grid grid-cols-1 gap-y-8 place-content-center place-items-center  md:grid-cols-2 md:gap-y-8
+       lg:gap-y-8 xl:gap-y-0 xl:gap-x-28 xxl:gap-y-0 lg:grid-cols-3 xl:grid-cols-5 
        xxl:grid-cols-5 pt-16"
       >
         {successStudentCard.map((val, i) => {

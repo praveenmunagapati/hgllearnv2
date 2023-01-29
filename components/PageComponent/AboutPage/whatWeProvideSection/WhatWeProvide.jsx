@@ -62,15 +62,15 @@ function WhatWeProvide() {
 
   return (
     <div>
-      <div className="py-5 text-center">
+      <div className="py-5   text-center">
         <div className=" text-main capitalize Poppins font-bold">
-          <h1 className="text-3xl">What We Provide</h1>
+          <h1 className="text-2xl">What We Provide</h1>
         </div>
-        <div className="capitalize Poppins   my-3 text-sm  font-light text-gray-700  ">
+        <div className="capitalize Poppins   my-3 text-xs  font-light text-gray-700  ">
           Lorem ipsum dolor sit met, consectetur adipiscing elit
         </div>
       </div>
-      <div className="grid  gap-8  py-10 md:py-0 lg:gap-0 xl:gap-10 xl:grid-cols-3 xxl:gap-10 xxl:grid-cols-3">
+      <div className="grid   py-0   xl:grid-cols-3  xxl:grid-cols-3">
         {data?.map((val, i) => {
           return (
             <CompanyProvide

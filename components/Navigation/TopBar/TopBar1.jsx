@@ -6,7 +6,7 @@ function TopBar1() {
   const data = [
     { id: 1, title: "Become Partner", href: "/" },
     { id: 2, title: "Check Certificate", href: "/" },
-    { id: 3, title: "Career", href: "/" },
+    { id: 3, title: "Career", href: "/Career" },
     { id: 4, title: "Contact Us", href: "/contact" },
     { id: 5, title: "Download Brochure", href: "/" },
     { id: 6, title: "Hackathons", href: "/" },

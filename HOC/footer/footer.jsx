@@ -169,12 +169,12 @@ function Footer() {
 
       {/* bottom section ends  */}
       {/* whatsapp widget */}
-      <div className="text-main text-5xl bottom-20 right-10 fixed cursor-pointer transition textPrimary">
+      <div className="text-main text-5xl bottom-10 right-10 fixed cursor-pointer transition textPrimary">
         {Wicon.map((val, i) => {
           return (
             <div key={i}>
               <Link href={val.path} passHref>
-                <a target={"_blank"}>{val.Icon}</a>
+                <a target={"_blank"} className="text-[#4FCE5D] text-4xl font-black">{val.Icon}</a>
               </Link>
             </div>
           );

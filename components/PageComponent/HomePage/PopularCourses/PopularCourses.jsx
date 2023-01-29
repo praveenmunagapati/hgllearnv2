@@ -188,11 +188,12 @@ function PopularCourses({ card, value }) {
               </div>
             </div>
           </div>
+          
         ) : (
           ""
         )}
         {value === "onlyTag" ? (
-          <div className="flex px-5  justify-end gap-2 ">
+          <div className="flex px-5 justify-center  gap-2  ">
             <div>
               <FaChevronLeft
                 onClick={() => {

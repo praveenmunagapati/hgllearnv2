@@ -12,7 +12,7 @@ function InstructorCard({ image, role, name, email }) {
       >
         <div className=" w-full lg:w-72 xl:w-72 xxl:w-72   borderRadiusTopHover ">
           <Image
-            src={image}
+            src={image.src}
             height={45}
             width={60}
             alt="Loading ..."

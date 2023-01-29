@@ -19,30 +19,28 @@ function NameOfCourseToEnroll({
   //     setAppearBorder(true);
   //   };
   return (
-    <div className="mb-16">
+    <div className="mb-16 px-40">
       {" "}
-      <div className="bg-main w-full p-2 rounded-t-xl mb-8 Poppins tracking-widest text-center uppercase text-2xl  text-white font-medium">
-        name of course/s to enroll:
-      </div>
-      <div className="flex justify-between  px-8">
-        <div className="flex gap-48">
+    
+      <div className="     ">
+        <div className="flex justify-between    ">
           {SelectData.map((val, i) => {
             if (val.Shift) {
               return (
-                <div>
-                  <div className="  flex items-center-2 border border-main rounded-sm h-9  pr-2 ">
+                <div className="col-span-5">
+                  <div className="  flex flex-col items-center-2  gap-3  h-9  pr-2 ">
                     <div
-                      className="Poppins flex justify-center items-center bg-[#f1aad4]  w-fit text-gray-800  px-2 py-1
-                rounded-sm outline-none border-none text-sm uppercase"
+                      className="Poppins flex  justify-center items-center   w-fit    py-1
+                rounded-sm outline-none border-none text-sm capitalize"
                     >
                       {" "}
                       {val.label}
                     </div>
-                    <div className=" flex ml-4 gap-4 items-center">
+                    <div className=" flex gap-4 items-center">
                       {val.Shift.map((val, i) => {
                         return (
-                          <div className="flex gap-2" key={i}>
-                            <div>{val.label}</div>
+                          <div className="flex gap-2 " key={i}>
+                            <div className="capitalize text-sm Poppins text-gray-500">{val.label}</div>
                             <Field
                               type={val.type}
                               value={val.value}
@@ -69,12 +67,12 @@ function NameOfCourseToEnroll({
               );
             } else {
               return (
-                <div>
+                <div className="  col-span-5 ">
                   <Field
                     as={"select"}
                     // onChange={(e) => MultiSelectCourses(e)}
                     name={val.apikey}
-                    className="bg-[#f1aad4] w-fit text-gray-800 h-9 capitalize px-2 py-1
+                    className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize  py-1
           rounded-sm outline-none border-none"
                   >
                     {val?.options?.map((val, i) => {
@@ -108,25 +106,8 @@ function NameOfCourseToEnroll({
             }
           })}
         </div>
-
-        <div className="border-2 border-[#f1aad4] w-fit ">
-          <div
-            className="bg-[#f1aad4]  w-fit Poppins text-gray-800 h-9 capitalize px-[8.5px] py-1
-outline-none border-none"
-          >
-            other courses previously taken
-          </div>
-          <div className=" h-[120px]  ">
-            <textarea
-              name={description}
-              className="bg-gray-200 outline-none border-none w-full    "
-              rows="5"
-              cols="30"
-              placeholder="message here!!!"
-            ></textarea>
-          </div>
         </div>
-      </div>
+     
     </div>
   );
 }

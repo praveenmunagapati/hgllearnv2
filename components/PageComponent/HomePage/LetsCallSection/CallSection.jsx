@@ -2,18 +2,18 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { IoPerson } from "react-icons/io5";
-import { BsTelephoneFill } from "react-icons/bs";
+import { IoIosCall } from "react-icons/io";
 import { toast, ToastContainer, toastify } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const schema = yup.object().shape({
-  name: yup.string().required("required!!!"),
+  name: yup.string().required("Required!!!"),
   phone: yup
     .string()
     .min(10, "too short!!")
     .max(10, "too long!!")
-    .required("required!!"),
+    .required("Required!!"),
 });
 function CallSection() {
 //   const FormFields=[{
@@ -40,14 +40,14 @@ function CallSection() {
 
   return (
     <>
-      <div className="w-full bg-[#EEEAEA] mt-7 lg:mt-14 xl:mt-14 xxl:mt-14 py-8  lg:py-24 xl:py-24 xxl:py-24 ">
+      <div className="w-full bg-[#EEEAEA] mt-7 lg:mt-14 xl:mt-14 xxl:mt-14 py-8 px-20  lg:py-24 xl:py-24 xxl:py-24 ">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2">
-          <div className="capitalize py-1  text-center">
-            <h2 className="text-xl xl:text-2xl xxl:text-2xl font-bold Poppins">
+          <div className="text-center items-center capitalize    ">
+            <h2 className="h-fit  text-xl  xl:text-2xl xxl:text-2xl font-bold Poppins">
               {" "}
               let us give you a <span className="text-main">quick call</span>!
             </h2>
-            <p className="text-sm xl:text-sm xxl:text-base text-center font-normal text-gray-600 mt-8">
+            <p className=" h-fit text-sm xl:text-sm xxl:text-base text-center font-normal text-gray-600">
               leave us your contact number so our administratives can contact
               you as soon as possible.
             </p>
@@ -66,40 +66,40 @@ function CallSection() {
           >
             {({ handlesubmit }) => (
               <Form>
-                <div className="flex flex-col ">
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 mx-5 ">
-                    <div className="flex relative ">
-                      <IoPerson className="text-xl absolute top-3 left-4" />
+                <div className="w-full  flex flex-col items-center ">
+                  <div className=" grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 mx-10 ">
+                    <div className="flex flex-col  relative ">
+                      <IoPerson className="text-xl absolute top-3 left-4 text-gray-400" />
                       <Field
                         type="text"
                         name="name"
-                        placeholder="fullname"
-                        className="border-none py-2 px-5 rounded-2xl text-center"
+                        placeholder="Full Name"
+                        className="w-full border-none py-2 px-5 rounded-2xl text-center"
                       />
                       <ErrorMessage
                         name="name"
                         component={"div"}
-                        className="text-sm text-red-500"
+                        className="text-xs text-red-500"
                       />
                     </div>
-                    <div className=" flex relative">
-                      <BsTelephoneFill className="text-xl absolute top-3 left-4" />
+                    <div className=" flex flex-col relative">
+                      <IoIosCall className="text-xl absolute top-3 left-4 text-gray-400" />
                       <Field
                         type="text"
                         name="phone"
-                        placeholder="phone no."
-                        className="border-none py-2 px-5 rounded-2xl text-center"
+                        placeholder="Phone Number"
+                        className="w-full border-none py-2 px-5 rounded-2xl text-center"
                       />
                       <ErrorMessage
                         name="phone"
                         component={"div"}
-                        className="text-sm text-red-500"
+                        className="text-xs text-red-500"
                       />
                     </div>
                   </div>
-                  <div className="mx-5 md:mx-[14rem] lg:mx-[14rem] xl:mx-[14rem] xxl:mx-[14rem] ">
+                  <div className=" md:mx-[14rem] lg:mx-[14rem] xl:mx-[14rem] xxl:mx-[14rem]    ">
                     <ToastContainer />
-                    <button type="submit" className="bg-main text-white font-bold text-base rounded-3xl px-10 py-2 ml-5 mt-5 w-fit ">
+                    <button type="submit" className="bg-main text-white font-bold text-base rounded-3xl px-10 py-2  mt-5 w-fit ">
                       Submit
                     </button>
                   </div>
