@@ -122,7 +122,7 @@ function InfoSection() {
             
           }}>
           {
-            val.image &&  <Image src={val?.image?.src}  key={i} layout="fill" className='w-96 h-52'  /> 
+            val.image &&  <Image src={val?.image?.src} alt=''  key={i} layout="fill" className='w-96 h-52'  /> 
           }
             <div className="text-[10px] Poppins font-light text-main">{val.event}</div>
             <div className="text-3xl Poppins w-2/3 ">{val.tittle}</div>
@@ -134,9 +134,9 @@ function InfoSection() {
     </div>
     <div className='grid grid-cols-4 place-content-center place-items-center px-20 py-5 relative bottom-[450px]  '>
       {
-        InfoStatus.map((val)=>{
+        InfoStatus.map((val,i)=>{
           return(
-            <div className=" w-fit h-fit grid flex-col justify-center items-center  text-[#515151] p-2 rounded-md ">
+            <div key={i} className=" w-fit h-fit grid flex-col justify-center items-center  text-[#515151] p-2 rounded-md ">
               <div className="Poppins h-fit">
                 <p className='text-4xl font-semibold'>{val.counting}</p>
               </div>
@@ -153,7 +153,7 @@ function InfoSection() {
     {
       mission.map((val,i)=>{
         return(
-          <div className="flex flex-col px-32  " key={i}>
+          <div  className="flex flex-col px-32  " key={i}>
           <p className='text-sm font-semibold Poppins text-main ' style={{
             marginTop:val.top,
           }}>{val.tittle}</p>
@@ -169,7 +169,7 @@ function InfoSection() {
             {
               guidance.map((val,i)=>{
                 return(
-                  <div className="flex  w-[500px] gap-1 " style={{
+                  <div key={i} className="flex  w-[500px] gap-1 " style={{
                     marginLeft:val.left,
                   }}>
                     <div className="mt-2">{val.icon}</div>

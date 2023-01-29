@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import HowWeWork from "../../components/PageComponent/AboutPage/HowWeWork/HowWeWork";
 import MIssionVision from "../../components/PageComponent/AboutPage/MissionVision/MIssionVision";
-import OurAchivements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchivements";
+import OurAchievements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchievements";
 import OurTeamMembers from "../../components/PageComponent/AboutPage/OurTeamMembers/OurTeamMembers";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
 import WhatWeProvide from "../../components/PageComponent/AboutPage/whatWeProvideSection/WhatWeProvide";
@@ -12,7 +12,7 @@ import Layout from "../../HOC/Layout/Layout";
 import GroupStatus from "../../components/PageComponent/AboutPage/GroupStatus/GroupStatus";
 import TouchButton from "../../components/PageComponent/AboutPage/GetIntouchButton/TouchButton";
 
-function Aboutus() {
+function AboutUs() {
   return (
     <div>
       <Layout>
@@ -33,7 +33,7 @@ function Aboutus() {
           <WhatClientsSays />
           <OurTeamMembers />
           <HowWeWork />
-          <OurAchivements />
+          <OurAchievements />
           <FindUsOn />
           {/* </div> */}
         </div>
@@ -42,4 +42,4 @@ function Aboutus() {
   );
 }
 
-export default Aboutus;
+export default AboutUs;

@@ -29,7 +29,7 @@ function GroupStatus() {
   return (
     <div className='grid grid-cols-5 place-content-center place-items-center px-40 py-5  '>
       {
-        status.map((val)=>{
+        status.map((val,i)=>{
           return(
             <div key={i} className=" w-fit h-fit grid flex-col justify-center items-center  text-[#515151] p-2 rounded-md ">
               <div className="Poppins h-fit">

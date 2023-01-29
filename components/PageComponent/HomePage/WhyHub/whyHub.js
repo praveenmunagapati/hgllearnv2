@@ -60,9 +60,9 @@ const WhyHub = () => {
           
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 xxl:grid-cols-3 gap-x-20 gap-y-12 w-full lg:w-4/6 xl:w-5/6 xxl:w-4/6">
-          {data.map((item) => {
+          {data.map((item,i) => {
             return (
-              <div key={item}>
+              <div key={i}>
                 <div className="flex h-full gap-4 flex-row items-center ">
                   <div className={`p-3 text-white  rounded-full text-2xl xxl:text-lg`} style={{
                     background:item.color

@@ -64,8 +64,8 @@ function CallSection() {
               //toast.success("submitted successfully!!");
             }}
           >
-            {({ handlesubmit }) => (
-              <Form>
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
                 <div className="w-full  flex flex-col items-center ">
                   <div className=" grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 mx-10 ">
                     <div className="flex flex-col  relative ">

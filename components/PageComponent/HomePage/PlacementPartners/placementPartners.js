@@ -16,11 +16,11 @@ const PlacementPartners = () => {
         Placement Partners
       </div>
       <div className="w-full grid  grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 xxl:grid-cols-5 gap-7 my-6">
-        {Placement.map((item) => {
+        {Placement.map((item,i) => {
           return (
-            <div className="w-max my-0 ml-44  flex items-center   h-fit">
+            <div key={i} className="w-max my-0 ml-44  flex items-center   h-fit">
             <div className=" ml-50  w-[677px] h-[52px] relative ">
-              <Image src={item.image } className='' layout="fill"/>
+              <Image src={item.image } alt='' className='' layout="fill"/>
               </div>
               </div>
             // <div

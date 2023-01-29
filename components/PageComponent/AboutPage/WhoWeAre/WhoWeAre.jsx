@@ -33,13 +33,13 @@ function WhoWeAre() {
             our website and learning more about our institution
               <br />
               <br />
-              At our cooperation, we believe that information technology
+              {`At our cooperation, we believe that information technology
                is the backbone of any successful organization, and we 
                are committed to providing the highest quality education 
                and training,services and tech support to every aspect of 
                life. We understand that the IT industry is constantly changing, 
                and our goal is to stay ahead of the curve by providing our clients 
-               with the skills and knowledge they need to succeed in today's digital age
+               with the skills and knowledge they need to succeed in today's digital age`}
               <br />
               <br />
               Our all tech teams are among the best in the industry, and they 

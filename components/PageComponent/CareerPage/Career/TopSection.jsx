@@ -13,7 +13,7 @@ function Career() {
     }} >
       <p className='text-3xl Poppins'>Course</p>
       <div className="flex items-center gap-1 border-2 border-black px-5 rounded-full py-1">
-      <button classname=" w-fit h-fit border-4 border-black    text-lg Poppins">View Vacancy</button>
+      <button className=" w-fit h-fit border-4 border-black    text-lg Poppins">View Vacancy</button>
       <AiOutlineArrowDown/>
       </div>
     </div>

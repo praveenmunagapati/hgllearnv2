@@ -37,9 +37,9 @@ function CourseStatus() {
       </div>
       <div className="grid grid-cols-3 gap-16 mt-10  ">
         {
-          CourseStatus.map((item)=>{
+          CourseStatus.map((item,i)=>{
             return(
-              <div className='h-48 grid grid-rows-3  px-10 place-content-center place-items-center text-white rounded-xl' style={{background:item.color}}>
+              <div key={i} className='h-48 grid grid-rows-3  px-10 place-content-center place-items-center text-white rounded-xl' style={{background:item.color}}>
               <div className=' '>
                 <h1>{item.icon}</h1>
               </div>

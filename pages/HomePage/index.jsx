@@ -14,7 +14,7 @@ import PlacementPartners from "../../components/PageComponent/HomePage/Placement
 import CourseStatus from "../../components/PageComponent/HomePage/courseStatus.jsx/CourseStatus";
 import axios from "axios";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
-import OurAchivements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchivements";
+import OurAchievements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchievements";
 import SuccessStories from "../../components/PageComponent/HomePage/SuccessStories/SuccessStories";
 import FindUsOn from "../../components/PageComponent/HomePage/FindUsOn/finUsOn";
 
@@ -134,7 +134,7 @@ function Index() {
       <WelcomePortal images={images} />
       <WhyHub />
       <WhatClientsSays />
-      <OurAchivements/>
+      <OurAchievements/>
       
       <PlacementPartners />
       <SuccessStories />

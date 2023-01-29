@@ -4,7 +4,7 @@ import InfoSection from '../../components/PageComponent/CareerPage/Career/InfoSe
 import Layout from '../../HOC/Layout/Layout'
 import Vacancy from '../../components/PageComponent/CareerPage/Career/vacancy'
 import BottomSection from '../../components/PageComponent/CareerPage/Career/BottomSection'
-function index() {
+function Index() {
   return (
     <div>
       <Layout>
@@ -18,4 +18,4 @@ function index() {
   )
 }
 
-export default index
+export default Index

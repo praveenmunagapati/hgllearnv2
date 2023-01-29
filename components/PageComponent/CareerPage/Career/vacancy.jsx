@@ -60,7 +60,8 @@ const type=[
                 type.map((val,i)=>{
                   return(
                    
-                    <div className="bg-[#FACC15] text-center w-20 gap-x-2 h-fit rounded-md py-1 text-black text-[12px] Poppins" key={i}>{val.jobsType}</div>
+                    <div className="bg-[#FACC15] text-center w-20 gap-x-2 h-fit rounded-md py-1 text-black text-[12px] Poppins"
+                     key={i}>{val.jobsType}</div>
                   
                     
                   )

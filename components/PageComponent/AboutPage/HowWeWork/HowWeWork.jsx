@@ -59,7 +59,7 @@ function HowWeWork() {
 
         <div className="text-xs text-regular Poppins  w-5/6  text-center mx-auto  mt-5 text-gray-400   capitalize">
           <p>
-          At the Hub IT Training Institute, we believe in a collaborative approach to 
+         {` At the Hub IT Training Institute, we believe in a collaborative approach to 
           learning. We work closely with our students and staff to understand their needs and
           tailor our training and resources to meet those needs. We use a variety of teaching
           methods, including hands-on exercises, lectures, and group discussions to ensure that
@@ -68,7 +68,7 @@ function HowWeWork() {
           but also give you a job as per your skill and ability. We extremely 
           that we are not “shovel sellers ” Additionally, we are committed to staying
           up-to-date with the latest developments in the field of technology and
-          regularly update our curriculum to reflect these changes.
+          regularly update our curriculum to reflect these changes.`}
 
           </p>
         </div>
@@ -76,8 +76,8 @@ function HowWeWork() {
           {
             
             working.map((val,i)=>{
-              return( <div className="relative w-40 h-40 mx-auto my-6 ">
-                       <Image src={val.image} className='' layout="fill"/>
+              return( <div key={i} className="relative w-40 h-40 mx-auto my-6 ">
+                       <Image src={val.image} alt='' className='' layout="fill"/>
                        </div>
               )
             })

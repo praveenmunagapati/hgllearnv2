@@ -81,7 +81,7 @@ function WelcomePortal({ images }) {
                 return (
                   <div
                     key={i}
-                    className="sm:w-60 hovr:scale-105 transition-all duration-300  cursor-pointer ease-in-out w-72 md:w-64 lg:w-40 xl:w-52
+                    className="sm:w-60 hover:scale-105 transition-all duration-300  cursor-pointer ease-in-out w-72 md:w-64 lg:w-40 xl:w-52
                    xxl:w-48"
                   >
                     <Image
