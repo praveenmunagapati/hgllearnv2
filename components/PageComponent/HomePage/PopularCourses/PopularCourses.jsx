@@ -235,7 +235,7 @@ function PopularCourses({ card, value }) {
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    query: { image: val.image, description: val.description },
+                    query: { image: `https://hubitbackend.onrender.com/${val.image}`, description: val.description },
                   }}
                 >
                   <div
@@ -244,7 +244,7 @@ function PopularCourses({ card, value }) {
                   >
                     <div className="h-60 w-80 relative">
                       <Image
-                        src={val.image}
+                        src={`https://hubitbackend.onrender.com/${val.image}`}
                         alt={"images"}
                         placeholder="blur"
                         blurDataURL={val.image}
@@ -301,7 +301,7 @@ function PopularCourses({ card, value }) {
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    query: { image: val.image, description: val.description },
+                    query: { image: `https://hubitbackend.onrender.com/${val.image}`, description: val.description },
                   }}
                 >
                   <div
