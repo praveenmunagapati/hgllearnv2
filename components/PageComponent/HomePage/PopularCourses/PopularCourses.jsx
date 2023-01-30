@@ -14,7 +14,7 @@ function PopularCourses({ card, value }) {
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitbackend-production.up.railway.app/course")
+        .get("https://hubitbackend.onrender.com/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -311,7 +311,7 @@ function PopularCourses({ card, value }) {
                     <div className="h-60 w-80 relative">
                       {val.image ? (
                         <Image
-                          src={val.image}
+                          src={`https://hubitbackend.onrender.com/${val.image}`}
                           alt={"images"}
                           placeholder="blur"
                           blurDataURL={val.image}
@@ -322,7 +322,7 @@ function PopularCourses({ card, value }) {
                         />
                       ) : (
                         <Image
-                          src={val.image}
+                          src={`https://hubitbackend.onrender.com${val.image}`}
                           alt={val.course_name}
                           height="200"
                           width={200}
