@@ -85,7 +85,7 @@ function Course() {
   const getData = () => {
     try {
       axios
-        .get("http://192.168.0.29:4000/course")
+        .get("https://hubitbackend.onrender.com/course")
         .then((res) => {
           console.log(res.data.data);
           setCard(res.data.data);
