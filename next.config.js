@@ -7,7 +7,7 @@ const nextConfig = {
   sitemapSize: 1000,
   images: {
     domains: [
-      "hubitnep.herokuapp.com",
+      "hubitbackend.onrender.com",
       "firebasestorage.googleapis.com",
       "www.derby-college.ac.uk",
       "encrypted-tbn0.gstatic.com",
