@@ -61,14 +61,16 @@ function Inquiry() {
 
   // post data
   const postData = (val, resetForm) => {
+  //  test  
     resetForm();
-  toast.success("submitted successfully");
     try {
       axios
         .post("https://hubitbackend.onrender.com/inquire", val)
         .then((res) => {
           console.log("gfg");
           if (res.status === "200") {
+  toast.success("submitted successfully");
+
           }
         })
         .catch((err) => {
