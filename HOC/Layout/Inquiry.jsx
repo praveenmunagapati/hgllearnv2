@@ -68,7 +68,7 @@ function Inquiry() {
         .post("https://hubitbackend.onrender.com/inquire", val)
         .then((res) => {
           console.log("gfg");
-          if (res.status === "201") {
+          if (res.status == "201") {
   toast.success("submitted successfully");
 
           }
