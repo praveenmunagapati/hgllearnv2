@@ -32,7 +32,7 @@ function CallSection() {
     resetForm();
     toast.success("submitted successfully");
     try {
-      axios.post("https://himal-hubitbackend.adaptable.app/quickcall", val);
+      axios.post("https://hubitbackend.onrender.com/quickcall", val);
     } catch (error) {
       console.log(error);
     }
