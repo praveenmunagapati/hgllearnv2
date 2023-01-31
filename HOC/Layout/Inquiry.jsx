@@ -65,7 +65,7 @@ function Inquiry() {
   toast.success("submitted successfully");
     try {
       axios
-        .post("https://himal-hubitbackend.adaptable.app/inquire", val)
+        .post("https://hubitbackend.onrender.com/inquire", val)
         .then((res) => {
           console.log("gfg");
           if (res.status === "200") {
@@ -80,7 +80,7 @@ function Inquiry() {
   const getData = () => {
     try {
       axios
-        .get("https://himal-hubitbackend.adaptable.app/course")
+        .get("https://hubitbackend.onrender.com/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
