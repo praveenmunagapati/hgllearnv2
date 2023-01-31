@@ -69,7 +69,7 @@ function Index() {
   const getData = () => {
     try {
       axios
-        .get("https://hubitnep.herokuapp.com/course")
+        .get("https://hubitbackend.onrender.com/course")
         .then((res) => {
           console.log(res);
           setCard(res.data.data);
