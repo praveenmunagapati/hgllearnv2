@@ -1,0 +1,58 @@
+// import partners from "./icons/japan.jpg";
+
+import Image from "next/image";
+// import ImageFirst from '../../../../public/images/shine resunga.png';
+// import Image1 from '../../../../public/images/1solution.webp';
+// import Image2 from '../../../../public/images/kangaroo education.png';
+// import Image3 from '../../../../public/images/kba-global.png';
+// import Image4 from '../../../../public/images/ng market1.png';
+// import Image5 from '../../../../public/images/printhub.png';
+import imgLink from "../../../Navigation/Navitem/placementpartners";
+import Link from "next/link";
+const PlacementPartners = () => {
+  // const Placement =[
+  //   {
+  //     image : ImageFirst
+  //   },
+  //   {
+  //     image : Image1
+  //   },
+  //   {
+  //     image : Image2
+  //   },
+  //   {
+  //     image : Image3
+  //   },
+  //   {
+  //     image : Image4
+  //   },
+  //   {
+  //     image : Image5
+  //   },
+  // ]
+  // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  return (
+    <div className=" px-4 md:px-8 lg:px-20 xl:px-24 xxl:px-32 mt-10 flex flex-col items-center ">
+      <div className="w-max  text-[#a0047d] text-lg xl:text-xl xxl:text-2xl capitalize Poppins my-10 font-bold">
+        Placement Partners
+      </div>
+      <div className=" grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-6 gap-6 my-2">
+        {imgLink.map((item,i) => {
+          return (
+            <div key={i} className="">
+            <div className=" w-24 h-10 p-2">
+              <Link href={image.path} passHref>
+                <a target={"_blank"}>{item.image}</a>
+              </Link>
+              {/* <Image src={item.image} alt='' className=''/> */}
+              </div>
+              </div>
+           
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+export default PlacementPartners;
