@@ -88,7 +88,7 @@ function CourseCuriculum() {
   };
   useEffect(() => {
     getCuriculumData();
-  }, []);
+  }, [ID]);
 
   return (
     <div>
