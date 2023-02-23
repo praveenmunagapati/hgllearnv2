@@ -73,8 +73,8 @@ function NameOfCourseToEnroll({
                     as={"select"}
                     // onChange={(e) => MultiSelectCourses(e)}
                     name={val.apikey}
-                    className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize px-3 py-1 mx-7
-          rounded-md outline-none border-none"
+                    className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize px-2 py-1
+          rounded-sm outline-none border-none"
                   >
                     {val?.options?.map((val, i) => {
                       console.log(val);

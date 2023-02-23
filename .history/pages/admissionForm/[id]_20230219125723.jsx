@@ -2,9 +2,9 @@ import { Field, Form, Formik } from "formik";
 import React, { useState, useEffect } from "react";
 import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
-import bg from "../../public/images/Rectangle 35.png";
+import bg from "../../public/images/Rectangle 35.png"
 import * as Yup from "yup";
-// import { BiVial } from "react-icons/bi";
+import { BiVial } from "react-icons/bi";
 // import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
 import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
 import axios from "axios";
@@ -14,7 +14,7 @@ function AdmissionForm() {
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("https://hubitnep.herokuapp.com/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -191,7 +191,7 @@ function AdmissionForm() {
   const AdmissionFormSchema = Yup.object().shape({
     full_name: Yup.string()
       .min(2, "Too Short!")
-      .max(25, "Too Long!")
+      .max(50, "Too Long!")
       .required("Required"),
     address: Yup.string().required("Required"),
     dob: Yup.string().required("Required"),
@@ -209,7 +209,7 @@ function AdmissionForm() {
   });
   const Submit = (values) => {
     axios
-      .post("https://hubitbackend.onrender.com/course")
+      .post("https://hubitnep.herokuapp.com/course")
       .then((res) => {
         if (res.status === 200) {
           //   toast.success("Form added successfullty");
@@ -234,29 +234,23 @@ function AdmissionForm() {
         </div>
         <div className="absolute top-20 /0 left-8 sm:left-20 text-white capitalize">
           <div className="font-bold  text-3xl"> Student Admission Form</div>
-          <div className="Poppins text-xs w-2/3 font-light mt-2 ">
-            Enter your admission information below to enroll to your interested
-            IT Course at your comfort, we have made available the Online
-            Admission Form below!
-          </div>
+          <div className="Poppins text-xs w-2/3 font-light mt-2 ">Enter your admission information below to admit for their interested IT Course at their comfort, we have made available the Online Admission Form below!</div>
           <div className="Poppins text-sm mt-2">home/courses</div>
-          {/* <button className="px-6 py-2 bg-[#FACC15] Poppins text-black font-medium text-xs mt-2 rounded-full">View Form</button> */}
+          <button className="px-6 py-2 bg-[#FACC15] Poppins text-black font-medium text-xs mt-2 rounded-full">View Form</button>
         </div>
       </div>
       <div className="px-2">
+
         <div className="  rounded-t-2xl">
           <div className="flex flex-col w-full justify-center items-center pb-5 pt-16 gap-2">
             <div className=" w-full   Poppins  text-center uppercase text-xl  text-black font-medium">
               {" "}
               student enrollment registration form:
             </div>
-            {/* <div className="text-xs Poppins capitalize ">
-              <p>
-                Fill out the form carefully for registration. All Asterisks (*)
-                fields are mandatory to fill-up.
-              </p>
-            </div> */}
-            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-8 mt-5 Poppins">
+            <div className="text-xs Poppins capitalize ">
+              <p>Fill out the form carefully for registration. All Asterisks (*) fields are mandatory to fill-up.</p>
+            </div>
+            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-5 mt-5 Poppins">
               <button>Personel Information</button>
               <button>Payment Option</button>
               <button>Review Details</button>
@@ -283,7 +277,7 @@ function AdmissionForm() {
             onSubmit={(values, { resetForm }) => {
               console.log(values);
               //   alert(5);
-              resetForm();
+              //   resetForm();
               Submit(values);
             }}
           >
@@ -291,17 +285,20 @@ function AdmissionForm() {
               <div>
                 <Form onSubmit={handleSubmit}>
                   <div className="flex flex-col  px-7 mb-16">
-                    <div className={`  flex justify-center  `}>
+                    <div
+                      className={`  flex justify-center  `}
+                    >
                       {FormImage.map((val, i) => {
                         let AllImage = val.apikey;
                         return (
                           <div key={i}>
-                            <div className=" capitalize font-semibold text-lg text-gray-700">
+                            <div className=" capitalize    font-semibold text-lg text-gray-700">
                               <label
                                 className="cursor-pointer "
                                 htmlFor={val.apikey}
                               >
                                 {val.label}
+
                               </label>
                             </div>
                             <div className="   ">
@@ -348,11 +345,10 @@ function AdmissionForm() {
                               />
                             </div>
                             <div
-                              className={`${
-                                errors[val.apikey] && touched[val.apikey]
+                              className={`${errors[val.apikey] && touched[val.apikey]
                                   ? "bg-red-100 my-2"
                                   : ""
-                              } text-red-400 py-1 px-2 text-xs font-medium`}
+                                } text-red-400 py-1 px-2 text-xs font-medium`}
                             >
                               {errors[val.apikey] && touched[val.apikey]
                                 ? errors[val.apikey]
@@ -396,11 +392,10 @@ function AdmissionForm() {
                                 </div>
                               </div>
                               <div
-                                className={`text-red-400 ${
-                                  errors[val.apikey] && touched[val.apikey]
+                                className={`text-red-400 ${errors[val.apikey] && touched[val.apikey]
                                     ? " bg-red-100 my-2"
                                     : ""
-                                }  px-1.5 py-1  text-xs font-medium`}
+                                  }  px-1.5 py-1  text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -429,11 +424,10 @@ function AdmissionForm() {
                                     </div>
                                   </div>
                                   <div
-                                    className={`text-red-400  ${
-                                      errors[val.apikey] && touched[val.apikey]
+                                    className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
                                         ? " bg-red-100 my-2"
                                         : ""
-                                    }  px-2 py-1 text-xs font-medium`}
+                                      }  px-2 py-1 text-xs font-medium`}
                                   >
                                     {errors[val.apikey] && touched[val.apikey]
                                       ? errors[val.apikey]
@@ -461,11 +455,10 @@ function AdmissionForm() {
                                   </div>
                                 </div>
                                 <div
-                                  className={`text-red-400  ${
-                                    errors[val.apikey] && touched[val.apikey]
+                                  className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
                                       ? " my-2  bg-red-100"
                                       : ""
-                                  }  px-2 py-1 text-xs font-medium`}
+                                    }  px-2 py-1 text-xs font-medium`}
                                 >
                                   {errors[val.apikey] && touched[val.apikey]
                                     ? errors[val.apikey]
@@ -478,6 +471,7 @@ function AdmissionForm() {
                       })}
                     </div>
                     {/* for images or document */}
+
                   </div>
                   <div>
                     <NameOfCourseToEnroll
@@ -490,6 +484,7 @@ function AdmissionForm() {
                     />
                   </div>
                   <div className=" flex mb-5 px-40 ">
+
                     <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
                       <div className="flex items-center">
                         <input
@@ -500,30 +495,27 @@ function AdmissionForm() {
                       </div>
 
                       <div className="text-xs Poppins font-regular capitalize">
-                        I agree to the
-                        <button className="text-main capitalize mx-1">
-                          {" "}
-                          terms and conditions
-                        </button>
+                        I agree to the<button className="text-main capitalize mx-1"> terms and conditions</button> 
                       </div>
                     </div>
                     <div className="w-full my-5 flex justify-end  px-7">
-                      <button
-                        type="submit"
-                        className={`px-5 py-2 capitalize bg-main text-white w-fit 
+                    <button
+                      type="submit"
+                      className={`px-5 py-2 capitalize bg-main text-white w-fit 
                         
-                      ${
-                        clickedCheckBox
+                      ${clickedCheckBox
                           ? "opacity-100 cursor-pointer transition-all hover:scale-105 ease-in-out duration-300 "
                           : " opacity-50 cursor-not-allowed"
-                      } rounded-md
+                        } rounded-md
                      `}
-                        disabled={clickedCheckBox ? "" : "disabled "}
-                      >
-                        submit
-                      </button>
-                    </div>
+                      disabled={clickedCheckBox ? "" : "disabled "}
+                    >
+                      submit
+                    </button>
                   </div>
+                  </div>
+
+                  
                 </Form>
               </div>
             )}

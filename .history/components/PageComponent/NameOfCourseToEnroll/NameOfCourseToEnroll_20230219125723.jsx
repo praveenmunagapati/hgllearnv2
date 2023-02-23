@@ -21,6 +21,7 @@ function NameOfCourseToEnroll({
   return (
     <div className="mb-16 px-40">
       {" "}
+    
       <div className="     ">
         <div className="flex justify-between    ">
           {SelectData.map((val, i) => {
@@ -39,9 +40,7 @@ function NameOfCourseToEnroll({
                       {val.Shift.map((val, i) => {
                         return (
                           <div className="flex gap-2 " key={i}>
-                            <div className="capitalize text-sm Poppins text-gray-500">
-                              {val.label}
-                            </div>
+                            <div className="capitalize text-sm Poppins text-gray-500">{val.label}</div>
                             <Field
                               type={val.type}
                               value={val.value}
@@ -73,8 +72,8 @@ function NameOfCourseToEnroll({
                     as={"select"}
                     // onChange={(e) => MultiSelectCourses(e)}
                     name={val.apikey}
-                    className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize px-3 py-1 mx-7
-          rounded-md outline-none border-none"
+                    className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize  py-1
+          rounded-sm outline-none border-none"
                   >
                     {val?.options?.map((val, i) => {
                       console.log(val);
@@ -107,7 +106,8 @@ function NameOfCourseToEnroll({
             }
           })}
         </div>
-      </div>
+        </div>
+     
     </div>
   );
 }

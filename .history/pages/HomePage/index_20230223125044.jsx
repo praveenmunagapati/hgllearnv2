@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WhyHub from "../../components/PageComponent/HomePage/WhyHub/whyHub";
-// import CompanyMoto from "../../components/PageComponent/HomePage/Companymoto/Moto";
+import CompanyMoto from "../../components/PageComponent/HomePage/Companymoto/Moto";
 import WelcomePortal from "../../components/PageComponent/HomePage/WelcomePortal/WelcomePortal";
 import image1 from "../../public/images/Rectangle 25.svg";
 import image2 from "../../public/images/Rectangle 26aa.svg";

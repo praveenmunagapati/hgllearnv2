@@ -19,24 +19,24 @@ function CourseCuriculum() {
   }, [router.isReady, router.query]);
   console.log(ID);
 
+  () => {
+    try {
+      axios
+        .get(`https://hubitnep.herokuapp.com/syallabus/${ID}`)
+        .then((res) => {
+          console.log(res);
+          setCourseCuriculumData(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const getCuriculumData = () => {
-      try {
-        axios
-          .get(`https://hubitnep.herokuapp.com/syallabus/${ID}`)
-          .then((res) => {
-            console.log(res);
-            setCourseCuriculumData(res.data.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getCuriculumData();
-  }, [ID]);
+  }, []);
 
   return (
     <div>

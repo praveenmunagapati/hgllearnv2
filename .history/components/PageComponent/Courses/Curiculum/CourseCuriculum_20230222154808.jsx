@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
+import { IoArrowDown, IoArrowUp } from "react-icons/io5";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Collapse from "@kunukn/react-collapse";
 import axios from "axios";
@@ -19,22 +21,72 @@ function CourseCuriculum() {
   }, [router.isReady, router.query]);
   console.log(ID);
 
+  // const courseCuriculumData = [
+  //   {
+  //     id: 1,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  //   {
+  //     id: 5,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  //   {
+  //     id: 6,
+  //     question: "What is a web page?",
+  //     answer: [
+  //       { answer1: "web page is a page1" },
+  //       { answer2: "web page is a page2" },
+  //     ],
+  //   },
+  // ];
+  const getCuriculumData = () => {
+    try {
+      axios
+        .get(`https://hubitnep.herokuapp.com/syallabus/${ID}`)
+        .then((res) => {
+          console.log(res);
+          setCourseCuriculumData(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const getCuriculumData = () => {
-      try {
-        axios
-          .get(`https://hubitnep.herokuapp.com/syallabus/${ID}`)
-          .then((res) => {
-            console.log(res);
-            setCourseCuriculumData(res.data.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getCuriculumData();
   }, [ID]);
 

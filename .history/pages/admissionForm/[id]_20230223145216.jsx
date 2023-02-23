@@ -4,7 +4,7 @@ import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
 import bg from "../../public/images/Rectangle 35.png";
 import * as Yup from "yup";
-// import { BiVial } from "react-icons/bi";
+import { BiVial } from "react-icons/bi";
 // import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
 import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
 import axios from "axios";
@@ -209,7 +209,7 @@ function AdmissionForm() {
   });
   const Submit = (values) => {
     axios
-      .post("https://hubitbackend.onrender.com/course")
+      .post("https://hubitnep.herokuapp.com/course")
       .then((res) => {
         if (res.status === 200) {
           //   toast.success("Form added successfullty");
@@ -250,12 +250,12 @@ function AdmissionForm() {
               {" "}
               student enrollment registration form:
             </div>
-            {/* <div className="text-xs Poppins capitalize ">
+            <div className="text-xs Poppins capitalize ">
               <p>
                 Fill out the form carefully for registration. All Asterisks (*)
                 fields are mandatory to fill-up.
               </p>
-            </div> */}
+            </div>
             <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-8 mt-5 Poppins">
               <button>Personel Information</button>
               <button>Payment Option</button>

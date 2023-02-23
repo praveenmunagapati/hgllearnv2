@@ -9,7 +9,7 @@ const Leftbanner = ({ image, description }) => {
       <div className="py-4 ">
         {/* <MainImage /> */}
         <div className="flex gap-5">
-          <div className="shadow-lg border rounded-lg h-96 w-full mx-auto  relative">
+          <div className="shadow-lg  h-96 w-full mx-auto  relative">
             {image ? (
               <Image
                 src={image}

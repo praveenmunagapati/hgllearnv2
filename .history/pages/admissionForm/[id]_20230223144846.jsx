@@ -4,7 +4,7 @@ import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
 import bg from "../../public/images/Rectangle 35.png";
 import * as Yup from "yup";
-// import { BiVial } from "react-icons/bi";
+import { BiVial } from "react-icons/bi";
 // import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
 import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
 import axios from "axios";
@@ -14,7 +14,7 @@ function AdmissionForm() {
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("https://hubitnep.herokuapp.com/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -191,7 +191,7 @@ function AdmissionForm() {
   const AdmissionFormSchema = Yup.object().shape({
     full_name: Yup.string()
       .min(2, "Too Short!")
-      .max(25, "Too Long!")
+      .max(50, "Too Long!")
       .required("Required"),
     address: Yup.string().required("Required"),
     dob: Yup.string().required("Required"),
@@ -209,7 +209,7 @@ function AdmissionForm() {
   });
   const Submit = (values) => {
     axios
-      .post("https://hubitbackend.onrender.com/course")
+      .post("https://hubitnep.herokuapp.com/course")
       .then((res) => {
         if (res.status === 200) {
           //   toast.success("Form added successfullty");
@@ -250,13 +250,13 @@ function AdmissionForm() {
               {" "}
               student enrollment registration form:
             </div>
-            {/* <div className="text-xs Poppins capitalize ">
+            <div className="text-xs Poppins capitalize ">
               <p>
                 Fill out the form carefully for registration. All Asterisks (*)
                 fields are mandatory to fill-up.
               </p>
-            </div> */}
-            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-8 mt-5 Poppins">
+            </div>
+            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-5 mt-5 Poppins">
               <button>Personel Information</button>
               <button>Payment Option</button>
               <button>Review Details</button>
@@ -283,7 +283,7 @@ function AdmissionForm() {
             onSubmit={(values, { resetForm }) => {
               console.log(values);
               //   alert(5);
-              resetForm();
+              //   resetForm();
               Submit(values);
             }}
           >
@@ -296,7 +296,7 @@ function AdmissionForm() {
                         let AllImage = val.apikey;
                         return (
                           <div key={i}>
-                            <div className=" capitalize font-semibold text-lg text-gray-700">
+                            <div className=" capitalize    font-semibold text-lg text-gray-700">
                               <label
                                 className="cursor-pointer "
                                 htmlFor={val.apikey}
