@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import React, { useState, useEffect } from "react";
 import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
@@ -72,13 +72,24 @@ function AdmissionForm() {
     {
       label: "gender:",
       apikey: "gender",
-      as: "select",
-      genderOptions: [],
+      Gender: [
+        {
+          label: "male",
+          type: "select",
+          apikey: "gender",
+          value: "male",
+        },
+        {
+          label: "female",
+          type: "select",
+          apikey: "gender",
+          value: "female",
+        },
+      ],
     },
     {
       label: "level of education:",
       apikey: "level_of_education",
-      as: "radio",
       Gender: [
         {
           label: "slc",
@@ -130,22 +141,6 @@ function AdmissionForm() {
       ],
     },
   ];
-
-  const genderOptions = [
-    {
-      value: "select your gender",
-    },
-    {
-      value: "male",
-    },
-    {
-      value: "female",
-    },
-    {
-      value: "other",
-    },
-  ];
-
   const SelectData = [
     {
       as: "select",
@@ -367,93 +362,8 @@ function AdmissionForm() {
                         );
                       })}
                     </div>
-
-                    <div className="grid grid-cols-3 gap-16 col-start-3  px-40 mt-16 ">
+                    <div className="grid grid-cols-2 gap-16 col-start-3 col-span-10 px-40 mt-16 ">
                       {admissionForm.map((val, i) => {
-                        if (val.as === "select") {
-                          return (
-                            <div>
-                              <div
-                                key={i}
-                                className="flex col-span-5 flex-col  h-14  gap-3  "
-                              >
-                                <div className="  px-2  capitalize Poppins text-sm  w-fit flex  items-center">
-                                  {val.label}
-                                </div>
-                                <div>
-                                  <div>
-                                    <div className=" flex   px-1 h-full items-center justify-center ">
-                                      <Field
-                                        as={val.as}
-                                        value={val.value}
-                                        name={val.apikey}
-                                        className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
-                                      >
-                                        {val?.genderOptions?.map((val, i) => {
-                                          <option
-                                            key={i}
-                                            value={val.value}
-                                            className="w-full p-2 text-center bg-slate-200 text-slate-600"
-                                          >
-                                            {val?.value}
-                                          </option>;
-                                        })}
-                                      </Field>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* <div >
-                                <div >
-                                  {val.label}
-                                </div>
-                                <div >
-                                  {val.Gender.map((val, i) => {
-                                    return (
-                                      <div key={i} className=" ">
-                                        <div >
-                                          <Field
-                                            as={val.as}
-                                            value={val.value}
-                                            name={val.apikey}
-                                            className=" w-full form-radio checked:bg-main   px-4 py-1.5  "
-                                          />
-
-                                          <div className="w-fit ml-2 ">
-                                            <div className="  capitalize w-fit Poppins text-sm text-gray-500 flex justify-center  items-center">
-                                              <label>{val.label}</label>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              </div> */}
-                              <div
-                                className={`text-red-400  ${
-                                  errors[val.apikey] && touched[val.apikey]
-                                    ? " my-2  bg-red-100"
-                                    : ""
-                                }  px-2 py-1 text-xs font-medium`}
-                              >
-                                {errors[val.apikey] && touched[val.apikey]
-                                  ? errors[val.apikey]
-                                  : ""}
-                              </div>
-                            </div>
-                          );
-                        }
-                        // else {
-                        //   return (
-                        //     <ErrorMessage
-                        //       component={"div"}
-                        //       name={val.apikey}
-                        //       className="text-red-500 text-xs capitalize"
-                        //     />
-                        //   );
-                        // }
                         if (val.Gender) {
                           return (
                             <div>
@@ -610,7 +520,7 @@ function AdmissionForm() {
                      `}
                         disabled={clickedCheckBox ? "" : "disabled "}
                       >
-                        Next
+                        submit
                       </button>
                     </div>
                   </div>

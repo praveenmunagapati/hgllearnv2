@@ -105,7 +105,7 @@ function Inquiry() {
       course_name: "select course name",
     },
   ];
-  FormFields[3].option.push(...data, ...course);
+  FormFields[2].option.push(...data, ...course);
 
   return (
     <>

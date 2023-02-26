@@ -372,15 +372,12 @@ function AdmissionForm() {
                       {admissionForm.map((val, i) => {
                         if (val.as === "select") {
                           return (
-                            <div>
-                              <div
-                                key={i}
-                                className="flex col-span-5 flex-col  h-14  gap-3  "
-                              >
+                            <div key={i}>
+                              <div className="flex col-span-5 flex-col  h-14  gap-3  ">
                                 <div className="  px-2  capitalize Poppins text-sm  w-fit flex  items-center">
                                   {val.label}
                                 </div>
-                                <div>
+                                <div className="flex  gap-5">
                                   <div>
                                     <div className=" flex   px-1 h-full items-center justify-center ">
                                       <Field
@@ -389,13 +386,9 @@ function AdmissionForm() {
                                         name={val.apikey}
                                         className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
                                       >
-                                        {val?.genderOptions?.map((val, i) => {
-                                          <option
-                                            key={i}
-                                            value={val.value}
-                                            className="w-full p-2 text-center bg-slate-200 text-slate-600"
-                                          >
-                                            {val?.value}
+                                        {val.genderOptions.map((val, i) => {
+                                          <option key={i} value={val.value}>
+                                            {val.value}
                                           </option>;
                                         })}
                                       </Field>

@@ -389,13 +389,13 @@ function AdmissionForm() {
                                         name={val.apikey}
                                         className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
                                       >
-                                        {val?.genderOptions?.map((val, i) => {
+                                        {val.genderOptions.map((val, i) => {
                                           <option
                                             key={i}
                                             value={val.value}
                                             className="w-full p-2 text-center bg-slate-200 text-slate-600"
                                           >
-                                            {val?.value}
+                                            {val.value}
                                           </option>;
                                         })}
                                       </Field>

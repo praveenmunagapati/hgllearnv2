@@ -368,34 +368,26 @@ function AdmissionForm() {
                       })}
                     </div>
 
-                    <div className="grid grid-cols-3 gap-16 col-start-3  px-40 mt-16 ">
+                    <div className="grid grid-cols-2 gap-16 col-start-3 col-span-10 px-40 mt-16 ">
                       {admissionForm.map((val, i) => {
                         if (val.as === "select") {
                           return (
                             <div>
-                              <div
-                                key={i}
-                                className="flex col-span-5 flex-col  h-14  gap-3  "
-                              >
+                              <div className="flex col-span-5 flex-col  h-14  gap-3  ">
                                 <div className="  px-2  capitalize Poppins text-sm  w-fit flex  items-center">
                                   {val.label}
                                 </div>
-                                <div>
+                                <div className="flex  gap-5">
                                   <div>
                                     <div className=" flex   px-1 h-full items-center justify-center ">
                                       <Field
                                         as={val.as}
                                         value={val.value}
                                         name={val.apikey}
-                                        className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
                                       >
-                                        {val?.genderOptions?.map((val, i) => {
-                                          <option
-                                            key={i}
-                                            value={val.value}
-                                            className="w-full p-2 text-center bg-slate-200 text-slate-600"
-                                          >
-                                            {val?.value}
+                                        {genderOptions.map((val, i) => {
+                                          <option key={i} value={val.value}>
+                                            {val.value}
                                           </option>;
                                         })}
                                       </Field>
@@ -432,11 +424,11 @@ function AdmissionForm() {
                                 </div>
                               </div> */}
                               <div
-                                className={`text-red-400  ${
+                                className={`text-red-400 ${
                                   errors[val.apikey] && touched[val.apikey]
-                                    ? " my-2  bg-red-100"
+                                    ? " bg-red-100 my-2"
                                     : ""
-                                }  px-2 py-1 text-xs font-medium`}
+                                }  px-1.5 py-1  text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
