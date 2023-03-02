@@ -541,9 +541,9 @@ function AdmissionForm() {
                           } else {
                             return (
                               <div key={i} className=" ">
-                                <div className="flex flex-col gap-3 ">
+                                <div className=" ">
                                   <div className="w-fit">
-                                    <div className="  px-2 h-full capitalize text-sm Poppins  w-fit flex  items-center">
+                                    <div className="  px-2 h-full capitalize text-sm Poppins  w-fit   items-center">
                                       <label>{val.label}</label>
                                     </div>{" "}
                                   </div>

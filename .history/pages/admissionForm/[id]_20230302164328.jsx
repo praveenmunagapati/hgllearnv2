@@ -586,8 +586,8 @@ function AdmissionForm() {
                         description="description"
                       />
                     </div>
-                    <div className=" ">
-                      <div className="w-full items-center Poppins mb-5 px-44   text-gray-600 mt-5">
+                    <div className=" flex mb-5 px-40 ">
+                      <div className="w-full items-center Poppins  px-8  text-gray-600 mt-5">
                         <div className="flex gap-3 items-center">
                           <input
                             type="checkbox"

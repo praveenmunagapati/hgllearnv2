@@ -197,11 +197,8 @@ function AdmissionForm() {
     full_name: Yup.string()
       .min(2, "Too Short!")
       .max(25, "Too Long!")
-      .matches(
-        /^[a-zA-Z0-9\s]*$/,
-        "Username can only contain letters, numbers, and whitespace"
-      )
       .required("Required"),
+    //.matches("/^[aA-zZ]+$/"),
     address: Yup.string().required("Required"),
     dob: Yup.string().required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
@@ -297,9 +294,9 @@ function AdmissionForm() {
             }}
           >
             {({ errors, touched, handleSubmit, values, setFieldValue }) => (
-              <div>
+              <div className="grid grid-cols-3 w-full">
                 <Form onSubmit={handleSubmit}>
-                  <div className="flex flex-col  px-7 mb-16">
+                  <div className="flex px-7 mb-16">
                     <div className={`  flex justify-center  `}>
                       {FormImage.map((val, i) => {
                         let AllImage = val.apikey;
@@ -361,7 +358,7 @@ function AdmissionForm() {
                                 errors[val.apikey] && touched[val.apikey]
                                   ? "bg-red-100 my-2"
                                   : ""
-                              } text-red-400 py-1 px-2 text-xs rounded-full text-center font-medium`}
+                              } text-red-400 py-1 px-2 text-xs font-medium`}
                             >
                               {errors[val.apikey] && touched[val.apikey]
                                 ? errors[val.apikey]
@@ -372,7 +369,7 @@ function AdmissionForm() {
                       })}
                     </div>
 
-                    <div className="grid grid-cols-3 gap-16 col-start-3  px-40 mt-16 ">
+                    <div>
                       {admissionForm.map((val, i) => {
                         if (val.as === "select") {
                           return (
@@ -440,9 +437,9 @@ function AdmissionForm() {
                               <div
                                 className={`text-red-400  ${
                                   errors[val.apikey] && touched[val.apikey]
-                                    ? " my-5  bg-red-100"
+                                    ? " my-2  bg-red-100"
                                     : ""
-                                }  px-1 py-1 text-xs text-center rounded-full font-medium`}
+                                }  px-2 py-1 text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -496,7 +493,7 @@ function AdmissionForm() {
                                   errors[val.apikey] && touched[val.apikey]
                                     ? " bg-red-100 my-2"
                                     : ""
-                                }  px-1.5 py-1 text-center rounded-full text-xs font-medium`}
+                                }  px-1.5 py-1  text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -529,7 +526,7 @@ function AdmissionForm() {
                                       errors[val.apikey] && touched[val.apikey]
                                         ? " bg-red-100 my-2"
                                         : ""
-                                    }  px-2 py-1 text-xs text-center rounded-full font-medium`}
+                                    }  px-2 py-1 text-xs font-medium`}
                                   >
                                     {errors[val.apikey] && touched[val.apikey]
                                       ? errors[val.apikey]
@@ -561,7 +558,7 @@ function AdmissionForm() {
                                     errors[val.apikey] && touched[val.apikey]
                                       ? " my-2  bg-red-100"
                                       : ""
-                                  }  px-2 py-1 text-xs  text-center rounded-full font-medium`}
+                                  }  px-2 py-1 text-xs font-medium`}
                                 >
                                   {errors[val.apikey] && touched[val.apikey]
                                     ? errors[val.apikey]
@@ -576,32 +573,31 @@ function AdmissionForm() {
                     {/* for images or document */}
                   </div>
                   <div>
-                    <div>
-                      <NameOfCourseToEnroll
-                        SelectData={SelectData}
-                        values={values}
-                        errors={errors}
-                        touched={touched}
-                        Field={Field}
-                        description="description"
-                      />
-                    </div>
-                    <div className=" ">
-                      <div className="w-full items-center Poppins mb-5 px-44   text-gray-600 mt-5">
-                        <div className="flex gap-3 items-center">
-                          <input
-                            type="checkbox"
-                            className="w-4 h-4 "
-                            onClick={() => setClickedCheckBox(!clickedCheckBox)}
-                          />
-                          <div className="text-xs Poppins font-regular capitalize">
-                            I agree to the
-                            <button className="text-main capitalize mx-1">
-                              {" "}
-                              terms and conditions
-                            </button>
-                          </div>
-                        </div>
+                    <NameOfCourseToEnroll
+                      SelectData={SelectData}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                      Field={Field}
+                      description="description"
+                    />
+                  </div>
+                  <div className=" flex mb-5 px-40 ">
+                    <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4 "
+                          onClick={() => setClickedCheckBox(!clickedCheckBox)}
+                        />
+                      </div>
+
+                      <div className="text-xs Poppins font-regular capitalize">
+                        I agree to the
+                        <button className="text-main capitalize mx-1">
+                          {" "}
+                          terms and conditions
+                        </button>
                       </div>
                     </div>
                     <div className="w-full my-5 flex justify-end  px-7">

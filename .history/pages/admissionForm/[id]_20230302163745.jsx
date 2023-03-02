@@ -561,7 +561,7 @@ function AdmissionForm() {
                                     errors[val.apikey] && touched[val.apikey]
                                       ? " my-2  bg-red-100"
                                       : ""
-                                  }  px-2 py-1 text-xs  text-center rounded-full font-medium`}
+                                  }  px-2 py-1 text-xs font-medium`}
                                 >
                                   {errors[val.apikey] && touched[val.apikey]
                                     ? errors[val.apikey]
@@ -586,9 +586,9 @@ function AdmissionForm() {
                         description="description"
                       />
                     </div>
-                    <div className=" ">
-                      <div className="w-full items-center Poppins mb-5 px-44   text-gray-600 mt-5">
-                        <div className="flex gap-3 items-center">
+                    <div className=" flex mb-5 px-40 ">
+                      <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
+                        <div className="flex gap-5 items-center">
                           <input
                             type="checkbox"
                             className="w-4 h-4 "

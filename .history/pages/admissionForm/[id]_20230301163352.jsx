@@ -14,7 +14,7 @@ function AdmissionForm() {
   const getCourse = () => {
     try {
       axios
-        .get("192.168.1.157:4000/onlineform")
+        .get("https://hubitbackend.onrender.com/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -197,10 +197,6 @@ function AdmissionForm() {
     full_name: Yup.string()
       .min(2, "Too Short!")
       .max(25, "Too Long!")
-      .matches(
-        /^[a-zA-Z0-9\s]*$/,
-        "Username can only contain letters, numbers, and whitespace"
-      )
       .required("Required"),
     address: Yup.string().required("Required"),
     dob: Yup.string().required("Required"),
@@ -218,7 +214,7 @@ function AdmissionForm() {
   });
   const Submit = (values) => {
     axios
-      .post("192.168.1.157:4000/onlineform/files")
+      .post("https://hubitbackend.onrender.com/course")
       .then((res) => {
         if (res.status === 200) {
           //   toast.success("Form added successfullty");
@@ -361,7 +357,7 @@ function AdmissionForm() {
                                 errors[val.apikey] && touched[val.apikey]
                                   ? "bg-red-100 my-2"
                                   : ""
-                              } text-red-400 py-1 px-2 text-xs rounded-full text-center font-medium`}
+                              } text-red-400 py-1 px-2 text-xs font-medium`}
                             >
                               {errors[val.apikey] && touched[val.apikey]
                                 ? errors[val.apikey]
@@ -440,9 +436,9 @@ function AdmissionForm() {
                               <div
                                 className={`text-red-400  ${
                                   errors[val.apikey] && touched[val.apikey]
-                                    ? " my-5  bg-red-100"
+                                    ? " my-2  bg-red-100"
                                     : ""
-                                }  px-1 py-1 text-xs text-center rounded-full font-medium`}
+                                }  px-2 py-1 text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -496,7 +492,7 @@ function AdmissionForm() {
                                   errors[val.apikey] && touched[val.apikey]
                                     ? " bg-red-100 my-2"
                                     : ""
-                                }  px-1.5 py-1 text-center rounded-full text-xs font-medium`}
+                                }  px-1.5 py-1  text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -529,7 +525,7 @@ function AdmissionForm() {
                                       errors[val.apikey] && touched[val.apikey]
                                         ? " bg-red-100 my-2"
                                         : ""
-                                    }  px-2 py-1 text-xs text-center rounded-full font-medium`}
+                                    }  px-2 py-1 text-xs font-medium`}
                                   >
                                     {errors[val.apikey] && touched[val.apikey]
                                       ? errors[val.apikey]
@@ -561,7 +557,7 @@ function AdmissionForm() {
                                     errors[val.apikey] && touched[val.apikey]
                                       ? " my-2  bg-red-100"
                                       : ""
-                                  }  px-2 py-1 text-xs  text-center rounded-full font-medium`}
+                                  }  px-2 py-1 text-xs font-medium`}
                                 >
                                   {errors[val.apikey] && touched[val.apikey]
                                     ? errors[val.apikey]
@@ -576,32 +572,31 @@ function AdmissionForm() {
                     {/* for images or document */}
                   </div>
                   <div>
-                    <div>
-                      <NameOfCourseToEnroll
-                        SelectData={SelectData}
-                        values={values}
-                        errors={errors}
-                        touched={touched}
-                        Field={Field}
-                        description="description"
-                      />
-                    </div>
-                    <div className=" ">
-                      <div className="w-full items-center Poppins mb-5 px-44   text-gray-600 mt-5">
-                        <div className="flex gap-3 items-center">
-                          <input
-                            type="checkbox"
-                            className="w-4 h-4 "
-                            onClick={() => setClickedCheckBox(!clickedCheckBox)}
-                          />
-                          <div className="text-xs Poppins font-regular capitalize">
-                            I agree to the
-                            <button className="text-main capitalize mx-1">
-                              {" "}
-                              terms and conditions
-                            </button>
-                          </div>
-                        </div>
+                    <NameOfCourseToEnroll
+                      SelectData={SelectData}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                      Field={Field}
+                      description="description"
+                    />
+                  </div>
+                  <div className=" flex mb-5 px-40 ">
+                    <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4 "
+                          onClick={() => setClickedCheckBox(!clickedCheckBox)}
+                        />
+                      </div>
+
+                      <div className="text-xs Poppins font-regular capitalize">
+                        I agree to the
+                        <button className="text-main capitalize mx-1">
+                          {" "}
+                          terms and conditions
+                        </button>
                       </div>
                     </div>
                     <div className="w-full my-5 flex justify-end  px-7">
