@@ -1,7 +1,7 @@
 import React from "react";
-import Buttom from "../CourseSection/Buttom";
+// import Buttom from "../CourseSection/Buttom";
 
-import Leftbanner from "../CourseSection/LeftBanner";
+// import Leftbanner from "../CourseSection/LeftBanner";
 const CourseLeftSection = () => {
   const data = [
     {

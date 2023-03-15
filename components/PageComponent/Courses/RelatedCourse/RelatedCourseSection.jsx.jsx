@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 //import image from "../../../Resources/images/python1.webp";
 import Image from "next/image";
-import axios from "axios";
+import axios from "../../../UI/Axios/Axios";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -118,7 +118,7 @@ const RelatedCourseSection = () => {
   const getData = () => {
     try {
       axios
-        .get("https://hubitnep.herokuapp.com/course")
+        .get("/course")
         .then((res) => {
           console.log(res.data.data);
           setData(res.data.data);

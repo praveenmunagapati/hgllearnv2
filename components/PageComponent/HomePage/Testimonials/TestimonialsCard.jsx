@@ -19,8 +19,8 @@ function TestimonialsCard({ description, image, name, post }) {
             width={100}
             src={image}
             alt={"images"}
-            objectFit="cover"
-            layout="responsive"
+            // objectFit="cover"
+            // layout="responsive"
             className=" rounded-full"
           />
         </div>

@@ -44,7 +44,7 @@ function Index() {
   const getData = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get(`http://fullel-backend.apdaptable.app/course`)
         .then((res) => {
           console.log(res);
           setCard(res.data.data);

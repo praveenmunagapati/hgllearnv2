@@ -20,15 +20,15 @@ function PopularCoursesCard({
       <div className="w-72 ">
         {image && (
           <Image
-            src={image}
+            src={val.image}
             height={65}
             width={60}
             alt="Loading ..."
-            layout="responsive"
-            objectFit="cover"
-            placeholder="blur"
+            // layout="responsive"
+            // objectFit="cover"
+            // placeholder="blur"
             blurDataURL={image}
-            className="borderRadiusTop  "
+            className="borderRadiusTop bg-red-600 "
           />
         )}
       </div>

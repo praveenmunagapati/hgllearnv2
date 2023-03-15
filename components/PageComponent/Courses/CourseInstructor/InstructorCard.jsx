@@ -2,7 +2,15 @@ import React from "react";
 import Image from "next/image";
 import { IoMail } from "react-icons/io5";
 
-function InstructorCard({ image, role, name, email }) {
+function InstructorCard({
+  image,
+  post,
+  name,
+  email,
+  aboutMe,
+  experience,
+  skill,
+}) {
   return (
     <div className="flex flex-col lg:flex-row xl:flex-row xxl:flex-row gap-14 ">
       <div
@@ -16,10 +24,6 @@ function InstructorCard({ image, role, name, email }) {
             height={45}
             width={60}
             alt="Loading ..."
-            layout="responsive"
-            objectFit="contain"
-            placeholder="blur"
-            blurDataURL={image}
             className="borderRadiusTop "
           />
         </div>
@@ -27,7 +31,7 @@ function InstructorCard({ image, role, name, email }) {
           <div className="Poppins capitalize text-gray-700 text-[18px]">
             {name}
           </div>
-          <div className="text-gray-500 capitalize text-[14px]">{role}</div>
+          <div className="text-gray-500 capitalize text-[14px]">{post}</div>
           <div className="text-gray-400 text-[13px] flex gap-1.5">
             <div>
               <IoMail className="w-5 h-5" />
@@ -41,27 +45,19 @@ function InstructorCard({ image, role, name, email }) {
           about me
         </div>
         <div className="text-sm text-gray-500 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          dolor similique aut perferendis amet veritatis ut illum placeat fuga
-          nihil unde libero corporis quaerat inventore, iste totam vel tempora
-          alias!
+          <p>{aboutMe}</p>
         </div>
         <div className="w-full h-[1px] bg-gray-300 my-4"></div>
         <div className="Poppins font-bold capitalize text-lg text-gray-800 ">
           skills
         </div>
-        <div className="capitalize">html/css ,progressbar</div>
+        <div className="capitalize">{skill}</div>
         <div className="w-full h-[1px] bg-gray-300 my-4"></div>
 
         <div className="Poppins font-bold capitalize text-lg text-gray-800 ">
           experience
         </div>
-        <div className="text-sm text-gray-500 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          dolor similique aut perferendis amet veritatis ut illum placeat fuga
-          nihil unde libero corporis quaerat inventore, iste totam vel tempora
-          alias!
-        </div>
+        <div className="text-sm text-gray-500 text-justify">{experience}</div>
       </div>
     </div>
   );

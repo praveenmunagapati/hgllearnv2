@@ -13,9 +13,9 @@ function SuccessStudentCard({ image, placement, as, name, position }) {
           height={85}
           width={100}
           alt="Loading ..."
-          layout="responsive"
-          objectFit="cover"
-          placeholder="blur"
+          // layout="responsive"
+          // objectFit="cover"
+          // placeholder="blur"
           blurDataURL={image}
           className="borderRadiusTop"
         />

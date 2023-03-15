@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RiCloseFill } from "react-icons/ri";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import axios from "axios";
+import axios from "../../components/UI/Axios/Axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUser } from "react-icons/fa";
@@ -65,7 +65,7 @@ function Inquiry() {
     resetForm();
     try {
       axios
-        .post("https://hubitbackend.onrender.com/inquire", val)
+        .post("/inquire", val)
         .then((res) => {
           //console.log("gfg");
           if (res.status == "201") {
@@ -81,7 +81,7 @@ function Inquiry() {
   const getData = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);

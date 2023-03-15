@@ -1,17 +1,19 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextCo
+ * nfig} */
 const nextConfig = {
   reactStrictMode: true,
   siteUrl: process.env.SITE_URL || "https://hubit.com.np",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   sitemapSize: 1000,
+  env:{
+  // "NEXT_APP":"https://hubitbackend.onrender.com"
+  "NEXT_APP":"https://fullel-backend.adaptable.app"
+  },
   images: {
     domains: [
-      "hubitbackend.onrender.com",
-      "firebasestorage.googleapis.com",
-      "www.derby-college.ac.uk",
-      "encrypted-tbn0.gstatic.com",
-      "www.cnet.com",
+      // "https://storage.googleapis.com/",
+      "storage.googleapis.com",
       "images.unsplash.com"
     ],
   },

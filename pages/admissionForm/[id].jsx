@@ -7,7 +7,7 @@ import * as Yup from "yup";
 // import { BiVial } from "react-icons/bi";
 // import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
 //import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
-import axios from "axios";
+import axios from "../../components/UI/Axios/Axios";
 function AdmissionForm() {
   const [first, setFirst] = useState("");
   const [course, setCourse] = useState([]);
@@ -15,7 +15,7 @@ function AdmissionForm() {
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get(`/course`)
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);

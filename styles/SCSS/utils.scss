@@ -428,7 +428,7 @@ h6 {
 .tipDown {
   background-color: rgba(160, 4, 125, 1);
   position: relative;
-  z-index: 900;
+  z-index: 0;
 }
 .tipDown::after {
   content: "";
