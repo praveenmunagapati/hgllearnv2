@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WhyHub from "../../components/PageComponent/HomePage/WhyHub/whyHub";
-import CompanyMoto from "../../components/PageComponent/HomePage/Companymoto/Moto";
+// import CompanyMoto from "../../components/PageComponent/HomePage/Companymoto/Moto";
 import WelcomePortal from "../../components/PageComponent/HomePage/WelcomePortal/WelcomePortal";
 import image1 from "../../public/images/Rectangle 25.svg";
 import image2 from "../../public/images/Rectangle 26aa.svg";
@@ -40,36 +40,11 @@ function Index() {
     },
   ]);
   const images = [{ image: image1 }, { image: image2 }];
-  // const card = [
-  //   {
-  //     image: images1,
-  //     category_name: "programming",
-  //     course_name: "python with artificial intelligence (AI)",
-  //     duration_type: "3 months",
-  //   },
-  //   {
-  //     image: images1,
-  //     category_name: "account & finance",
-  //     course_name: "python with artificial intelligence (AI)",
-  //     duration_type: "3 months",
-  //   },
-  //   {
-  //     image: images1,
-  //     category_name: "Basic Computer",
-  //     course_name: "python with artificial intelligence (AI)",
-  //     duration_type: "3 months",
-  //   },
-  //   {
-  //     image: images1,
-  //     category_name: "Graphic Designing",
-  //     course_name: "python with artificial intelligence (AI)",
-  //     duration_type: "3 months",
-  //   },
-  // ];
+
   const getData = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get(`http://fullel-backend.apdaptable.app/course`)
         .then((res) => {
           console.log(res);
           setCard(res.data.data);
@@ -107,18 +82,17 @@ function Index() {
   return (
     <div className="">
       <Home image={image} />
-     
+
       <div className=" pt-8 pb-20">
         <PopularCourses card={card} value="onlyTag" />
       </div>
-      
-      <CourseStatus/>
-      
-      
+
+      <CourseStatus />
+
       <WelcomePortal images={images} />
       <WhyHub />
       <WhatClientsSays />
-      <OurAchievements/>
+      <OurAchievements />
       <PlacementPartners />
       <SuccessStories />
       <FindUsOn />

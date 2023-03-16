@@ -1,10 +1,24 @@
 import React from "react";
 import CourseDetails from "../../components/PageComponent/Courses/CourseDetails/CourseDetails";
 
-function OurCourses() {
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+
+  let res = await fetch(`http://fullel-backend.adaptable.app/course/${id}`);
+  let data = await res.json();
+  return {
+    props: {
+      id: context.query,
+      data: data.data,
+    }, // will be passed to the page component as props
+  };
+}
+
+function OurCourses({ id, data }) {
+  console.log(id, data, "jghgf");
   return (
     <div>
-      <CourseDetails />
+      <CourseDetails detail={data} id={id} />
     </div>
   );
 }

@@ -8,16 +8,19 @@ import { useRouter } from "next/router";
 import OverView from "../Overview/OverView";
 import CourseCuriculum from "../Curiculum/CourseCuriculum";
 import CourseInstructor from "../CourseInstructor/CourseInstructor";
-const CourseDetails = () => {
+const CourseDetails = ({ detail }) => {
   const router = useRouter();
+
   const [Image, setImage] = useState(null);
   const [description, setDes] = useState(null);
+  const [ID, setID] = useState("");
   const [active, setActive] = useState("overview");
   useEffect(() => {
     if (router.isReady) {
-      const { image, description } = router.query;
-      console.log(image, router.query);
+      const { image, description, id } = router.query;
+      console.log(image, router.query, id);
       setImage(image);
+      setID(id);
       setDes(description);
     }
   }, [router.isReady, router.query]);
@@ -30,7 +33,7 @@ const CourseDetails = () => {
   const Tabs = () => {
     switch (active) {
       case "overview":
-        return <OverView image={Image} description={description} />;
+        return <OverView detail={detail} id={ID} description={description} />;
         break;
       case "curiculum":
         return <CourseCuriculum />;
@@ -39,7 +42,7 @@ const CourseDetails = () => {
         return <CourseInstructor />;
         break;
       case "review":
-        return 4;
+        return;
         break;
 
       default:
@@ -61,8 +64,8 @@ const CourseDetails = () => {
                     <div
                       key={i}
                       className={` ${
-                        active === val.title ? "text-white tipDown " : ""
-                      } capitalize px-1 lg:px-4 xl:px-4 xxl:px-4 py-2 cursor-pointer`}
+                        active === val.title ? "text-white tipDown" : ""
+                      } capitalize px-1 lg:px-4 xl:px-4 xxl:px-4 py-2 cursor-pointer `}
                       onClick={() => setActive(val.title)}
                     >
                       {val.title}

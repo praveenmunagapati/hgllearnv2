@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/router";
-import axios from "axios";
+import axios from "../../../UI/Axios/Axios";
 function PopularCourses({ card, value }) {
   const router = useRouter();
   console.log(router);
@@ -14,7 +14,7 @@ function PopularCourses({ card, value }) {
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -188,7 +188,6 @@ function PopularCourses({ card, value }) {
               </div>
             </div>
           </div>
-          
         ) : (
           ""
         )}
@@ -235,7 +234,10 @@ function PopularCourses({ card, value }) {
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    query: { image: `https://hubitbackend.onrender.com/${val.image}`, description: val.description },
+                    // query:
+                    // image: `https://hubitbackend.onrender.com/${val.image}`,
+                    // description: val.description,
+                    // },
                   }}
                 >
                   <div
@@ -243,13 +245,13 @@ function PopularCourses({ card, value }) {
                 overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer`}
                   >
                     <div className="h-60 w-80 relative">
-                      <Image
-                        src={`https://hubitbackend.onrender.com/${val.image}`}
+                      <img
+                        src={val.image}
                         alt={"images"}
-                        placeholder="blur"
-                        blurDataURL={val.image}
-                        objectFit="cover"
-                        objectPosition="top"
+                        // placeholder="blur"
+                        // blurDataURL={val.image}
+                        // objectFit="cover"
+                        // objectPosition="top"
                         layout="fill"
                         className=" "
                       />
@@ -273,7 +275,7 @@ function PopularCourses({ card, value }) {
                           {val.course_name}
                         </div>
                         <div className="py-1 xs:py-2">
-                          <span className="text-gray-500 text-[9px] xl:text-[11px] xxl:text-sm">
+                          <span className="text-gray-500 text-[12px] xl:text-[11px] xxl:text-sm">
                             Duration :
                           </span>
                           <span className="text-[9px] xl:text-[11px] xxl:text-sm mx-1">
@@ -301,7 +303,10 @@ function PopularCourses({ card, value }) {
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    query: { image: `https://hubitbackend.onrender.com/${val.image}`, description: val.description },
+                    // query: {
+                    //   image: `https://hubitbackend.onrender.com/${val.image}`,
+                    //   description: val.description,
+                    // },
                   }}
                 >
                   <div
@@ -310,19 +315,10 @@ function PopularCourses({ card, value }) {
                   >
                     <div className="h-60 w-80 relative">
                       {val.image ? (
-                        <Image
-                          src={`https://hubitbackend.onrender.com/${val.image}`}
-                          alt={"images"}
-                          placeholder="blur"
-                          blurDataURL={val.image}
-                          objectFit="cover"
-                          objectPosition="top"
-                          layout="fill"
-                          className=" "
-                        />
+                        <img src={val.image} alt={"images"} className=" " />
                       ) : (
-                        <Image
-                          src={`https://hubitbackend.onrender.com${val.image}`}
+                        <img
+                          src={val.image}
                           alt={val.course_name}
                           height="200"
                           width={200}
@@ -339,7 +335,7 @@ function PopularCourses({ card, value }) {
                           {val.course_category}
                         </div>
                         <div className="font-semibold w-full h-max line-clamp-2 text-xs xl:text-sm xxl:text-base ">
-                          {val.course_name}
+                          <h1> {val.course_name}</h1>
                         </div>
                         <div className="py-1 xs:py-2">
                           <span className="text-gray-500 text-[9px] xl:text-[11px] xxl:text-sm">

@@ -3,9 +3,10 @@ import Image from "next/image";
 
 import Layout from "../../HOC/Layout/Layout";
 import RecommendedCourse from "../../components/PageComponent/Courses/RecommendedCourse/RecommendedCourse";
-import axios from "axios";
+import axios from "../../components/UI/Axios/Axios";
 import FeaturedCourses from "../../components/PageComponent/Courses/FeaturedCourses/FeaturedCourses";
 import PopularCourses from "../../components/PageComponent/HomePage/PopularCourses/PopularCourses";
+// import axios from "axios";
 function Course() {
   // const card = [
   //   {
@@ -85,9 +86,9 @@ function Course() {
   const getData = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("/course")
         .then((res) => {
-          console.log(res.data.data);
+          console.log("jjjjjjjjj", res.data.data);
           setCard(res.data.data);
         })
         .catch((err) => {
@@ -122,7 +123,7 @@ function Course() {
         <div className="pb-28">
           <PopularCourses card={card} value="courses" />
         </div>
-        <RecommendedCourse/>
+        <RecommendedCourse />
       </div>
     </Layout>
   );

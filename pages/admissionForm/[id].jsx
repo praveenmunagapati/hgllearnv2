@@ -1,20 +1,21 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState, useEffect } from "react";
 import Layout from "../../HOC/Layout/Layout";
 import Image from "next/image";
-import bg from "../../public/images/Rectangle 35.png"
+import bg from "../../public/images/Rectangle 35.png";
 import * as Yup from "yup";
-import { BiVial } from "react-icons/bi";
+// import { BiVial } from "react-icons/bi";
 // import RulesAndRegulations from "../../components/PageComponent/RulesAndRegulations/RulesAndRegulations";
-import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
-import axios from "axios";
+//import NameOfCourseToEnroll from "../../components/PageComponent/NameOfCourseToEnroll/NameOfCourseToEnroll";
+import axios from "../../components/UI/Axios/Axios";
 function AdmissionForm() {
+  const [first, setFirst] = useState("");
   const [course, setCourse] = useState([]);
   const [clickedCheckBox, setClickedCheckBox] = useState(false);
   const getCourse = () => {
     try {
       axios
-        .get("https://hubitnep.herokuapp.com/course")
+        .get(`/course`)
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -40,12 +41,14 @@ function AdmissionForm() {
   const admissionForm = [
     {
       label: "full name:",
+      name: "name",
       type: "text",
       apikey: "full_name",
       placeholder: " Enter your full name",
     },
     {
       label: "address:",
+      name: "address",
       type: "text",
       apikey: "address",
       placeholder: " Address",
@@ -53,11 +56,13 @@ function AdmissionForm() {
 
     {
       label: "date of birth:",
+      name: "dateOfBirth",
       type: "date",
       apikey: "dob",
     },
     {
       label: "email:",
+      name: "email",
       type: "email",
       apikey: "email",
       placeholder: "Email ",
@@ -65,31 +70,22 @@ function AdmissionForm() {
 
     {
       label: "phone no:",
+      name: "phone",
       type: "text",
       apikey: "phone_no",
       placeholder: "E.g:9878765432 ",
     },
     {
       label: "gender:",
+      name: "gender",
       apikey: "gender",
-      Gender: [
-        {
-          label: "male",
-          type: "radio",
-          apikey: "gender",
-          value: "male",
-        },
-        {
-          label: "female",
-          type: "radio",
-          apikey: "gender",
-          value: "female",
-        },
-      ],
+      as: "select",
+      genderOptions: [],
     },
     {
       label: "level of education:",
       apikey: "level_of_education",
+      as: "radio",
       Gender: [
         {
           label: "slc",
@@ -121,6 +117,7 @@ function AdmissionForm() {
       grid: [
         {
           label: "guardians_name:",
+          name: "guardianName",
           type: "text",
           apikey: "guardians_name",
           placeholder: "Enter your guardian name ",
@@ -128,12 +125,14 @@ function AdmissionForm() {
 
         {
           label: "guardian_number:",
+          name: "guardianNumber",
           type: "text",
           apikey: "guardians_phone_no",
           placeholder: "Enter your guardian number ",
         },
         {
-          label: " name_of_school/college:",
+          label: " name of school/college:",
+          name: "collegeOrSchoolName",
           type: "text",
           apikey: "school_or_clg_name",
           placeholder: "School/college name ",
@@ -141,6 +140,22 @@ function AdmissionForm() {
       ],
     },
   ];
+
+  const genderOptions = [
+    {
+      value: "select your gender",
+    },
+    {
+      value: "male",
+    },
+    {
+      value: "female",
+    },
+    {
+      value: "other",
+    },
+  ];
+
   const SelectData = [
     {
       as: "select",
@@ -188,10 +203,23 @@ function AdmissionForm() {
       //   placeholder: "image ",
     },
   ];
+  // append code
+  const postFormData = (e) => {
+    try {
+    } catch (error) {}
+  };
+  // const handleChange = (e) => {
+  //   console.log(e.target.files);
+  // };
+
   const AdmissionFormSchema = Yup.object().shape({
     full_name: Yup.string()
       .min(2, "Too Short!")
-      .max(50, "Too Long!")
+      .max(25, "Too Long!")
+      .matches(
+        /^[a-zA-Z0-9\s]*$/,
+        "Username can only contain letters, numbers, and whitespace"
+      )
       .required("Required"),
     address: Yup.string().required("Required"),
     dob: Yup.string().required("Required"),
@@ -199,26 +227,44 @@ function AdmissionForm() {
     guardians_name: Yup.string().required("Required"),
     guardians_phone_no: Yup.string().required("Required"),
     phone_no: Yup.string().required("Required"),
-    level_of_education: Yup.string().required("Required"),
+    // level_of_education: Yup.string().required("Required"),
     school_or_clg_name: Yup.string().required("Required"),
     gender: Yup.string().required("Required"),
     course_names: Yup.string(),
     description: Yup.string(),
-    shifts: Yup.string().required("Required"),
+    // shifts: Yup.string().required("Required"),
     image: Yup.string().required("Required"),
   });
-  const Submit = (values) => {
-    axios
-      .post("https://hubitnep.herokuapp.com/course")
-      .then((res) => {
-        if (res.status === 200) {
-          //   toast.success("Form added successfullty");
-          alert("Form added successfullty");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const Submit = (e) => {
+    //alert("sds");
+    console.log(e, "e.target");
+    try {
+      const formData = new FormData();
+      formData.append("full_name", e.full_name);
+      formData.append("address", e.address);
+      formData.append("file", e.image);
+      formData.append("dob", e.dob);
+      formData.append("email", e.email);
+      formData.append("phone_number", e.phone_no);
+      formData.append("gender", e.gender);
+      formData.append("level_of_education", e.level_of_education);
+      formData.append("guardians_name", e.guardians_name);
+      formData.append("guardians_phone_number", e.guardians_phone_no);
+      formData.append("course_names", e.course_names);
+      formData.append("shifts", e.shifts);
+      formData.append("school_or_clg_name", e.school_or_clg_name);
+      axios
+        .post("http://192.168.0.13:4000/onlineform/files", formData)
+        .then((res) => {
+          if (res.status === 200) {
+            //   toast.success("Form added successfullty");
+            alert("Form added successfullty");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {}
   };
   return (
     <Layout>
@@ -233,24 +279,30 @@ function AdmissionForm() {
           />
         </div>
         <div className="absolute top-20 /0 left-8 sm:left-20 text-white capitalize">
-          <div className="font-bold  text-3xl"> Student Admission Form</div>
-          <div className="Poppins text-xs w-2/3 font-light mt-2 ">Enter your admission information below to admit for their interested IT Course at their comfort, we have made available the Online Admission Form below!</div>
+          <h1 className="font-bold  text-3xl"> Student Admission Form</h1>
+          <p className="Poppins text-xs w-2/3 font-light mt-2 ">
+            Enter your admission information below to enroll to your interested
+            IT Course at your comfort, we have made available the Online
+            Admission Form below!
+          </p>
           <div className="Poppins text-sm mt-2">home/courses</div>
-          <button className="px-6 py-2 bg-[#FACC15] Poppins text-black font-medium text-xs mt-2 rounded-full">View Form</button>
+          {/* <button className="px-6 py-2 bg-[#FACC15] Poppins text-black font-medium text-xs mt-2 rounded-lg">View Form</button> */}
         </div>
       </div>
       <div className="px-2">
-
         <div className="  rounded-t-2xl">
           <div className="flex flex-col w-full justify-center items-center pb-5 pt-16 gap-2">
             <div className=" w-full   Poppins  text-center uppercase text-xl  text-black font-medium">
               {" "}
               student enrollment registration form:
             </div>
-            <div className="text-xs Poppins capitalize ">
-              <p>Fill out the form carefully for registration. All Asterisks (*) fields are mandatory to fill-up.</p>
-            </div>
-            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-full text-xs gap-5 mt-5 Poppins">
+            {/* <div className="text-xs Poppins capitalize ">
+              <p>
+                Fill out the form carefully for registration. All Asterisks (*)
+                fields are mandatory to fill-up.
+              </p>
+            </div> */}
+            <div className="flex bg-[#EEEAEA] py-2 px-4 rounded-lg text-xs gap-8 mt-5 Poppins">
               <button>Personel Information</button>
               <button>Payment Option</button>
               <button>Review Details</button>
@@ -258,7 +310,7 @@ function AdmissionForm() {
           </div>
           <Formik
             initialValues={{
-              full_name: "",
+              name: "",
               address: "",
               phone_no: "",
               dob: "",
@@ -275,30 +327,28 @@ function AdmissionForm() {
             }}
             validationSchema={AdmissionFormSchema}
             onSubmit={(values, { resetForm }) => {
-              console.log(values);
+              // console.log(values);
               //   alert(5);
-              //   resetForm();
               Submit(values);
+              resetForm();
+              postFormData(values);
             }}
           >
             {({ errors, touched, handleSubmit, values, setFieldValue }) => (
               <div>
                 <Form onSubmit={handleSubmit}>
                   <div className="flex flex-col  px-7 mb-16">
-                    <div
-                      className={`  flex justify-center  `}
-                    >
+                    <div className={`  flex justify-center  `}>
                       {FormImage.map((val, i) => {
                         let AllImage = val.apikey;
                         return (
                           <div key={i}>
-                            <div className=" capitalize    font-semibold text-lg text-gray-700">
+                            <div className=" capitalize font-semibold text-lg text-gray-700">
                               <label
                                 className="cursor-pointer "
                                 htmlFor={val.apikey}
                               >
                                 {val.label}
-
                               </label>
                             </div>
                             <div className="   ">
@@ -311,14 +361,15 @@ function AdmissionForm() {
                                   objectPosition={"top"}
                                   src={
                                     values[val.apikey]
-                                      ? URL.createObjectURL(values[val.apikey])
+                                      ? URL.createObjectURL(values[AllImage])
                                       : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSeH9llEv5AAEqHYkOwwIjcJa0VFPVERRUuw&usqp=CAU"
                                   }
                                   alt="Loading ..."
                                   layout="responsive"
                                   height={100}
                                   width={100}
-                                  className="m-auto h-60 laptop:h-80 rounded-full "
+                                  className="m-auto h-60 laptop:h-80 rounded-lg "
+                                  //onChange={handleChange}
                                 />
                               </label>
                             </div>
@@ -338,6 +389,7 @@ function AdmissionForm() {
                                 type={val.type}
                                 accept={val.accept}
                                 onChange={(e) => {
+                                  alert("gotr");
                                   let file = e.target.files[0];
                                   console.log(file, AllImage);
                                   setFieldValue(AllImage, e.target.files[0]);
@@ -345,10 +397,11 @@ function AdmissionForm() {
                               />
                             </div>
                             <div
-                              className={`${errors[val.apikey] && touched[val.apikey]
+                              className={`${
+                                errors[val.apikey] && touched[val.apikey]
                                   ? "bg-red-100 my-2"
                                   : ""
-                                } text-red-400 py-1 px-2 text-xs font-medium`}
+                              } text-red-400 py-1 px-2 text-xs rounded-lg text-center font-medium`}
                             >
                               {errors[val.apikey] && touched[val.apikey]
                                 ? errors[val.apikey]
@@ -358,8 +411,60 @@ function AdmissionForm() {
                         );
                       })}
                     </div>
-                    <div className="grid grid-cols-2 gap-16 col-start-3 col-span-10 px-40 mt-16 ">
+
+                    <div className="grid grid-cols-2 gap-16 col-start-3  px-40 mt-16 ">
                       {admissionForm.map((val, i) => {
+                        if (val.as === "select") {
+                          return (
+                            <div>
+                              <div
+                                key={i}
+                                className="flex col-span-5 flex-col  h-14  gap-3  "
+                              >
+                                <div className="  px-2  capitalize Poppins text-sm  w-fit flex  items-center">
+                                  {val.label}
+                                </div>
+                                <div>
+                                  <div>
+                                    <div className=" flex   px-1 h-full items-center justify-center ">
+                                      <Field
+                                        as={val.as}
+                                        value={val.value}
+                                        name={val.apikey}
+                                        className=" w-full bg-[#EEEAEA] rounded-lg   px-4 py-1.5  "
+                                      >
+                                        {genderOptions?.map((val, i) => {
+                                          return (
+                                            <option
+                                              key={i}
+                                              value={val.value}
+                                              className="w-full p-2 text-center bg-slate-200 text-slate-600"
+                                            >
+                                              {val?.value}
+                                            </option>
+                                          );
+                                        })}
+                                      </Field>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                className={`text-red-400  ${
+                                  errors[val.apikey] && touched[val.apikey]
+                                    ? " my-5  bg-red-100"
+                                    : ""
+                                }  px-1 py-1 text-xs text-center rounded-lg font-medium`}
+                              >
+                                {errors[val.apikey] && touched[val.apikey]
+                                  ? errors[val.apikey]
+                                  : ""}
+                              </div>
+                            </div>
+                          );
+                        }
+
                         if (val.Gender) {
                           return (
                             <div>
@@ -377,7 +482,7 @@ function AdmissionForm() {
                                               type={val.type}
                                               value={val.value}
                                               name={val.apikey}
-                                              className=" w-full form-radio checked:bg-main   px-4 py-1.5  "
+                                              className=" w-full  checked:bg-main   px-4 py-1.5  "
                                             />
                                           </div>
                                           <div className="w-fit ml-2 ">
@@ -392,10 +497,11 @@ function AdmissionForm() {
                                 </div>
                               </div>
                               <div
-                                className={`text-red-400 ${errors[val.apikey] && touched[val.apikey]
+                                className={`text-red-400 ${
+                                  errors[val.apikey] && touched[val.apikey]
                                     ? " bg-red-100 my-2"
                                     : ""
-                                  }  px-1.5 py-1  text-xs font-medium`}
+                                }  px-1.5 py-1 text-center rounded-lg text-xs font-medium`}
                               >
                                 {errors[val.apikey] && touched[val.apikey]
                                   ? errors[val.apikey]
@@ -407,7 +513,7 @@ function AdmissionForm() {
                           if (val.grid) {
                             return val.grid.map((val, i) => {
                               return (
-                                <div key={i} className="  w-full">
+                                <div key={i} className="b  w-full">
                                   <div className="flex flex-col gap-3  ">
                                     <div className="w-fit">
                                       <div className="  px-2 h-full capitalize text-sm Poppins w-fit flex  items-center">
@@ -419,15 +525,16 @@ function AdmissionForm() {
                                         type={val.type}
                                         placeholder={val.placeholder}
                                         name={val.apikey}
-                                        className=" w-full bg-[#EEEAEA] rounded-full   px-4 py-1.5  "
+                                        className=" w-full bg-[#EEEAEA] rounded-lg   px-4 py-1.5  "
                                       />
                                     </div>
                                   </div>
                                   <div
-                                    className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
+                                    className={`text-red-400  ${
+                                      errors[val.apikey] && touched[val.apikey]
                                         ? " bg-red-100 my-2"
                                         : ""
-                                      }  px-2 py-1 text-xs font-medium`}
+                                    }  px-2 py-1 text-xs text-center rounded-lg font-medium`}
                                   >
                                     {errors[val.apikey] && touched[val.apikey]
                                       ? errors[val.apikey]
@@ -438,84 +545,169 @@ function AdmissionForm() {
                             });
                           } else {
                             return (
-                              <div key={i} className=" ">
-                                <div className="flex flex-col gap-3 ">
-                                  <div className="w-fit">
-                                    <div className="  px-2 h-full capitalize text-sm Poppins  w-fit flex  items-center">
-                                      <label>{val.label}</label>
-                                    </div>{" "}
+                              <>
+                                <div key={i} className=" ">
+                                  <div className="flex flex-col gap-3 ">
+                                    <div className="w-fit">
+                                      <div className="  px-2 h-full capitalize text-sm Poppins  w-fit flex  items-center">
+                                        <label>{val.label}</label>
+                                      </div>{" "}
+                                    </div>
+                                    <div className="w-full">
+                                      <Field
+                                        type={val.type}
+                                        placeholder={val.placeholder}
+                                        name={val.apikey}
+                                        className=" w-full bg-[#EEEAEA] rounded-lg  px-4 py-1.5  "
+                                      />
+                                    </div>
                                   </div>
-                                  <div className="w-full">
-                                    <Field
-                                      type={val.type}
-                                      placeholder={val.placeholder}
-                                      name={val.apikey}
-                                      className=" w-full bg-[#EEEAEA] rounded-full  px-4 py-1.5  "
-                                    />
+                                  <div
+                                    className={`text-red-400  ${
+                                      errors[val.apikey] && touched[val.apikey]
+                                        ? " my-2  bg-red-100"
+                                        : ""
+                                    }  px-2 py-1 text-xs  text-center rounded-lg font-medium`}
+                                  >
+                                    {errors[val.apikey] && touched[val.apikey]
+                                      ? errors[val.apikey]
+                                      : ""}
                                   </div>
                                 </div>
-                                <div
-                                  className={`text-red-400  ${errors[val.apikey] && touched[val.apikey]
-                                      ? " my-2  bg-red-100"
-                                      : ""
-                                    }  px-2 py-1 text-xs font-medium`}
-                                >
-                                  {errors[val.apikey] && touched[val.apikey]
-                                    ? errors[val.apikey]
-                                    : ""}
-                                </div>
-                              </div>
+                              </>
                             );
                           }
                         }
                       })}
+
+                      {/* for images or document */}
                     </div>
-                    {/* for images or document */}
+                    <div className="">
+                      <div className=" mt-10 mb-16 px-40">
+                        <div className="  ">
+                          <div className="flex justify-between  ">
+                            {SelectData.map((val, i) => {
+                              if (val.Shift) {
+                                return (
+                                  <div className="">
+                                    <div className="">
+                                      <div className="">{val.label}</div>
+                                      <div className=" flex gap-4 items-center">
+                                        {val.Shift.map((val, i) => {
+                                          return (
+                                            <div
+                                              className="flex gap-2 "
+                                              key={i}
+                                            >
+                                              <div className="capitalize text-sm Poppins text-gray-500">
+                                                {val.label}
+                                              </div>
+                                              <Field
+                                                type={val.type}
+                                                value={val.value}
+                                                name={val.apikey}
+                                                className="w-4"
+                                              />
+                                            </div>
+                                          );
+                                        })}
+                                      </div>
+                                    </div>
 
-                  </div>
-                  <div>
-                    <NameOfCourseToEnroll
-                      SelectData={SelectData}
-                      values={values}
-                      errors={errors}
-                      touched={touched}
-                      Field={Field}
-                      description="description"
-                    />
-                  </div>
-                  <div className=" flex mb-5 px-40 ">
+                                    <div
+                                      className={`text-red-400  ${
+                                        errors[val.apikey] &&
+                                        touched[val.apikey]
+                                          ? " my-2  bg-red-100"
+                                          : ""
+                                      }  px-1 py-1 text-xs font-medium`}
+                                    >
+                                      {errors[val.apikey] &&
+                                      touched[val.apikey] ? (
+                                        <div>{errors[val.apikey]}</div>
+                                      ) : null}
+                                    </div>
+                                  </div>
+                                );
+                              } else {
+                                return (
+                                  <div className=" ">
+                                    <Field
+                                      as={"select"}
+                                      name={val.apikey}
+                                      className=" w-full bg-[#EEEAEA] Poppins text-sm h-9 capitalize px-32 py-1
+                                                     rounded-md outline-none border-none"
+                                    >
+                                      {val?.options?.map((val, i) => {
+                                        console.log(val);
 
-                    <div className="w-full flex gap-2 items-center Poppins  px-8  text-gray-600 mt-5">
-                      <div className="flex items-center">
-                        <input
-                          type="checkbox"
-                          className="w-4 h-4 "
-                          onClick={() => setClickedCheckBox(!clickedCheckBox)}
-                        />
+                                        return (
+                                          <option key={i}>
+                                            {val?.course_name}
+                                          </option>
+                                        );
+                                      })}
+                                    </Field>
+
+                                    <div
+                                      className={`text-red-400  ${
+                                        errors[val.apikey] &&
+                                        touched[val.apikey]
+                                          ? " my-2  bg-red-100"
+                                          : ""
+                                      }  px-2 py-1 text-xs font-medium`}
+                                    >
+                                      {errors[val.apikey] &&
+                                      touched[val.apikey] ? (
+                                        <div>{errors[val.apikey]}</div>
+                                      ) : null}
+                                    </div>
+                                  </div>
+                                );
+                              }
+                            })}
+                          </div>
+                        </div>
                       </div>
+                      <div className="flex justify-between ">
+                        <div className=" items-center Poppins mb-5 px-44   text-gray-600 mt-5">
+                          <div className="flex gap-3 items-center">
+                            <input
+                              type="checkbox"
+                              className="w-4 h-4 "
+                              onClick={() =>
+                                setClickedCheckBox(!clickedCheckBox)
+                              }
+                            />
+                            <div className="text-xs Poppins font-regular capitalize">
+                              I agree to the
+                              <button className="text-main capitalize mx-1">
+                                {" "}
+                                terms and conditions
+                              </button>
+                            </div>
+                          </div>
+                        </div>
 
-                      <div className="text-xs Poppins font-regular capitalize">
-                        I agree to the<button className="text-main capitalize mx-1"> terms and conditions</button> 
-                      </div>
-                    </div>
-                    <div className="w-full my-5 flex justify-end  px-7">
-                    <button
-                      type="submit"
-                      className={`px-5 py-2 capitalize bg-main text-white w-fit 
+                        <div className="mr-7 px-7">
+                          <button
+                            type="submit"
+                            className={`px-5 py-2 capitalize bg-main text-white w-fit 
                         
-                      ${clickedCheckBox
+                      ${
+                        clickedCheckBox
                           ? "opacity-100 cursor-pointer transition-all hover:scale-105 ease-in-out duration-300 "
                           : " opacity-50 cursor-not-allowed"
-                        } rounded-md
+                      } rounded-md
                      `}
-                      disabled={clickedCheckBox ? "" : "disabled "}
-                    >
-                      submit
-                    </button>
+                            disabled={clickedCheckBox ? "" : "disabled "}
+                          >
+                            Next
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  </div>
-
-                  
                 </Form>
               </div>
             )}

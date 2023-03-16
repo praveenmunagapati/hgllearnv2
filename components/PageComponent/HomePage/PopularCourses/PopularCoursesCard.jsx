@@ -1,9 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import {FaUser, FaCommentAlt} from "react-icons/fa"
-import image from "../../../../public/images/Rectangle 34.jpg"
+import { FaUser, FaCommentAlt } from "react-icons/fa";
+//import image from "../../../../public/images/Rectangle 34.jpg"
 
-function PopularCoursesCard({ image, CourseTittle, CourseCategory, Description, usercount, commentcount }) {
+function PopularCoursesCard({
+  image,
+  CourseTittle,
+  CourseCategory,
+  Description,
+  usercount,
+  commentcount,
+}) {
   return (
     <div
       className=" 
@@ -11,23 +18,23 @@ function PopularCoursesCard({ image, CourseTittle, CourseCategory, Description, 
       pb-5 rounded-lg"
     >
       <div className="w-72 ">
-        {
-          image && <Image
-          src={image}
-          height={65}
-          width={60}
-          alt="Loading ..."
-          layout="responsive"
-          objectFit="cover"
-          placeholder="blur"
-          blurDataURL={image}
-          className="borderRadiusTop  "
-        />
-        }
+        {image && (
+          <Image
+            src={val.image}
+            height={65}
+            width={60}
+            alt="Loading ..."
+            // layout="responsive"
+            // objectFit="cover"
+            // placeholder="blur"
+            blurDataURL={image}
+            className="borderRadiusTop bg-red-600 "
+          />
+        )}
       </div>
       <div className=" px-4  flex flex-col items-center justify-center my-6  ">
         <div className="Poppins capitalize font-semibold  text-gray-800 text-[16px]">
-          {CourseTittle}
+          <h1>{CourseTittle}</h1>
         </div>
         <div className="text-gray-600 font-medium text-[12px]">
           Category : {CourseCategory}
@@ -35,10 +42,12 @@ function PopularCoursesCard({ image, CourseTittle, CourseCategory, Description, 
         </div>
         <div className="text-gray-500 font-regular capitalize text-[12px] flex">
           <div className="flex gap-1">
-            <FaUser/><p>{usercount}</p>
+            <FaUser />
+            <p>{usercount}</p>
           </div>
           <div className="flex gap-1">
-            <FaCommentAlt/><p>{commentcount}</p>
+            <FaCommentAlt />
+            <p>{commentcount}</p>
           </div>
         </div>
       </div>

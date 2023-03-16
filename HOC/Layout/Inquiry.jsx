@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { RiCloseFill } from "react-icons/ri";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import axios from "axios";
+import axios from "../../components/UI/Axios/Axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {FaUser} from "react-icons/fa"
-import {MdEmail, MdCall} from "react-icons/md"
-import {BsChatSquareTextFill} from "react-icons/bs"
+import { FaUser } from "react-icons/fa";
+import { MdEmail, MdCall } from "react-icons/md";
+import { BsChatSquareTextFill } from "react-icons/bs";
 //import CourseOption from "./CourseOption";
 
 const schema = yup.object().shape({
@@ -28,20 +28,20 @@ function Inquiry() {
 
   const FormFields = [
     {
-      position:"center",
-      icon:<FaUser/>,
+      position: "center",
+      icon: <FaUser />,
       name: "name",
       type: "text",
     },
     {
-      position:"center",
-      icon:<MdEmail/>,
+      position: "center",
+      icon: <MdEmail />,
       name: "email",
       type: "email",
     },
     {
-      position:"center",
-      icon:<MdCall/>,
+      position: "center",
+      icon: <MdCall />,
       name: "phone",
       type: "text",
     },
@@ -52,8 +52,8 @@ function Inquiry() {
       option: [],
     },
     {
-      pad:"10px",
-      icon :<BsChatSquareTextFill/>,
+      pad: "10px",
+      icon: <BsChatSquareTextFill />,
       name: "description",
       as: "textarea",
     },
@@ -61,16 +61,15 @@ function Inquiry() {
 
   // post data
   const postData = (val, resetForm) => {
-  //  test  
+    //  test
     resetForm();
     try {
       axios
-        .post("https://hubitbackend.onrender.com/inquire", val)
+        .post("/inquire", val)
         .then((res) => {
-          console.log("gfg");
+          //console.log("gfg");
           if (res.status == "201") {
-  toast.success("submitted successfully");
-
+            toast.success("submitted successfully");
           }
         })
         .catch((err) => {
@@ -82,7 +81,7 @@ function Inquiry() {
   const getData = () => {
     try {
       axios
-        .get("https://hubitbackend.onrender.com/course")
+        .get("/course")
         .then((res) => {
           console.log(res);
           setCourse(res.data.data);
@@ -110,7 +109,7 @@ function Inquiry() {
 
   return (
     <>
-      <div>                                                                                                    
+      <div>
         <ToastContainer />
         {console.log(FormFields)}
         {/* send us inquiry button */}
@@ -151,7 +150,6 @@ function Inquiry() {
             onSubmit={(val, { resetForm }) => {
               console.log(val);
               postData(val, resetForm);
-           
             }}
           >
             {({ handleSubmit, values }) => {
@@ -194,27 +192,31 @@ function Inquiry() {
                     } else {
                       return (
                         <div key={i} className="flex flex-col py-2  ">
-                           <ErrorMessage
+                          <ErrorMessage
                             name={val.name}
                             component={"div"}
                             className="text-red-700 poppins text-[10px] w-full text-left capitalize"
                           />
-                          <div className="w-full h-fit text-gray-600  rounded-md bg-gray-200  pl-3  " style={{ display:"flex", alignItems:val.position}} >
-                            <div  style={{paddingTop:val.pad}}>
-                           {val.icon} 
-                           </div>
-                          <Field
-                            as={val.as}
-                            type={val.type}
-                            placeholder={`Enter your ${val.name}`}
-                            name={val.name}
-                            className=" outline-none  border-b text-xs bg-transparent  py-2 px-3 "
-                          />
+                          <div
+                            className="w-full h-fit text-gray-600  rounded-md bg-gray-200  pl-3  "
+                            style={{
+                              display: "flex",
+                              alignItems: val.position,
+                            }}
+                          >
+                            <div style={{ paddingTop: val.pad }}>
+                              {val.icon}
+                            </div>
+                            <Field
+                              as={val.as}
+                              type={val.type}
+                              placeholder={`Enter your ${val.name}`}
+                              name={val.name}
+                              className=" outline-none  border-b text-xs bg-transparent  py-2 px-3 "
+                            />
 
-                          {console.log(values)}
-                          
+                            {console.log(values)}
                           </div>
-                         
                         </div>
                       );
                     }

@@ -1,12 +1,18 @@
 import React from "react";
 import Leftbanner from "../../../PageComponent/Courses/CourseSection/LeftBanner";
 
-function OverView({ image, description }) {
+function OverView({ detail, coursetitle, description, id }) {
+  console.log(detail, "sfmldkfxgjdfkjv nhbfkjcv");
   return (
     <div>
       <div>
-        {image !== null && (
-          <Leftbanner image={image} description={description} />
+        {detail !== null && (
+          <Leftbanner
+            image={detail.image}
+            coursetitle={coursetitle}
+            description={detail.description}
+            id={id}
+          />
         )}
       </div>
     </div>
