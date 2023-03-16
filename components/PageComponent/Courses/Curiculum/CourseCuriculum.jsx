@@ -16,30 +16,31 @@ function CourseCuriculum() {
     if (router.isReady) {
       const { id } = router.query;
       console.log(id);
+      getCuriculumData(id);
       setID(id);
     }
   }, [router.isReady, router.query]);
   console.log(ID);
 
-  useEffect(() => {
-    const getCuriculumData = () => {
-      try {
-        axios
-          .get(`/syallabus/${ID}`)
-          .then((res) => {
-            console.log(res.data);
-            setsecID(res.data[0]);
-            setCourseCuriculumData(res.data.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getCuriculumData();
-  }, [ID]);
+  // useEffect(() => {
+  const getCuriculumData = (id) => {
+    try {
+      axios
+        .get(`/syallabus/${id}`)
+        .then((res) => {
+          console.log(res.data);
+          setsecID(res.data[0]);
+          setCourseCuriculumData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // getCuriculumData();
+  // }, [ID]);
 
   return (
     <div>
