@@ -229,62 +229,62 @@ function PopularCourses({ card, value }) {
          xl:grid-cols-4 xxl:grid-cols-4 gap-5 w-full`}
           >
             {card?.slice(StartValue, EndValue)?.map((val, i) => {
-              return (
+               return (
                 <Link
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    // query:
-                    // image: `https://hubitbackend.onrender.com/${val.image}`,
-                    // description: val.description,
+                    // query: {
+                    //   image: `https://hubitbackend.onrender.com/${val.image}`,
+                    //   description: val.description,
                     // },
                   }}
                 >
                   <div
-                    className={`shadow-lg h-fit  pb-4 w-full 
-                overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer`}
+                    className="shadow-lg h-fit  pb-4 w-full  
+              overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
                   >
-                    <div className="h-60 w-80 relative">
-                      <img
-                        src={val.image}
-                        alt={"images"}
-                        // placeholder="blur"
-                        // blurDataURL={val.image}
-                        // objectFit="cover"
-                        // objectPosition="top"
-                        layout="fill"
-                        className=" "
-                      />
-                      {/* <image
-                      src={val.image}
-                      alt={val.course_name}
-                      height="200"
-                      width={200}
-                    /> */}
+                    <div className="h-60  bg-white relative"
+                    style={{
+                      backgroundImage:`url(${val.image})`,
+                      backgroundSize:'cover'
+,backgroundRepeat:'no-repeat', 
+                    }}
+                    >
+                      
+                        {/* <img src={val.image} alt={"images"}
+                         className="h" /> */}
+                     
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">
                         <div
                           className={`py-1 xs:py-2 ${color(
-                            val.course_category
-                          )} text-[9px] xl:text-[11px] xxl:text-sm font-semibold`}
+                            val.course_category 
+                          )} text-sm bg-main text-white w-fit px-4  rounded-sm 
+                           xxl:text-sm  font-light`}
                         >
                           {val.course_category}
                         </div>
-                        <div className="font-semibold w-full h-max line-clamp-2 text-xs xl:text-sm xxl:text-base ">
-                          {val.course_name}
+                        <div className="font-semibold w-full
+                         h-max line-clamp-2 text-xs xl:text-sm
+                          xxl:text-base ">
+                          <h1 className="text-xl p-0 pt-1 m-0 font-semibold"> {val.course_name}</h1>
                         </div>
                         <div className="py-1 xs:py-2">
-                          <span className="text-gray-500 text-[12px] xl:text-[11px] xxl:text-sm">
+                          <span className="text-gray-500 text-[12px]
+                           xl:text-[11px] xxl:text-sm">
                             Duration :
                           </span>
-                          <span className="text-[9px] xl:text-[11px] xxl:text-sm mx-1">
-                            {val.duration}
+                          <span className="text-[12px] 
+                           xxl:text-sm mx-1">
+                            {val.duration} months
+
                           </span>
                         </div>
                         {/* <div className="line-clamp-2 pt-3  ">
-                        {val.description}
-                      </div> */}
+                      {val.description}
+                    </div> */}
                       </div>
                     </div>
                   </div>

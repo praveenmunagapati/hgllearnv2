@@ -12,7 +12,7 @@ import Home from "./Home";
 import CallSection from "../../components/PageComponent/HomePage/LetsCallSection/CallSection";
 import PlacementPartners from "../../components/PageComponent/HomePage/PlacementPartners/placementPartners";
 import CourseStatus from "../../components/PageComponent/HomePage/courseStatus.jsx/CourseStatus";
-import axios from "axios";
+import axios from "../../components/UI/Axios/Axios";
 import WhatClientsSays from "../../components/PageComponent/AboutPage/What ClientsSays/WhatClientsSays";
 import OurAchievements from "../../components/PageComponent/AboutPage/OurAchivements/OurAchievements";
 import SuccessStories from "../../components/PageComponent/HomePage/SuccessStories/SuccessStories";
@@ -44,7 +44,7 @@ function Index() {
   const getData = () => {
     try {
       axios
-        .get(`http://fullel-backend.apdaptable.app/course`)
+        .get(`/course`)
         .then((res) => {
           console.log(res);
           setCard(res.data.data);
@@ -56,28 +56,28 @@ function Index() {
       console.log(error);
     }
   };
-  const getReview = () => {
-    let placeId = "ChIJU6XiOYiGljkRv4xyNSswlBE";
-    let apiKey = "AIzaSyAKQo1DhCmxNhzHWqelTUs_T3jS_pGiBG4";
-    try {
-      axios
-        .get(
-          `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`
-        )
-        .then((res) => {
-          console.log(res);
-          setCard(res.data.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getReview = () => {
+  //   let placeId = "ChIJU6XiOYiGljkRv4xyNSswlBE";
+  //   let apiKey = "AIzaSyAKQo1DhCmxNhzHWqelTUs_T3jS_pGiBG4";
+  //   try {
+  //     axios
+  //       .get(
+  //         `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`
+  //       )
+  //       .then((res) => {
+  //         console.log(res);
+  //         setCard(res.data.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   useEffect(() => {
     getData();
-    getReview();
+    // getReview();
   }, []);
   return (
     <div className="">
