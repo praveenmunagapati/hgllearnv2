@@ -231,7 +231,7 @@ const RelatedCourseSection = () => {
                             Duration :
                           </span>
                           <span className="text-[9px] xl:text-[11px] xxl:text-sm mx-1">
-                            {val.duration}
+                            {val.duration} months
                           </span>
                         </div>
                         {/* <div className="line-clamp-2 pt-3  ">

@@ -120,7 +120,7 @@ function Course() {
           </div>
         </div>
         <FeaturedCourses />
-        <div className="pb-28">
+        <div className="pb-10">
           <PopularCourses card={card} value="courses" />
         </div>
         <RecommendedCourse />
