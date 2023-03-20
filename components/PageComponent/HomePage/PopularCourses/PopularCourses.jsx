@@ -10,6 +10,7 @@ function PopularCourses({ card, value }) {
   const router = useRouter();
   console.log(router);
   const [course, setCourse] = useState([]);
+  const [category, setCategory] = useState([]);
 
   const getCourse = () => {
     try {
@@ -26,25 +27,53 @@ function PopularCourses({ card, value }) {
       console.log(error);
     }
   };
+
+  //get category
+  const getCategory = () => {
+    try {
+      axios
+        .get("/category")
+        .then((res) => {
+          console.log(res);
+          console.log(res.data.data, "bnsbnffskj");
+          setCategory(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getCourse();
+    getCategory();
   }, []);
+
   let courseName = [];
   {
     course.map((val, i) => {
       courseName.push({
         id: val.id,
         course_name: val.course_name,
-        course_category: val.course_category,
+        // category_name: val.category_name,
       });
-      return (
-        <div key={i}>
-          {val.course_name},{val.course_category}
-        </div>
-      );
+      return <div key={i}>{val.course_name}</div>;
     });
   }
   console.log(courseName);
+  let categoryName = [];
+  {
+    category.map((val, i) => {
+      categoryName.push({
+        id: val._id,
+        category_name: val.category_name,
+      });
+      return <div key={i}>{val.category_name}</div>;
+    });
+  }
+  console.log(categoryName);
   const options = [
     {
       id: "0",
@@ -53,14 +82,25 @@ function PopularCourses({ card, value }) {
     },
     {
       id: "1",
-      course_category: "choose course category",
+      category_name: "choose course category",
       apikey: "course_categories",
     },
     ...courseName,
+    ...categoryName,
   ];
 
-  const color = (category) => {
-    switch (category) {
+  const option = [
+    {
+      id: "0",
+      category_name: "choose course category",
+      apikey: "course_categories",
+    },
+
+    ...categoryName,
+  ];
+
+  const color = (c) => {
+    switch (c) {
       case "programming":
         return "text-blue-500";
       case "account & finance":
@@ -73,6 +113,19 @@ function PopularCourses({ card, value }) {
         return "text-black";
     }
   };
+
+  // for multiplesearchfilter
+  const handleFilter = (e) => {
+    return e.filter((option) => {
+      return (
+        option.course_name.toLowerCase().includes(e.target.value.toLowerCase()),
+        option.category_name
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
+      );
+    });
+  };
+
   const [slide, setSlide] = useState(false);
   let currentPageRef = useRef(0);
 
@@ -142,7 +195,7 @@ function PopularCourses({ card, value }) {
             <div className="bg-main rounded-full mt-10 p-1">
               <GiGraduateCap className="text-2xl xl:text-3xl xxl:text-4xl text-white" />
             </div>
-            <div className="text-lg xl:text-xl xxl:text-2xl my-2 capitalize Poppins font-bold">
+            <div className="text-lg xl:text-xl xxl:text-2xl my-1 capitalize Poppins font-bold">
               our popular courses
             </div>
             <div className="capitalize Poppins  bg-gray-100 font-semibold px-4 py-1.5 mt-2  rounded-full text-[8px] xl:text-[10px] xxl:text-xs  text-gray-800 cursor-pointer">
@@ -153,12 +206,12 @@ function PopularCourses({ card, value }) {
           <div>
             <div
               className="text-xl  flex  justify-center items-center
-             xl:text-2xl xxl:text-3xl my-2 capitalize Poppins font-bold"
+             xl:text-2xl xxl:text-3xl my-1 capitalize Poppins font-bold"
             >
               <h2>our popular courses</h2>
             </div>
             <div className="   md:grid lg:grid  xl:grid xxl:grid  grid-cols-12 gap-16  mt-7 md:mt-14  mb-4 md:mb-7">
-              <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9 ">
+              <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9">
                 <div className="w-full ">
                   <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
                     {options.map((val, i) => {
@@ -170,16 +223,19 @@ function PopularCourses({ card, value }) {
                 <div className="w-full my-6 ">
                   <div className="w-full">
                     <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                      {options.map((val, i) => {
+                      {option.map((val, i) => {
                         console.log(val);
-                        return <option key={i}>{val.course_category}</option>;
+                        return <option key={i}>{val.category_name}</option>;
                       })}
                     </select>
                   </div>
                 </div>
               </div>
               <div className="col-span-3  flex items-center text-white Poppins font-semibold">
-                <button className=" w-auto p-2 bg-[#C7189F]  capitalize rounded-md items-center justify-center ">
+                <button
+                  onClick={(e) => handleFilter}
+                  className=" w-auto p-2 bg-[#C7189F]  capitalize rounded-md items-center justify-center "
+                >
                   search course
                 </button>
                 {/* <div className="  h-10 w-20 flex justify-center items-center border-main bg-main border">
@@ -229,7 +285,7 @@ function PopularCourses({ card, value }) {
          xl:grid-cols-4 xxl:grid-cols-4 gap-5 w-full`}
           >
             {card?.slice(StartValue, EndValue)?.map((val, i) => {
-               return (
+              return (
                 <Link
                   key={i}
                   href={{
@@ -244,42 +300,49 @@ function PopularCourses({ card, value }) {
                     className="shadow-lg h-fit  pb-4 w-full  
               overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
                   >
-                    <div className="h-60  bg-white relative"
-                    style={{
-                      backgroundImage:`url(${val.image})`,
-                      backgroundSize:'cover'
-,backgroundRepeat:'no-repeat', 
-                    }}
+                    <div
+                      className="h-60  bg-white relative"
+                      style={{
+                        backgroundImage: `url(${val.image})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     >
-                      
-                        {/* <img src={val.image} alt={"images"}
+                      {/* <img src={val.image} alt={"images"}
                          className="h" /> */}
-                     
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">
                         <div
                           className={`py-1 xs:py-2 ${color(
-                            val.course_category 
+                            val.course_category
                           )} text-sm bg-main text-white w-fit px-4  rounded-sm 
                            xxl:text-sm  font-light`}
                         >
                           {val.course_category}
                         </div>
-                        <div className="font-semibold w-full
+                        <div
+                          className="font-semibold w-full
                          h-max line-clamp-2 text-xs xl:text-sm
-                          xxl:text-base ">
-                          <h1 className="text-xl p-0 pt-1 m-0 font-semibold"> {val.course_name}</h1>
+                          xxl:text-base "
+                        >
+                          <h1 className="text-xl p-0 pt-1 m-0 font-semibold">
+                            {" "}
+                            {val.course_name}
+                          </h1>
                         </div>
                         <div className="py-1 xs:py-2">
-                          <span className="text-gray-500 text-[12px]
-                           xl:text-[11px] xxl:text-sm">
+                          <span
+                            className="text-gray-500 text-[12px]
+                           xl:text-[11px] xxl:text-sm"
+                          >
                             Duration :
                           </span>
-                          <span className="text-[12px] 
-                           xxl:text-sm mx-1">
+                          <span
+                            className="text-[12px] 
+                           xxl:text-sm mx-1"
+                          >
                             {val.duration} months
-
                           </span>
                         </div>
                         {/* <div className="line-clamp-2 pt-3  ">
@@ -313,42 +376,49 @@ function PopularCourses({ card, value }) {
                     className="shadow-lg h-fit  pb-4 w-full  
               overflow-hidden rounded-md shadow-gray-400 flex flex-col justify-centre  cursor-pointer"
                   >
-                    <div className="h-60  bg-white relative"
-                    style={{
-                      backgroundImage:`url(${val.image})`,
-                      backgroundSize:'cover'
-,backgroundRepeat:'no-repeat', 
-                    }}
+                    <div
+                      className="h-60  bg-white relative"
+                      style={{
+                        backgroundImage: `url(${val.image})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     >
-                      
-                        {/* <img src={val.image} alt={"images"}
+                      {/* <img src={val.image} alt={"images"}
                          className="h" /> */}
-                     
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">
                         <div
                           className={`py-1 xs:py-2 ${color(
-                            val.course_category 
+                            val.course_category
                           )} text-sm bg-main text-white w-fit px-4  rounded-sm 
                            xxl:text-sm  font-light`}
                         >
                           {val.course_category}
                         </div>
-                        <div className="font-semibold w-full
+                        <div
+                          className="font-semibold w-full
                          h-max line-clamp-2 text-xs xl:text-sm
-                          xxl:text-base ">
-                          <h1 className="text-xl p-0 pt-1 m-0 font-semibold"> {val.course_name}</h1>
+                          xxl:text-base "
+                        >
+                          <h1 className="text-[16px] p-0 pt-1 m-0 font-semibold">
+                            {" "}
+                            {val.course_name}
+                          </h1>
                         </div>
                         <div className="py-1 xs:py-2">
-                          <span className="text-gray-500 text-[12px]
-                           xl:text-[11px] xxl:text-sm">
+                          <span
+                            className="text-gray-500 text-[12px]
+                           xl:text-[11px] xxl:text-sm"
+                          >
                             Duration :
                           </span>
-                          <span className="text-[12px] 
-                           xxl:text-sm mx-1">
+                          <span
+                            className="text-[12px] 
+                           xxl:text-sm mx-1"
+                          >
                             {val.duration} months
-
                           </span>
                         </div>
                         {/* <div className="line-clamp-2 pt-3  ">

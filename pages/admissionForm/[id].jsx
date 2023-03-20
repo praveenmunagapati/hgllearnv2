@@ -254,7 +254,7 @@ function AdmissionForm() {
       formData.append("shifts", e.shifts);
       formData.append("school_or_clg_name", e.school_or_clg_name);
       axios
-        .post("http://192.168.0.13:4000/onlineform/files", formData)
+        .post("/onlineform/files", formData)
         .then((res) => {
           if (res.status === 200) {
             //   toast.success("Form added successfullty");
