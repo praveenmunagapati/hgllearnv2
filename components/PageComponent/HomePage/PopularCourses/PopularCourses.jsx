@@ -309,7 +309,7 @@ function PopularCourses({ card, value }) {
                       // }}
                     >
                       <Image
-                        src={`${image}`}
+                        src={`${val.image}`}
                         alt="image"
                         layout="fill"
                         className=""
