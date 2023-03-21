@@ -214,18 +214,18 @@ function PopularCourses({ card, value }) {
               <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9">
                 <div className="w-full ">
                   <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                    {options.map((val, i) => {
+                    {option.map((val, i) => {
                       console.log(val);
-                      return <option key={i}>{val.course_name}</option>;
+                      return <option key={i}>{val.category_name}</option>;
                     })}
                   </select>
                 </div>
                 <div className="w-full my-6 ">
                   <div className="w-full">
                     <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                      {option.map((val, i) => {
+                      {options.map((val, i) => {
                         console.log(val);
-                        return <option key={i}>{val.category_name}</option>;
+                        return <option key={i}>{val.course_name}</option>;
                       })}
                     </select>
                   </div>
@@ -302,14 +302,18 @@ function PopularCourses({ card, value }) {
                   >
                     <div
                       className="h-60  bg-white relative"
-                      style={{
-                        backgroundImage: `url(${val.image})`,
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                      }}
+                      // style={{
+                      //   backgroundImage: `url(${val.image})`,
+                      //   backgroundSize: "cover",
+                      //   backgroundRepeat: "no-repeat",
+                      // }}
                     >
-                      {/* <img src={val.image} alt={"images"}
-                         className="h" /> */}
+                      <Image
+                        src={`${image}`}
+                        alt="image"
+                        layout="fill"
+                        className=""
+                      />
                     </div>
                     <div className="flex h-2/6 items-center pt-2">
                       <div className="px-2 Poppins capitalize h-max">

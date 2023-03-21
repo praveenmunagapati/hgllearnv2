@@ -14,7 +14,7 @@ const nextConfig = {
     domains: [
       // "https://storage.googleapis.com/",
       "storage.googleapis.com",
-      "images.unsplash.com"
+      "images.unsplash.com","encrypted-tbn0.gstatic.com"
     ],
   },
 };
