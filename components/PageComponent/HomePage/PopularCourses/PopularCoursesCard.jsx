@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaUser, FaCommentAlt } from "react-icons/fa";
+// import { FaUser, FaCommentAlt } from "react-icons/fa";
 //import image from "../../../../public/images/Rectangle 34.jpg"
 
 function PopularCoursesCard({
@@ -19,10 +19,10 @@ function PopularCoursesCard({
         {image && (
           <Image
             src={val.image}
-            height={65}
-            width={60}
+            // height={65}
+            // width={60}
             alt="Loading ..."
-            // layout="responsive"
+            layout="fill"
             // objectFit="cover"
             // placeholder="blur"
             blurDataURL={image}

@@ -21,9 +21,11 @@ function InstructorCard({
         <div className=" w-full lg:w-72 xl:w-72 xxl:w-72   borderRadiusTopHover ">
           <Image
             src={image}
-            height={45}
-            width={60}
+            height={210}
+            width={400}
             alt="Loading ..."
+            // layout="fil"
+            objectFit="cover"
             className="borderRadiusTop "
           />
         </div>
