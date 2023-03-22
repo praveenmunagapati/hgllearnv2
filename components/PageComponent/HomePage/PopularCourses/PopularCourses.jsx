@@ -188,7 +188,7 @@ function PopularCourses({ card, value }) {
 
   return (
     <div>
-      <div className="flex flex-col justify-between  px-4 md:px-8 lg:px-12 xl:px-14 xxl:px-16">
+      <div className={`flex flex-col justify-between ${value==='onlyTag'?'px-4 md:px-8 lg:px-12 xl:px-14 xxl:px-16':'p-0'} `}>
         {value === "onlyTag" ? (
           <div className=" flex flex-col justify-between items-center">
             {" "}
@@ -203,47 +203,7 @@ function PopularCourses({ card, value }) {
             </div>
           </div>
         ) : value === "courses" ? (
-          <div>
-            <div
-              className="text-xl  flex  justify-center items-center
-             xl:text-2xl xxl:text-3xl my-1 capitalize Poppins font-bold"
-            >
-              <h2>our popular courses</h2>
-            </div>
-            <div className="   md:grid lg:grid  xl:grid xxl:grid  grid-cols-12 gap-16  mt-7 md:mt-14  mb-4 md:mb-7">
-              <div className="md:flex lg:flex xl:flex xxl:flex  items-center gap-16 my-8 col-span-9">
-                <div className="w-full ">
-                  <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                    {option.map((val, i) => {
-                      console.log(val);
-                      return <option key={i}>{val.category_name}</option>;
-                    })}
-                  </select>
-                </div>
-                <div className="w-full my-6 ">
-                  <div className="w-full">
-                    <select className=" px-6 py-2 outline-none text-gray-600 capitalize  w-full border-b-2 border-main  bg-[#EEEAEA]  rounded-sm">
-                      {options.map((val, i) => {
-                        console.log(val);
-                        return <option key={i}>{val.course_name}</option>;
-                      })}
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-3  flex items-center text-white Poppins font-semibold">
-                <button
-                  onClick={(e) => handleFilter}
-                  className=" w-auto p-2 bg-[#C7189F]  capitalize rounded-md items-center justify-center "
-                >
-                  search course
-                </button>
-                {/* <div className="  h-10 w-20 flex justify-center items-center border-main bg-main border">
-                  <MdOutlineKeyboardArrowRight className="h-6 w-6" />
-                </div> */}
-              </div>
-            </div>
-          </div>
+          ""
         ) : (
           ""
         )}
@@ -361,8 +321,8 @@ function PopularCourses({ card, value }) {
           </div>
         ) : (
           <div
-            className="grid grid-cols-1 mt-8 md:mb-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-       xl:grid-cols-4 xxl:grid-cols-4 gap-5 w-full"
+            className="grid grid-cols-1  md:mb-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+       xl:grid-cols-3 xxl:grid-cols-3 gap-5 w-full"
           >
             {card?.slice(StartValue, EndValue).map((val, i) => {
               return (
@@ -370,10 +330,6 @@ function PopularCourses({ card, value }) {
                   key={i}
                   href={{
                     pathname: `/OurCourses/${val._id}`,
-                    // query: {
-                    //   image: `https://hubitbackend.onrender.com/${val.image}`,
-                    //   description: val.description,
-                    // },
                   }}
                 >
                   <div
@@ -406,7 +362,9 @@ function PopularCourses({ card, value }) {
                          h-max line-clamp-2 text-xs xl:text-sm
                           xxl:text-base "
                         >
-                          <h1 className="text-[16px] p-0 pt-1 m-0 font-semibold">
+                          <h1 className="p-0 pt-1 m-0 font-semibold w-full
+                         h-max line-clamp-1 text-xs xl:text-sm
+                          xxl:text-base " >
                             {" "}
                             {val.course_name}
                           </h1>
