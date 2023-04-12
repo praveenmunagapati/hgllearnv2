@@ -14,20 +14,20 @@ function WhatClientsSays() {
       image: "/images/japan.jpg",
       name: "Gayatri Malla",
       title: "Python",
-      description: `I have been studying Python Programming Language at Hub IT since 2 months. It has been a knowledgeable learning also build-up my confidence towards programming. Hub IT has a friendly environment and our Python Teacher is great in teaching.`,
+      description: `I have been studying Python Programming Language at HGL Learn since 2 months. It has been a knowledgeable learning also build-up my confidence towards programming. HGL Learn has a friendly environment and our Python Teacher is great in teaching.`,
     },
     {
       image: "/images/japan.jpg",
       name: "Saroj GC",
       title: "CCNA",
-      description: `Hub IT, for me, is one of the best places for learners (specially IT). I am happy to choose the institute for enhancing my Computer Networking knowledge with CCNA course. Thumbs UP!`,
+      description: `HGL Learn, for me, is one of the best places for learners (specially IT). I am happy to choose the institute for enhancing my Computer Networking knowledge with CCNA course. Thumbs UP!`,
     },
     {
       image: "/images/japan.jpg",
       name: "Prayab Maharjan",
       title: "MERN",
       description: `My time in the Institute was very satisfying. Teachers were very friendly and cooperative. Learning environment was also very suitable for beginners as well as veterans.
-      Thank you a lot HUB IT for providing a perfect learning experience to me.`,
+      Thank you a lot HGL Learn for providing a perfect learning experience to me.`,
     },
     {
       image: "/images/japan.jpg",
@@ -178,7 +178,7 @@ function WhatClientsSays() {
         <div className="Poppins  font-light my-3 text-sm  text-gray-700  ">
           <p className="text-xs">
             Here some testimonials about the experience of our students in
-            <span className="text-main font-medium">HUB IT TRAINING</span>
+            <span className="text-main font-medium">HGL Learn TRAINING</span>
           </p>
         </div>
       </div>

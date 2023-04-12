@@ -59,7 +59,7 @@ function HowWeWork() {
 
         <div className="text-xs text-regular Poppins  w-5/6  text-center mx-auto  mt-5 text-gray-400   capitalize">
           <p>
-         {` At the Hub IT Training Institute, we believe in a collaborative approach to 
+         {` At the HGL Learn Training Institute, we believe in a collaborative approach to 
           learning. We work closely with our students and staff to understand their needs and
           tailor our training and resources to meet those needs. We use a variety of teaching
           methods, including hands-on exercises, lectures, and group discussions to ensure that

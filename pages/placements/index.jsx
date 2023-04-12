@@ -9,7 +9,7 @@ const placement = () => {
   return (
     <>
       <Head>
-        <title>Placement-Hub IT</title>
+        <title>Placement-HGL Learn</title>
       </Head>
       <Layout>
         <HeroSection />

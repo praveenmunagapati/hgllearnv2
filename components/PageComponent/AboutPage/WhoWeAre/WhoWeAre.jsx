@@ -26,7 +26,7 @@ function WhoWeAre() {
         <div className="row-start-2 lg:row-start-1  xl:row-start-1 text-justify xxl:row-start-1">
           <div className="text-sm xl:text-sm xxl:text-base text-gray-700 text-justify">
             <p>
-            Welcome to our HUB IT Group Pvt.Ltd. We have 
+            Welcome to our HGL Learn Group Pvt.Ltd. We have 
             started our service journey from 2017 for then 
             till now it has been a wonderful journey.
             We are thrilled to have you visiting

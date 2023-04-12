@@ -147,7 +147,7 @@ function Footer() {
             </Link>
           </div>
           <p className="text-xs xl:text-sm   xxl:text-[14px] mt-1 text-white">
-            Copyright &copy; {new Date().getFullYear()}, Hub IT
+            Copyright &copy; {new Date().getFullYear()}, HGL Learn
           </p>
         </div>
         {/* social media icon section ends  */}

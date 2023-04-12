@@ -54,7 +54,7 @@ function Policy() {
             <p>
               <strong>Company</strong> (referred to as either &quot;the
               Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
-              in this Agreement) refers to HUB IT GROUP PVT LTD., Butwal-09
+              in this Agreement) refers to HGL Learn GROUP PVT LTD., Butwal-09
               Milanchowk .
             </p>
           </li>

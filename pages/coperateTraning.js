@@ -6,7 +6,7 @@ import Head from "next/head"
 const coperateTraning = () => {
   return (
     <>
-    <Head><title>Corporate Training - Hub IT</title></Head>
+    <Head><title>Corporate Training - HGL Learn</title></Head>
       <Layout>
         <TopSection />
         <MidSection />

@@ -21,7 +21,7 @@ export default function Index() {
             name="description"
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal
   | A Top Computer Institute in Rupandehi |No.1 IT Center | Best website designing course in Butwal | Top IT Training institute in Butwal |
-  No.1 Computer training in Nepal | IT training in Butwal | IT training Nepal | HUB IT TRAINING AND SOLUTION |hub it training and solution |
+  No.1 Computer training in Nepal | IT training in Butwal | IT training Nepal | HGL Learn TRAINING AND SOLUTION |HGL Learn training and solution |
   Computer Training Institute in kathmandu Nepal, Professional IT Training institute in Nepal, computer learning center , computer training center in nepal,
   computer courses in nepal ,computer institute in nepal, Web Designing Training,Professional IT Education, Training, IT Education Nepal, Computer Traning Institute Nepal,
   Computer Programming Institute Nepal, Professional Web Designing , Professional Web Development, Advance Web Master Program, Professional JOOMLA (CMS) Development,

@@ -17,7 +17,7 @@ function HomePageWelcomeSection({ play }) {
         <div className="text-center flex flex-col justify-center items-center  h-full ">
           <h1 className=" text-2xl md:text-5xl font-openSansEight">
             {" "}
-            WELCOME TO HUB IT
+            WELCOME TO HGL Learn
           </h1>
           {/* <p className=" text-xs md:text-xl  animate-pulse  font-openSansFive  -mt-2 md:-mt-8">
             hello world

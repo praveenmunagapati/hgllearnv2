@@ -35,10 +35,10 @@ function Home() {
           </div>
           <div className="text-xs xl:text-sm xxl:text-base text-gray-700 pr-6 text-justify">
             <p>
-              HUB IT is recognized as one of Nepal’s best global skill
-              development and IT training centers. The journey of HUB IT started
+              HGL Learn is recognized as one of Nepal’s best global skill
+              development and IT training centers. The journey of HGL Learn started
               in 2017 with a big dream to bring applied education to the mass
-              population at an affordable cost. The main purpose of HUB IT is to
+              population at an affordable cost. The main purpose of HGL Learn is to
               facilitate, with the best IT-related skills.
             </p>
           </div>
