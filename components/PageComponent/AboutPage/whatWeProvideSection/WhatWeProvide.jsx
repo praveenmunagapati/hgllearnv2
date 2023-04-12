@@ -7,56 +7,17 @@ function WhatWeProvide() {
     {
       icon: <TbCertificate />,
       title: "Top Courses",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text  Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      textLorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      textLorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text ever since the 1500s, when an unknown printer took a galley of type
-                   .`,
+      description: ``,
     },
     {
       icon: <TbCertificate />,
       title: "Certified Teachers",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text  Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      textLorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      textLorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-      text ever since the 1500s, when an unknown printer took a galley of type
-                   .`,
+      description: ``,
     },
     {
       icon: <TbCertificate />,
       title: "Book and Libraries",
-      description: `Lorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   text  Lorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   text Lorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   textLorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   text Lorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   textLorem Ipsum is simply dummy text of the printing and
-                   typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-                   text ever since the 1500s, when an unknown printer took a galley of type 
-                   .`,
+      description: ``,
     },
   ];
 

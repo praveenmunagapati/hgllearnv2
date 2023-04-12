@@ -15,7 +15,7 @@ function FeaturedCourses() {
         </div>
         <div className="text-gray-400">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+             Suscipit
             voluptates eveniet at perspiciatis ea ut, aliquam perferendis
             possimus illum unde vel esse, alias quos consequuntur incidunt
             voluptatem pariatur est modi.

@@ -63,7 +63,7 @@ function WhoWeAre() {
         <div className="">
           {hasWindow && (
             <ReactPlayer
-              url="https://youtu.be/sKA1hmPkcTA"
+              url="#"
               loop={true}
               controls={true}
               width="100%"

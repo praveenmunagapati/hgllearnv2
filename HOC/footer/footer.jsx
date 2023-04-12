@@ -117,7 +117,7 @@ function Footer() {
         <div className="w-28 mt-2   cursor-pointer">
           <Link href={"/"}>
             <Image
-              src="/images/hubitLogo1.svg"
+              src="/images/hubitLogo.svg"
               alt="logo"
               height={100}
               width={100}

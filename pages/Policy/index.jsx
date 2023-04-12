@@ -120,11 +120,11 @@ function Policy() {
               <strong>{`Website`}</strong>
               {` refers to haripb-001, accessible from`}
               <a
-                href="http://hubit.com.np"
+                href="http://hgllearn.com"
                 rel="external nofollow noopener"
                 // target="_blank"
               >
-                {`  http://hubit.com.np`}
+                {`  http://hgllearn.com`}
               </a>
             </p>
           </li>
@@ -573,7 +573,7 @@ function Policy() {
           <li>
             By visiting this page on our website:{" "}
             {/* <a
-              href="http://hubit.com.np/home/privacypolicy"
+              href="http://hgllearn.com/home/privacypolicy"
               rel="external nofollow noopener"
               target="_blank"
             ></a> */}

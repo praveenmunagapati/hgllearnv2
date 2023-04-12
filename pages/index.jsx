@@ -22,7 +22,7 @@ export default function Index() {
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal
   | A Top Computer Institute in Rupandehi |No.1 IT Center | Best website designing course in Butwal | Top IT Training institute in Butwal |
   No.1 Computer training in Nepal | IT training in Butwal | IT training Nepal | HGL Learn TRAINING AND SOLUTION |HGL Learn training and solution |
-  Computer Training Institute in kathmandu Nepal, Professional IT Training institute in Nepal, computer learning center , computer training center in nepal,
+  Computer Training Institute in kathmandu Nepal, Professional IT Training Institute in Hyderabad, computer learning center , computer training center in nepal,
   computer courses in nepal ,computer institute in nepal, Web Designing Training,Professional IT Education, Training, IT Education Nepal, Computer Traning Institute Nepal,
   Computer Programming Institute Nepal, Professional Web Designing , Professional Web Development, Advance Web Master Program, Professional JOOMLA (CMS) Development,
   CSS Training Nepal, Object Oriented PHP Programming Training Courses Nepal, Quality Assurance, Web Institution Nepal, Computer courses in nepal,
@@ -44,7 +44,7 @@ export default function Index() {
   best it training institute in butwal,top it training institute in butwal,it training near me,best computer institute is,top computer institute near me is,no,1 it training is,
   Best IT Training in Butwal Nepal,A Top Computer Institute in Rupandehi,No,1 IT Center,Best website designing course in Butwal,Top IT Training institute in Butwal,
   No,1 Computer training in Nepal,IT training in Butwal,IT training Nepal,Mirror Technology and Training Center,best video editing and wordpress training in butwal,
-  in butwal,HTML,CSS,Java,Python,PHP,Javascript,Wordpress,Android,Computer Training Institute in kathmandu Nepal,Professional IT Training institute in Nepal,
+  in butwal,HTML,CSS,Java,Python,PHP,Javascript,Wordpress,Android,Computer Training Institute in kathmandu Nepal,Professional IT Training Institute in Hyderabad,
   computer learning center,computer training center in nepal,computer courses in nepal,computer institute in nepal,Web Designing Training,Professional IT Education,
   Training,IT Education Nepal,Computer Traning Institute Nepal,Computer Programming Institute Nepal,Professional Web Designing,Professional Web Development,
   Advance Web Master Program,Professional JOOMLA,CMS,Development,CSS Training Nepal,Object Oriented PHP Programming Training Courses Nepal,Quality Assurance,
@@ -57,7 +57,7 @@ export default function Index() {
   mobile application development companies in nepal,android app development company,webdesign,college in butwal,website design,event videography,  Best IT Training in nepal,
   it training courses,it training near me,it training butwal,training course,computer training in butwal,best it training website,best it training courses, best it training sites,
   best it training in the world,best computer institute in kathmandu,best computer institute in chitwan,best computer training institute in butwal, website designing course,website designing course in butwal,
-  it training institute in nepal,"
+  IT Training Institute in Hyderabad,"
           />
           <meta
             property="og:title"
@@ -71,7 +71,7 @@ export default function Index() {
             property="og:description"
             content="Best IT training and Solutions in Butwal, No.1 web designer and computer Institute in Rupandehi, Best IT Training in Butwal Nepal |
   A Top Computer Institute in Rupandehi |No.1 IT Center | Best website designing course in Butwal | Top IT Training institute in Butwal | No.1 Computer training in Nepal |
-  IT training in Butwal | IT training Nepal | Mirror Technology and Training Center | Computer Training Institute in kathmandu Nepal, Professional IT Training institute in Nepal,
+  IT training in Butwal | IT training Nepal | Mirror Technology and Training Center | Computer Training Institute in kathmandu Nepal, Professional IT Training Institute in Hyderabad,
   computer learning center , computer training center in nepal, computer courses in nepal ,computer institute in nepal, Web Designing Training,Professional IT Education, Training,
   IT Education Nepal, Computer Traning Institute Nepal, Computer Programming Institute Nepal, Professional Web Designing , Professional Web Development,
   Advance Web Master Program, Professional JOOMLA (CMS) Development, CSS Training Nepal, Object Oriented PHP Programming Training Courses Nepal, Quality Assurance,

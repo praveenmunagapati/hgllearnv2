@@ -9,13 +9,13 @@ const HeroSection = () => {
             What we do for your placement?
           </h1>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae
+             Est vitae
             ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio
             praesentium impedit, neque consequatur aliquam veniam nemo non
             architecto. Voluptatibus deleniti vel laudantium pariatur delectus,
             rerum molestias maiores placeat veritatis, obcaecati quibusdam
             architecto assumenda vero eveniet, amet sint voluptas incidunt esse.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vitae,
+             Iure vitae,
             earum adipisci dolore iste et ab ut voluptas magni culpa eaque
             soluta corrupti in quam fuga odio, aliquam, rerum eveniet.
           </p>

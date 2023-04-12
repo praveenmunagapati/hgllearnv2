@@ -11,7 +11,7 @@ function InfoSection() {
       height:"300px",
       event:'150 Roles / 75 Location',
       tittle:"What Is Your            Destination ?",
-      button:"Explore More"
+      button:"Explore "
     },
     
     {
@@ -32,7 +32,7 @@ function InfoSection() {
       height:"300px",
       event:'150 Roles / 75 Location',
       tittle:"Deploy Your Career",
-      button:"Explore More"
+      button:"Explore"
     },
 
   ]
@@ -61,13 +61,13 @@ function InfoSection() {
       top:"0px",
       tittle:"Our Mission",
       mission:"Create a world where anyone can belong anywhere",
-      description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur aliquam veniam nemo non architecto. Voluptatibus deleniti vel laudantium pariatur delectus, rerum molestias maiores placeat veritatis, obcaecati quibusdam architecto assumenda vero eveniet, amet sint voluptas incidunt esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vitae, earum adipisci dolore iste et ab ut voluptas magni culpa eaque soluta corrupti in quam fuga odio, aliquam, rerum eveniet."
+      description:", neque consequatur aliquam veniam nemo non architecto. Voluptatibus deleniti vel laudantium pariatur delectus, rerum molestias maiores placeat veritatis, obcaecati quibusdam architecto assumenda vero eveniet, amet sint voluptas incidunt esse.  Iure vitae, earum adipisci dolore iste et ab ut voluptas magni culpa eaque soluta corrupti in quam fuga odio, aliquam, rerum eveniet."
     },
     {
       top:"35px",
       tittle:"we will guide you",
       top_1:"0px",
-      description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur aliquam veniam nemo non architecto. Voluptatibus deleniti vel laudantium pariatur delectus, rerum molestias maiores placeat veritatis, obcaecati quibusdam architecto ",
+      description:", neque consequatur aliquam veniam nemo non architecto. Voluptatibus deleniti vel laudantium pariatur delectus, rerum molestias maiores placeat veritatis, obcaecati quibusdam architecto ",
     }
     
   ]
@@ -75,28 +75,28 @@ function InfoSection() {
     {
       icon:<BsShieldFillCheck/>,
       tittle:"Lorem ipsum dolor sit amet",
-      description:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur "
+      description:" , neque consequatur "
     },
     {
       icon:<BsShieldFillCheck/>,
       tittle:"Lorem ipsum dolor sit amet",
-      description:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur "
+      description:" , neque consequatur "
     },
     {
       icon:<BsShieldFillCheck/>,
       tittle:"Lorem ipsum dolor sit amet",
-      description:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur "
+      description:" , neque consequatur "
     },
     {
       icon:<BsShieldFillCheck/>,
       tittle:"Lorem ipsum dolor sit amet",
-      description:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur "
+      description:" , neque consequatur "
     },
     {
       left:"500px",
       icon:<BsShieldFillCheck/>,
       tittle:"Lorem ipsum dolor sit amet",
-      description:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae ab minus. Dicta, alias quam. Porro, corporis perspiciatis distinctio praesentium impedit, neque consequatur "
+      description:" , neque consequatur "
     },
 
     

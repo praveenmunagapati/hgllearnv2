@@ -31,7 +31,7 @@ function Home() {
             })}
           </div>
           <div className="w-full flex flex-col font-bold xl:text-xl xxl:text-2xl text-[#A0047D] ">
-            <h2>IT Training Institute in Nepal</h2>
+            <h2>IT Training Institute in Hyderabad</h2>
           </div>
           <div className="text-xs xl:text-sm xxl:text-base text-gray-700 pr-6 text-justify">
             <p>
@@ -48,7 +48,7 @@ function Home() {
                 "border-[1.5px] border-[#A0047D] rounded-full mr-6 px-2 text-sm xl:text-base xxl:text-lg text-main hover:scale-105 transition-all ease-in-out duration-300 delay-100 hover:bg-main hover:text-white"
               }
             >
-              Explore More...
+              Explore
             </button>
             <div className="">
               <div className="flex gap-1 items-center border-[1.5px] border-main rounded-full py-1 hover:bg-main group">
@@ -56,7 +56,7 @@ function Home() {
                   <AiFillPlayCircle className="text-3xl text-main ml-1 group-hover:scale-105 transition-all ease-in-out duration-300 delay-100 group-hover:text-white" />
                 </div>
                 <button className="text-main text-sm xl:text-base xxl:text-lg mr-1 group-hover:scale-105 transition-all ease-in-out duration-300 delay-100 group-hover:text-white">
-                  watch now
+                  watch
                 </button>
               </div>
             </div>

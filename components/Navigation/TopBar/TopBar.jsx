@@ -2,7 +2,7 @@ import { NavData } from "../NavData";
 import TopBar1 from "./TopBar1";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../public/images/hubitLogo1.svg";
+import Logo from "../../../public/images/hubitLogo.svg";
 import { useRouter } from "next/router";
 import { MdDehaze } from "react-icons/md";
 

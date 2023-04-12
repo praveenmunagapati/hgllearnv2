@@ -125,7 +125,7 @@ function CoursesScheme() {
           register now
         </div>
         <div className="text-base text-gray-500 Poppins">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+           Debitis,
           laborum culpa eos, explicabo placeat nobis commodi assumenda
           temporibus obcaecati soluta, optio provident doloribus iusto impedit
           illo minus hic quas unde.

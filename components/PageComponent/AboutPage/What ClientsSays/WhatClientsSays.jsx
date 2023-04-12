@@ -48,19 +48,19 @@ function WhatClientsSays() {
       image: "/images/japan.jpg",
       name: "raymant das",
       title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "kavi vai",
       title: "teacher",
-      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "sahil sainju",
       title: "student",
-      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
   ];
   const Google = [
@@ -68,37 +68,37 @@ function WhatClientsSays() {
       image: "/images/japan.jpg",
       name: "rohit karki",
       title: "student",
-      description: `Lorem Ipsindustry. dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "nischal karki",
       title: "student",
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "pratik karki",
       title: "teacher",
-      description: `ting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "goma  karki",
       title: "student",
-      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "ramchandra  karki",
       title: "student",
-      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
     {
       image: "/images/japan.jpg",
       name: "mickey  karki",
       title: "student",
-      description: `Lorem Ipsum is simply dummy  Lorem Ipsum has been the industry's standard dummy text ever .`,
+      description: ``,
     },
   ];
   const [counter, setCounter] = useState(1);
